@@ -1,0 +1,36 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= Anna.Codina
+$$ C:/Data/NMR/RxM/DA2_1M_25C_proton_4ASAP/997/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2013-07-22 20:36:55.682 +0100>,<nmrsu>,<nmr500>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2013-07-22 20:36:23.482 +0100,
+	POWCHK disabled, PULCHK disabled,
+       configuration hash MD5:
+       0B 15 49 5F C7 0E B8 F7 93 62 A2 E2 B5 31 DF 3F
+       data hash MD5: 128K
+       DE 86 05 5A FB 61 B3 4F 2A AE 3E 30 DC BC FC E8>)
+(   2,<2013-07-22 20:36:56.005 +0100>,<nmrsu>,<nmr500>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       ICON-NMR User ID: axc
+       data hash MD5: 128K
+       DE 86 05 5A FB 61 B3 4F 2A AE 3E 30 DC BC FC E8>)
+(   3,<2014-09-17 16:39:35.601 +0100>,<INTRA-BRKR-CORP\Anna.Codina>,<BRHPLT012>,<dirdata>,<TOPSPIN 3.2>,
+      <wrpa from 1 102 "DA2_1M_25C_proton_4ASAP" "C:\Data\NMR\RxM"
+       data hash MD5: 128K
+       DE 86 05 5A FB 61 B3 4F 2A AE 3E 30 DC BC FC E8>)
+(   4,<2014-09-17 16:40:01.596 +0100>,<INTRA-BRKR-CORP\Anna.Codina>,<BRHPLT012>,<proc1d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       ef LB = 1 FT_mod = 6 PKNL = 1 SI = 128K 
+       data hash MD5: 128K
+       AD 03 A9 78 70 79 2D 22 47 1D CC 74 55 6E 04 54>)
+(   5,<2014-09-17 16:40:06.294 +0100>,<INTRA-BRKR-CORP\Anna.Codina>,<BRHPLT012>,<proc1d>,<TOPSPIN 3.2>,
+      <apk0 
+       data hash MD5: 128K
+       73 AF 36 9B D2 CE C7 06 E2 A7 9F 70 AB A0 F0 38>)
+##END=
+
+$$ hash MD5
+$$ 0E 1C B3 33 0E D8 7E BA 4B 3A 2E 11 46 FD 3A 1D

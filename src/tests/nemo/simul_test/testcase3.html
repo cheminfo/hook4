@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<title>JCAMP Visualiser</title>
+</head>
+
+<body bgcolor="white">
+<table border=1>
+<tr><td><p><applet code="org.cheminfo.hook.nemo.Nemo"
+	archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/colt.jar,ext-lib/concurrent.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/hook3-proprietary.jar"
+	codebase="../../../" width="800" height="500" name="nemo"> </applet> <br>
+From: <input type="text" value=0 name="from" size=4 id="from">
+to <input type="text" value=6 name="to" size=4 id="to"> ppm.
+Line Width <input type="text" value=1 name="lineWidth" size=4
+	id="lineWidth"> Hz <br>Max. Cluster size <input type="text" value=9 name="maxsize" size=4
+	id="maxsize"></td>
+	<td><p align="center"><a><img src="testcase3.png" border="0" alt="2D Mol"></a></p>
+	</td>
+</table>
+<table border=1>
+	<tr>
+		<td>
+		<button style="background-color:gray" onclick="simulateJW('simulationSimple')">sim. JW(Accurate)</button>
+		<button style="background-color:green" onclick="simulateJW2('simulationSimple')">sim. JW2(Faster)</button>
+		<button style="background-color:red" onclick="simulateOT('simulationSimple')">simulate
+		Other</button>
+		<button style="background-color:orange" onclick="simulateEX('simulationSimple')">simulate
+		Exact</button>
+		<button onclick="compare()">Compare</button>
+		<br>
+		<script language="javascript1.2">
+function simulateJW(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateJWSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+function simulateJW2(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateJW2Spectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.setColor('dark green');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+function simulateOT(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.setColor('red');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+function simulateEX(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateExactSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.setColor('dark orange');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+</script> 
+<textarea id="simulationSimple" rows=12 cols=120>
+29	1H	1.6			1	31	d	10.24	40	d	9.76	41	d	4.81
+30	1H	1.46			1	31	d	10.23	38	d	3.29	39	d	10.17
+31	1H	1.5			1	29	d	10.24	30	d	10.23	36	d	10.18	37	d	3.4
+32	1H	1.67			1	44	d	8.03	45	d	4.63	48	d	4.29
+33	1H	5.24			1	36	d	6.96	37	d	7.13
+34	1H	1.63			1	38	d	2.54	39	d	3.19	35	d	13.08
+35	1H	1.5			1	38	d	2.93	39	d	10.24	34	d	13.08
+36	1H	1.84			1	31	d	10.18	33	d	6.96	37	d	13.35
+37	1H	2.09			1	31	d	3.4	33	d	7.13	36	d	13.35
+38	1H	1.68			1	30	d	3.29	34	d	2.54	35	d	2.93	39	d	13.08
+39	1H	1.49			1	30	d	10.17	34	d	3.19	35	d	10.24	38	d	13.08
+40	1H	1.53			1	29	d	9.76	44	d	7.7	45	d	6.79	41	d	13.57
+41	1H	1.54			1	29	d	4.81	44	d	6.96	45	d	1.73	40	d	13.57
+42	1H	1.63			1	52	d	2.52	53	d	3.09	43	d	13.17
+43	1H	1.56			1	52	d	10.24	53	d	2.5	42	d	13.17
+44	1H	1.68			1	32	d	8.03	40	d	7.7	41	d	6.96	45	d	13.76
+45	1H	1.65			1	32	d	4.63	40	d	6.79	41	d	1.73	44	d	13.76
+46	1H	2.47			1	54	d	3.34	47	d	14.56
+47	1H	2.43			1	54	d	10.21	46	d	14.56
+48	1H	1.45			1	32	d	4.29	61	d	7.28	62	d	7.28	63	d	6.8	64	d	6.8	65	d	6.8
+49	1H	0.87			1
+50	1H	0.87			1
+51	1H	0.87			1
+52	1H	1.64			1	42	d	2.52	43	d	10.24	54	d	10.22	53	d	13.35
+53	1H	1.41			1	42	d	3.09	43	d	2.5	54	d	2.42	52	d	13.35
+54	1H	3.66			1	46	d	3.34	47	d	10.21	52	d	10.22	53	d	2.42
+55	1H	1.22			1
+56	1H	1.22			1
+57	1H	1.22			1
+59	1H	1.24			1	61	d	7.19	62	d	7.19	66	d	7.18	67	d	7.18
+60	1H	1.24			1	61	d	7.19	62	d	7.19	66	d	7.18	67	d	7.18
+61	1H	0.79			1	48	d	7.28	59	d	7.19	60	d	7.19
+62	1H	0.79			1	48	d	7.28	59	d	7.19	60	d	7.19
+63	1H	1.04			1	48	d	6.8
+64	1H	1.04			1	48	d	6.8
+65	1H	1.04			1	48	d	6.8
+66	1H	0.66			1	59	d	7.18	60	d	7.18	68	d	7.16
+67	1H	0.66			1	59	d	7.18	60	d	7.18	68	d	7.16
+68	1H	1.47			1	66	d	7.16	67	d	7.16	69	d	6.6	70	d	6.6	71	d	6.6	72	d	6.6	73	d	6.6	74	d	6.6
+69	1H	0.8			1	68	d	6.6
+70	1H	0.8			1	68	d	6.6
+71	1H	0.8			1	68	d	6.6
+72	1H	0.8			1	68	d	6.6
+73	1H	0.8			1	68	d	6.6
+74	1H	0.8			1	68	d	6.6
+</textarea> <br>
+</td>
+</body>
+</html>

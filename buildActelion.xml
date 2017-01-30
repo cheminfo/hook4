@@ -1,0 +1,253 @@
+<project name="nemo" default="jar" basedir=".">
+	<property name="project" value="${ant.project.name}" />
+	<property name="version.number" value="2.05"/>
+    <property name="src.main" value="org.cheminfo.hook.ui.NormalFrame"/>
+
+	<!-- those properties are generic and don't have to be changed-->
+	<property name="src.dir" location="src" />
+	<property name="build" value="build" />
+	<property name="dist" value="dist" />
+	<property name="deploy.dir" value="/mnt/pgm/ActelionResearch/${project}" />
+	<property name="tmp.dir" value="tmp" />
+    <property name="vm-options" value="-Xmx512m -Duser.language=en -Duser.region=US -jre 1.7"/>
+    <property name="cp" value="#spectraDataPlugin.jar;#function.jar"/>    
+    <property name="ico" value="nemo.ico"/>
+    <property name="icns" value="nemo.icns"/>
+
+	<condition property="git.root.dir" value="D:\Dev">
+		<os family="windows" />
+	</condition>
+	<condition property="git.root.dir" value="../../../../../git/linux">
+		<os family="unix" />
+	</condition>
+
+	<path id="libs">
+		<fileset dir="../library/lib">
+			<include name="blas.jar" />
+			<include name="lapack.jar" />
+			<include name="xerbla.jar" />
+			<include name="colt.jar" />
+			<include name="json.jar" />
+			<include name="concurrent.jar" />
+			<include name="jfftpack.jar" />
+			<include name="f2jutil.jar" />
+			<include name="cheminfo.md5.jar" />
+			<include name="lingpipe-2.4.0.jar" />
+			<include name="httpclient-4.3.jar" />
+			<include name="httpcore-4.3.jar" />
+			<include name="httpmime-4.3.jar" />
+			<include name="commons-codec-1.6.jar" />
+			<include name="commons-logging-1.1.3.jar" />
+			<include name="commons-lang3-3.0.1.jar" />
+			
+			<include name="servlet.jar" />
+			<include name="batik*.jar" />
+			<include name="iText-2.1.4.jar" />
+			<include name="joda-time-2.1.jar" />
+		</fileset>
+	</path>
+	
+	<path id="buildlibs">
+		<fileset dir="../function/build" includes="function.jar" />
+		<fileset dir="../spectraDataPlugin/build" includes="spectraDataPlugin.jar" />
+	</path>
+
+	<path id="compilelibs">
+		<path refid="libs" />
+		<path refid="buildlibs" />
+	</path>
+
+	<path id="srcs">
+		<dirset dir="." includes="src" />
+		<dirset dir="${git.root.dir}/DDCoreLibraries/dd_core" includes="src" />
+	</path>
+
+	<target name="clean">
+		<echo message="Cleaning..."/>
+		<delete dir="${build}" failonerror="false" />
+		<mkdir dir="${build}" />
+		<delete dir="${tmp.dir}" failonerror="false" />
+	</target>
+	
+	<target name="version">
+		<buildnumber />
+		<tstamp>
+			 <format property="date" pattern="yyyy-MM-dd HH:mm:ss" />
+		</tstamp>
+		<copy overwrite="true"
+			file="${src.dir}/Version.java.tpl"
+			tofile="${src.dir}/org/cheminfo/hook/ui/Version.java">
+		      <filterset>
+		      	<filter token="VERSION" value="${version.number}"/>
+		      	<filter token="BUILD" value="${build.number}"/>		      	
+		      	<filter token="BUILDDATE" value="${date}"/>
+		      	<filter token="APPLICATION" value="${project}"/>
+		      </filterset>
+	    </copy>	
+		<echo message="Build Number is ${build.number}"/>
+	</target>	
+
+	<target name="compile" depends="version">
+		<javac
+			destdir="${build}" 
+			failonerror="true" source="1.7" target="1.7" debug="false" encoding="ISO-8859-1">
+
+			<src refid="srcs" />
+			<classpath refid="compilelibs" />			
+			
+			<exclude name="**/tests/**" />
+			<exclude name="**/test/**" />
+
+			<include name="org/cheminfo/**/*.java" />
+			<include name="com/actelion/research/epfl/**/*.java" />
+		</javac>
+
+		<copy overwrite="true" todir="${build}">
+			<fileset dir="${src.dir}">
+				<exclude name="**/tests/**" />
+				<exclude name="**/build.properties" />
+				
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.xml"/>
+				<include name="**/*.properties"/>
+				<include name="**/*.js"/>
+			</fileset>
+		</copy>
+
+	</target>
+	
+	<target name="unjar">
+		<mkdir dir="${tmp.dir}" />		
+		<unzip dest="${tmp.dir}">
+			<path refid="libs" />
+			
+		    <patternset>
+		        <exclude name="META-INF/**"/>
+		        <exclude name="build*.xml"/>
+		        <exclude name="manifest"/>
+		    </patternset>
+		</unzip>
+	</target>
+	
+	<target name="jar" depends="compile">
+		<jar basedir="${tmp.dir}" includes="**/*" destfile="${build}/${project}.jar" update="false" />
+		<jar update="true" basedir="${build}" includes="**/*" excludes="**/*.jar" destfile="${build}/${project}.jar" >
+			<manifest>
+				<attribute name="Created-By" value="${user.name}" />
+				<attribute name="Main-Class" value="${src.main}" />
+			</manifest>
+		</jar>
+	</target>
+
+    <target name="all" depends="clean,unjar,jar,exe, app" />
+
+	<target name="sign" depends="">
+		<signjar jar="${build}/${project}.jar" keystore="${user.home}/actelion_keystore" alias="actelion" storepass="actelion" />
+	</target>
+
+    <target name="exe">
+		<echo output="${basedir}/${build}/${project}.exe" />
+        <taskdef name="putjar"
+                 classname="com.actelion.research.putjar.PutJarTask"
+                 classpath="${git.root.dir}/CommonLibraries/lib/putjar.jar"/>
+
+        <putjar outfile="${basedir}/${build}/${project}.exe"
+                jarfile="${basedir}/${build}/${project}.jar"
+                mainclass="${src.main}"
+                classpath="${cp}"
+                vmoptions="${vm-options}"
+                arch="x86" icon="${basedir}/${ico}" debug="false"/>
+        <putjar outfile="${basedir}/${build}/${project}_d.exe"
+                jarfile="${basedir}/${build}/${project}.jar"
+                mainclass="${src.main}"
+                classpath="${cp}"
+                vmoptions="${vm-options}"
+                arch="x86" icon="${basedir}/${ico}" debug="true"/>
+    </target>
+
+	<target name="app">
+	  <taskdef name="bundleapp"
+		classpath="${git.root.dir}/CommonLibraries/lib/appbundler.jar"
+		classname="com.actelion.research.appbundler.AppBundlerTask"/>
+
+	  <bundleapp
+		  outputdirectory="${basedir}/${build}"
+		  name="${project}"
+		  displayname="${project}"
+		  executableName="${project}"
+		  identifier="${src.main}"
+		  shortversion="${version.number}"
+		  version="${version.number}"
+		  icon="${basedir}/${icns}"
+		  mainclassname="${src.main}"
+		  copyright="2016 Actelion Pharmaceuticals Ltd."
+		  classpathref="buildlibs"
+		  applicationBundle="${basedir}/${build}/${project}.jar"
+		  applicationCategory="public.app-category.business">
+
+		  <arch name="x86_64"/>
+		  <arch name="i386"/>
+
+		  <bundledocument extensions="custom"
+			icon="${basedir}/${icns}"
+			name="JCamp data"
+			role="editor"
+			isPackage="true">
+		  </bundledocument>
+
+		  <!-- Workaround as com.apple.mrj.application.apple.menu.about.name property may no longer work -->
+		  <option value="-Xdock:name=${project}"/>
+
+		  <option value="-Dapple.laf.useScreenMenuBar=true"/>
+		  <option value="-Dcom.apple.macos.use-file-dialog-packages=true"/>
+		  <option value="-Dcom.apple.macos.useScreenMenuBar=true"/>
+		  <option value="-Dcom.apple.mrj.application.apple.menu.about.name=${project}"/>
+		  <option value="-Dcom.apple.smallTabs=true"/>
+		  <option value="-Dfile.encoding=UTF-8"/>
+
+		  <option value="-Xmx512M" name="Xmx"/>
+	  </bundleapp>
+	</target>
+
+	<target name="dist" description="Generate the distribution">
+        <!-- Create the distribution directory -->
+    	<mkdir dir="${dist}"/>
+        <delete>
+            <fileset dir="${dist}">
+                <include name="*.*"/>
+			</fileset>
+		</delete>
+        <copy todir="${dist}">
+            <fileset dir="${build}">
+                <include name="*.exe*"/>
+                <include name="*.jar"/>
+            </fileset>
+            <fileset dir="../function/build">
+                <include name="*.jar"/>
+            </fileset>
+            <fileset dir="../spectraDataPlugin/build">
+                <include name="*.jar"/>
+            </fileset>
+        </copy>
+    </target>
+
+	<target name="deploylibs" depends="dist" description="Deploy the distribution">
+		<copy overwrite="true" todir="${git.root.dir}/Nemo/nemo/lib" failonerror="true">
+			<fileset dir="${dist}" includes="*.jar" />
+		</copy>
+	</target>
+
+    <target name="deploy" depends="dist" description="Deploy the distribution">
+    	<mkdir dir="${deploy.dir}" />
+    	<mkdir dir="${deploy.dir}/old" />    	
+    	<tstamp />
+    	<move file="${deploy.dir}/${project}.exe" tofile="${deploy.dir}/old/${project}.exe.${DSTAMP}.${TSTAMP}" failonerror="false" />
+    	<move file="${deploy.dir}/${project}_d.exe" tofile="${deploy.dir}/old/${project}_d.exe.${DSTAMP}.${TSTAMP}" failonerror="false" />
+
+    	<copy overwrite="true" todir="${deploy.dir}" failonerror="false">
+    		<fileset dir="${dist}" includes="*/**" />
+    	</copy>
+    </target>
+
+</project>

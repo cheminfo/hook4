@@ -1,0 +1,18 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmr
+$$ /opt/topspin3.0/OnlineNMR/N_Imagabalin_foleyd03_706125-74-04_400MHz_RxnB/11/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2014-01-21 11:11:55.420 -0500>,<nmr>,<BH010310>,<go>,<TOPSPIN 3.0>,
+      <created by zg
+	started at 2014-01-21 11:11:24.238 -0500,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       7B 64 0B 52 1D 5E 54 10 07 AC 8F 97 BD A7 20 BF
+       data hash MD5: 64K
+       03 AC 7A 00 4E D7 F6 70 51 37 55 67 7F BE 9E DA>)
+##END=
+
+$$ hash MD5
+$$ 72 82 6F B5 E1 B9 23 12 41 FF 4D 2C 8D DE 0F 74

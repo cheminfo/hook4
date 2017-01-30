@@ -1,0 +1,22 @@
+##TITLE= C2H2 - resolution: 0.0010
+##JCAMP-DX= 5.00
+##DATA TYPE= MASS SPECTRUM
+##DATA CLASS= PEAK TABLE
+##ORIGIN= Generated spectrum based on ChemCalc www.chemcalc.org
+##SPECTROMETER/DATA SYSTEM= Based on ChemCalc isotopic distribution calculator
+##XUNITS= M/Z
+##YUNITS= RELATIVE ABUNDANCE
+##NPOINTS= 6
+##MAXY= 100
+##MINY= 0
+##PEAK TABLE= (XY..XY)
+24.016, 0
+26.016, 100
+27.019, 2.2244691608
+27.022, 0.0300045007
+28.022, 0.0123706576
+30.022, 0
+##END=
+
+
+

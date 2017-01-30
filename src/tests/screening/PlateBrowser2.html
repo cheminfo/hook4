@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title></title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet codebase="../.." code="org.cheminfo.hook.platebrowser2.PlateBrowser2.class" width="800" height="600" name="hook">
+	</applet>
+
+	<form name="form">
+		<INPUT type="button" value="Add" onClick="hook.setDataFromFlexiEx(document.form.table.value)">
+		<INPUT type="button" value="TYPE" onClick="hook.setVisibleField('TYPE')">
+		<INPUT type="button" value="GetXML" onClick="document.form.table.value=hook.getXML()">
+		<INPUT type="button" value="SetXML" onClick="hook.setXML(document.form.table.value)">
+		<INPUT type="button" value="UV Absorption" onClick="hook.setVisibleField('UV Absorption')">
+		<INPUT type="button" value="MCVS(UV Absorption)" onClick="hook.setVisibleField('MCVS(UV Absorption)')">
+		<INPUT type="button" value="BGE(MCVS(UV Absorption))" onClick="hook.setVisibleField('BGE(MCVS(UV Absorption))')">
+		<INPUT type="button" value="%ARF" onClick="hook.setVisibleField('%ARF')">
+
+		<p>
+		<textarea name="table" rows="10" cols="100"></textarea>
+
+	</form>
+
+
+	
+	</body>
+
+</html>

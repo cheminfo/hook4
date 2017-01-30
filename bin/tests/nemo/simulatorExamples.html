@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<table><tr><td>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/concurrent.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,lib/actelion.jar"
+	 		codebase="../../" width="800" height="500" id="nemo" name="nemo">
+			<param name="OPTIONS" value="smart,tools,undo,flags,colors,insert,processing,test"/></applet>
+	</td>
+	<td>
+<INPUT type="button" value="Transfer" onClick="transfer();">
+	</td>
+	<td>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/concurrent.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,lib/actelion.jar"
+	 		codebase="../../" width="600" height="400" name="nemo2" id="nemo2"> 
+	 		<param name="OPTIONS" value="smart,tools,undo,flags,colors,insert,processing,test"/></applet><br>
+	<button onclick="nemo2.setXML(document.getElementById('xmlout').value);">Set XML</button>
+</td></tr>
+
+<tr>
+<td>
+From: <input type="text" value=0 name="from" size=4 id="from"> to <input type="text" value=7 name="to" size=4 id="to"> ppm. Line Width <input type="text" value=1 name="lineWidth" size=4 id="lineWidth"> Hz
+<br>
+
+<tr><td>
+<button onclick="simulateJW('simulationSimple')">simulate JW</button>
+<button onclick="alert(nemo.getSpectraData(0).getDataClass());">getSpectraData</button>
+<br>
+
+<textarea id="simulationSimple" rows=5 cols=100>
+1	1H	2			1	2	d	7.597	3	d	2.264	
+2	1H	5			1	3	d	20	
+3	1H	6			1
+</textarea>
+<br>
+<br>
+<textarea id="simulationComplex" rows=10 cols=100>
+13	1H	7.215			1	16	d	1.268	14	d	7.725	17	d	1.269	15	d	7.725	
+14	1H	7.211			1	13	d	7.725	17	d	3.781	15	d	0.000	16	d	7.814	
+15	1H	7.211			1	13	d	7.725	14	d	0.000	16	d	3.773	17	d	7.814	
+16	1H	7.151			1	13	d	1.268	14	d	7.814	15	d	3.773	17	d	0.000	
+17	1H	7.151			1	13	d	1.269	14	d	3.781	15	d	7.814	16	d	0.000	
+18	1H	1.349			1	20	d	2.790	21	d	2.790	22	d	2.790	23	d	2.790	19	d	12.206	
+19	1H	1.347			1	20	d	2.790	21	d	10.260	22	d	10.260	23	d	2.790	18	d	12.206	
+20	1H	1.449			1	18	d	2.790	19	d	2.790	24	d	2.790	25	d	2.790	21	d	12.861	
+21	1H	1.425			1	18	d	2.790	19	d	10.260	24	d	10.260	25	d	2.790	20	d	12.861	
+22	1H	1.425			1	18	d	2.790	19	d	10.260	26	d	2.790	27	d	10.260	23	d	12.861	
+23	1H	1.449			1	18	d	2.790	19	d	2.790	26	d	2.790	27	d	2.790	22	d	12.861	
+24	1H	1.495			1	20	d	2.790	21	d	10.260	28	d	10.260	25	d	13.114	
+25	1H	1.538			1	20	d	2.790	21	d	2.790	28	d	2.790	24	d	13.114	
+26	1H	1.538			1	22	d	2.790	23	d	2.790	28	d	2.790	27	d	13.114	
+27	1H	1.495			1	22	d	10.260	23	d	2.790	28	d	10.260	26	d	13.114	
+28	1H	2.619			1	24	d	10.260	25	d	2.790	26	d	2.790	27	d	10.260	
+</textarea>
+</td>
+<td></td>
+<td>
+<textarea id="xmlout" rows=15 cols=100>
+</textarea>
+</td>
+</tr>
+</table>
+
+
+
+
+
+<script language="javascript">
+function transfer() {
+	var xml =nemo.getXML();
+	var element = document.getElementById("xmlout");
+	if (element) {
+		element.value = xml;
+	} else {
+		alert("no output element");
+	}
+	nemo2.setXML(xml);
+}
+
+function simulateJW(textareaID) {
+	var textarea=document.getElementById(textareaID);
+	var parameters = {from :document.getElementById("from").value};
+	parameters.to = document.getElementById("to").value;
+	parameters.linewidth = document.getElementById("lineWidth").value;
+	parameters.maxClusterSize=9;
+	parameters.nbPoints=16384*2;
+	parameters.frequency=500000000;
+	nemo.addSimulatedSpectrum(textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n"),JSON.stringify(parameters));
+	
+}
+
+var nemo=document.getElementById("nemo");
+var nemo2=document.getElementById("nemo2");
+</script>
+
+
+</body>
+
+</html>

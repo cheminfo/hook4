@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 4	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= Anna.Codina
+$$ 2014-01-24 16:07:13.118 +0000  INTRA-BRKR-CORP\Anna.Codina@BRHPLT012
+$$ C:/Data/NMR/RxM/Imagabalin/Img_400MHz_2/11/pdata/1/assocs
+$$ process C:\Bruker\TopSpin3.2.5\prog\mod\dataserver.exe
+##$MULTDISP= <C:\Data\NMR\RxM\Imagabalin\L_R2_array_all\2\pdata\1>
+##END=

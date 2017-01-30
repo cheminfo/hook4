@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\begin{document}
+\section{Exponential}
+\begin{displaymath} 
+f(x) = e^{-LB x}
+\end{displaymath}
+ Parameter lb: line broadening [Hz] 
+\section{Gaussian}
+\begin{displaymath}
+f(x) = e^{-(LB x)^2}
+\end{displaymath}
+ Parameter lb: line broadening [Hz] 
+\section{TRAF}
+
+
+ \begin{displaymath}f(x) = \frac{(e^{-{(LB x)}})^2}{(e^{{-LB x}})^2 + {(e^{-AT LB}})^3}\end{displaymath}
+ Parameter LB: line broadening [Hz] 
+\section{Sine Bell}
+ \begin{displaymath}f(x) = sin(\phi+(180-\phi)*x)\end{displaymath}
+ Parameter \begin{displaymath}\phi\end{displaymath} [deg] 
+\section{Sine Bell squared}
+ \begin{displaymath}f(x) = (sin(\phi+(180-\phi)*x))^2\end{displaymath}
+ Parameter $\phi$ [deg]
+
+\end{document}

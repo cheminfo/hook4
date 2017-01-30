@@ -1,0 +1,1044 @@
+%columnName	Compound	Application
+%dbColumnName	Compound	Application
+%datatype	String	String
+%data	CHLORTETRACYCLINE HYDROCHLORIDE	"antibacterial, antiamebic, Ca chelator, hepatotoxic; inhibits protein synthesis"
+%data	CHLORHEXIDINE	antibacterial (topical), disinfectant
+%data	CLENBUTEROL HYDROCHLORIDE	bronchodilator, beta2 adrenergic agonist
+%data	ANDROSTERONE ACETATE	androgen
+%data	Ng-METHYL-L-ARGININE ACETATE	NO synthesis inhibitor
+%data	SCOPOLETIN	NO synthesis (inducible) inhibitor, anticoagulant
+%data	SUCCINYLSULFATHIAZOLE	antibacterial
+%data	MECHLORETHAMINE	antineoplastic, alkylating agent
+%data	BETAHISTINE HYDROCHLORIDE	vasodilator
+%data	HARMALOL HYDROCHLORIDE	anthelmintic, narcotic agent
+%data	7-CHLOROETHYLTHEOPHYLLINE	adenosine receptor antagonist
+%data	CHLORAMPHENICOL	antibacterial, antirickettsial, inhibits protein synthesis
+%data	DESIPRAMINE HYDROCHLORIDE	antidepressant
+%data	RIBAVIRIN	antiviral
+%data	UREA	diuretic
+%data	PHENACETIN	analgesic, antipyretic
+%data	MIANSERIN HYDROCHLORIDE	5HT antagonist
+%data	GENTISIC ACID	analgesic, antiinflammatory
+%data	beta-CAROTENE	provitamin A
+%data	STRYCHNINE	central stimulant
+%data	IMIDACLOPRID	"nicotinyl AChR agonist; antiparasitic"
+%data	CIANIDANOL	hepatoprotectant
+%data	COLISTIMETHATE SODIUM	antibacterial
+%data	ESTRONE HEMISUCCINATE	estrogen
+%data	MEPHENTOIN	anticonvulsant
+%data	THYROXINE	antihypercholesterimic, thyromimetic
+%data	HYDROCORTISONE	glucocorticoid, antiinflammatory
+%data	SISOMICIN SULFATE	antibacterial, binds to ribosomes
+%data	NEOMYCIN SULFATE	antibacterial
+%data	ISOTHIPENDYL HYDROCHLORIDE	H1 antihistamine
+%data	CLINDAMYCIN HYDROCHLORIDE	antibacterial, inhibits protein synthesis
+%data	CLOFIBRIC ACID	antihyperlipoproteinemic
+%data	ROFECOXIB	COX2 inhibitor, antiinflammatory, antiarthritic
+%data	METHIOTHEPIN MALEATE	5HT1&2 receptor antagonist
+%data	RIFAMPIN	antibacterial (tuberculostatic)
+%data	DILTIAZEM HYDROCHLORIDE	Ca channel blocker, coronary vasodilator
+%data	MONENSIN SODIUM (monensin A is shown)	antibacterial
+%data	ACETYL TYROSINE ETHYL ESTER	chymotrpsin substrate
+%data	PIMPINELLIN	GABA receptor antagonist, phototoxin
+%data	CITRININ	antibacterial
+%data	CHLORPHENIRAMINE (S) MALEATE	antihistaminic
+%data	STROPHANTHIDIN	cardiotonic
+%data	PYROGALLIN	antiinfectant
+%data	TIMOLOL MALEATE	betaadrenergic blocker
+%data	CHROMOCARB	vascular protectant
+%data	ACETYLGLUCOSAMINE	antiarthritic
+%data	ATROPINE	anticholinergic, mydriatic
+%data	HYCANTHONE	anthelmintic, hepatotoxic
+%data	RHAPONTIN	antifungal, antioxidant
+%data	BUPROPION	antidepressant
+%data	VANCOMYCIN HYDROCHLORIDE	antibacterial
+%data	CLIDINIUM BROMIDE	anticholinergic
+%data	THONZYLAMINE HYDROCHLORIDE	antihistamine
+%data	p-FLUOROPHENYLALANINE	amino acid antagonist, protein synthesis inhibitor
+%data	NARINGIN	antihaemorrhagic, antiinflammatory
+%data	BETA-PROPIOLACTONE	antiinfective
+%data	QUIPAZINE MALEATE	antidepressant, oxytocic
+%data	CAPREOMYCIN SULFATE	antibacterial, tuberculostatic
+%data	HECOGENIN	
+%data	PIMETHIXENE MALEATE	H1 antihistamine
+%data	6-OXOPROGESTERONE	
+%data	IMPERATORIN	anticonvulsant, antiinflammatory
+%data	LANATOSIDE C	cardiotonic
+%data	PSEUDOEPHEDRINE HYDROCHLORIDE	decongestant
+%data	NICOTINE DITARTRATE	nicotinyl acetylchloline receptor agonist, ectoparasiticide
+%data	THALIDOMIDE	hypnotic
+%data	AZASERINE	antineoplastic, amino acid antagonist
+%data	NEOHESPERIDIN DIHYDROCHALCONE	sweetener
+%data	AKLAVINE HYDROCHLORIDE	antibacterial, antineoplastic
+%data	GRAMICIDIN	antibacterial
+%data	CHLOROTHIAZIDE	diuretic, antihypertensive
+%data	1-PHENYLBIGUANIDE HYDROCHLORIDE	5HT3 receptor agonist
+%data	GLYBURIDE	antihyperglycemic
+%data	PUROMYCIN HYDROCHLORIDE	antineoplastic, antiprotozoal
+%data	CYTIDINE	
+%data	CLOFIBRATE	antihyperlipidemic
+%data	HYDROXYUREA	antineoplastic, inhibits ribonucleoside diphosphate reductase
+%data	CHLORTHALIDONE	diuretic, antihypertensive
+%data	FOSINOPRIL SODIUM	ACE inhibitor, antihypertensive
+%data	DIMERCAPTOPROPANOL	chelating agent (As, Au, Hg)
+%data	p-CHLOROPHENYLALANINE	Irreversible inhibitor of tryptophan hydrxylase
+%data	ETHOSUXIMIDE	anticonvulsant
+%data	3,5-DINITROCATECHOL (OR-486)	catechol O-methyltransferase inhibitor
+%data	CISPLATIN	antineoplastic, convulsant
+%data	ROXARSONE	antibacterial
+%data	DIGITOXIN	inotropic, cardiotonic
+%data	VINCAMINE	vasodilator
+%data	ISOBUTYLMETHYLXANTHINE	phosphodiesterase inhibitor
+%data	HELENINE	anthelmintic, antibacterial, antineoplastic
+%data	CYCLOHEXIMIDE	protein synthesis inhibitor
+%data	LYSYL-TYROSYL-LYSINE ACETATE	Induces nicks at apurinic and apyrimidinic sites in circular DNA
+%data	PIPERIDOLATE HYDROCHLORIDE	antispasmodic
+%data	THIMEROSAL	antiinfective, preservative
+%data	CYTARABINE	antineoplastic, antiviral, antimetabolite
+%data	TOBRAMYCIN	antibacterial, inhibits protein synthesis
+%data	AUSTRICINE	antihyperlipidemic, antiinflammatory
+%data	IPRONIAZID SULFATE	monoamine oxidase inhibitor, antidepressant
+%data	CARPROFEN	antiinflammatory, analgesic
+%data	HYDROXYTOLUIC ACID	analgesic, antiseptic
+%data	METHYLCHROMONE	spasmolytic, sedative
+%data	N-FORMYLMETHIONYL-LEUCYLPHENYLALANINE	chemotactic peptide
+%data	d[-Arg-2]KYOTORPHAN ACETATE	analgesic
+%data	ACETARSOL	"antiprotozoal; diethylamine salt as antiphilitic"
+%data	CETYLPYRIDINIUM CHLORIDE	antiinfective (topical)
+%data	BENZO[a]PYRENE	carcinogen, binds to DNA
+%data	TRIOXSALEN	melanizing agent, antipsoriatic
+%data	ACONITINE	anesthetic (gastric), antipyretic, and cardiotoxin
+%data	5-NITRO-2-PHENYLPROPYLAMINOBENZOIC ACID [NPPB]	chloride channel blocker
+%data	CAMPTOTHECIN	antineoplastic
+%data	1R-CAMPHOR	analgesic, antiinfective, antipruritic
+%data	N-FORMYLMETHIONYLALANINE	chemotactic peptide
+%data	QUINACRINE HYDROCHLORIDE	anthelmintic, antimalarial, intercalating agent
+%data	AVOCADYNONE ACETATE	antibacterial, antifungal
+%data	CYCLOPHOSPHAMIDE HYDRATE	antineoplastic, alkylating agent
+%data	ROTENONE	acaricide, ectoparasiticide, antineoplastic, mitochondrial poison
+%data	ETANIDAZOLE	antineoplastic, hypoxic cell radiosensitizer
+%data	CARBOPLATIN	antineoplastic, convulsant
+%data	BERGAPTEN	antipsoriatic, antiinflammatory
+%data	HESPERIDIN	capillary protectant
+%data	OXOTREMORINE SESQUIFUMARATE	muscarinic agonist
+%data	LEUCINE ENKEPHALIN	opioid neuromodulator
+%data	6-AMINOCAPROIC ACID	hemostatic
+%data	DICUMAROL	anticoagulant
+%data	BENZETHONIUM CHLORIDE	antiinfective (topical)
+%data	CHLOROQUINE DIPHOSPHATE	antimalarial, antiamebic, antirheumatic, intercalating agent
+%data	NYSTATIN	antifungal, binds to membrane sterols
+%data	FLUOROURACIL	antineoplastic, pyrimidine antimetabolite
+%data	DEET	insect repellant
+%data	1,3,5-TRIMETHOXYBENZENE	spasmolytic
+%data	METAMPICILLIN SODIUM	antibacterial
+%data	N-FORMYLMETHIONYLPHENYLALANINE	chemotactic peptide
+%data	PHENYLBUTYRATE SODIUM 	antihyperlipidemic
+%data	NAFCILLIN SODIUM	antibacterial
+%data	PRISTIMERIN	antineoplastic, antiinflammatory
+%data	PENTAMIDINE ISETHIONATE	antiprotozoal, inhibits nucleic acid & protein synthesis
+%data	MERCAPTOPURINE	antineoplastic, purine antimetabolite
+%data	AJMALINE	antiarrhythmic (Class Ia): inhibits glucose uptake by mitochondria, & PAF blocker
+%data	QUERCETIN	"capillary protectant, antioxidant. antineoplastic, anti-HIV; LD50(mouse) 159 mg/kg po "
+%data	ESTRADIOL	estrogen
+%data	N,N-DIMETHYLAMILORIDE	inhibitor of Na+/H+ antiport
+%data	METHIONYL-LEUCYLPHENYLALANINE ACETATE	chemotactic peptide
+%data	ACRIFLAVINIUM HYDROCHLORIDE	antiinfective, intercalating agent
+%data	SALINOMYCIN, SODIUM	antibacterial
+%data	ATRACTYLOSIDE POTASSIUM	oxidative phosphorylation inhibitor
+%data	OUABAIN	antiarrhythmic, cardiotonic, hypertensive, Na/K ATPase inhibitor
+%data	SUCCINYLACETONE	inhibitor of heme biosynthesis
+%data	PEMPIDINE TARTRATE	ganglionic blocker, antihypertensive
+%data	NORDEFRIN  HYDROCHLORIDE	vasoconstrictor
+%data	GLUTATHIONE	antioxidant
+%data	QUASSIN	insecticide, antiamoebic
+%data	PIRACETAM	antinauseant
+%data	COLCHICINE	antimitotic, antigout agent
+%data	CADMIUM ACETATE	alpha1 antitrypsin inhibitor
+%data	AZATHIOPRINE	immunosuppressant, antineoplastic, antirheumatic
+%data	CILOSTAZOL	phosphodiesterase inhibitor
+%data	5-AMINOPENTANOIC ACID HYDROCHLORIDE	GABAb antagonist
+%data	BUSULFAN	antineoplastic, alkylating agent
+%data	NIMODIPINE	vasodilator
+%data	EMETINE	inhibits RNA, DNA and protein synthesis
+%data	ARTEMISININ	antimalarial
+%data	NERIIFOLIN	cardiotonic, antineoplastic
+%data	DIAZOXIDE	antihypertensive, diuretic, activates K channels and AMPA receptors
+%data	TYROTHRICIN	topical antibacterial (topical)
+%data	1,4-NAPHTHOQUINONE	coal tar product
+%data	CALCEIN	chelating agent (Ca, Mg)
+%data	CURCUMIN	"antiedemic, antiinflammatory, bile stimulant; antibacterial, antifungal, lipo/cyclooxygenase inhibitor"
+%data	ROSOLIC ACID	diagnostic aid
+%data	KINETIN	auxin, plant growth regulator, plant cell division promotor
+%data	TETRAC	thyroid hormone
+%data	IODIPAMIDE	radioopaque agent
+%data	ALLANTOIN	wound healing agent
+%data	ALLOXAN	specific cytotoxin (pacreatic islet betacell)
+%data	ALTHIAZIDE	diuretic
+%data	AMINACRINE	local antiseptic
+%data	BERBERINE CHLORIDE	"antiarrhythmic, alpha2 agonist, cholinesterase, anticonvulsant, antiinflammatory, antibacterial, antifungal, antitrypanosomal, antineoplastic, immunostimulant; LD50(mouse) 329 mg/kg po "
+%data	BUDESONIDE	antiinflammatory
+%data	CANRENOIC ACID, POTASSIUM SALT	aldosterone antagonist, diuretic
+%data	CEPHALOSPORIN C SODIUM	antibacterial
+%data	HARMALINE	CNS stimulant, antiparkinsonian agent
+%data	HARMANE	intercalating agent, sedative
+%data	MIMOSINE	depilatory agent
+%data	PIPERINE	analeptic, antibacterial
+%data	EMODIN	antibacterial, antineoplastic, cathartic, tyrosine kinase inhibitor
+%data	PARGYLINE HYDROCHLORIDE	antihypertensive
+%data	PENICILLAMINE	chelating agent (Cu), antirheumatic
+%data	BENZYL PENICILLIN POTASSIUM	antibacterial
+%data	PENICILLIN V POTASSIUM	antibacterial
+%data	PHENAZOPYRIDINE HYDROCHLORIDE	analgesic
+%data	PHENIRAMINE MALEATE	antihistaminic
+%data	PHENYLEPHRINE HYDROCHLORIDE	mydriatic, decongestant
+%data	PHYSOSTIGMINE SALICYLATE	cholinergic, anticholinesterase, miotic
+%data	PILOCARPINE NITRATE	antiglaucoma agent, miotic
+%data	PINDOLOL	antihypertensive, antianginal, antiarrhythmic, antiglaucoma agent
+%data	PIPERACILLIN SODIUM	antibacterial
+%data	PIROXICAM	antiinflammatory
+%data	PRAZIQUANTEL	anthelmintic
+%data	PRAZOSIN HYDROCHLORIDE	antihypertensive
+%data	PREDNISOLONE	glucocorticoid
+%data	PREDNISOLONE ACETATE	glucocorticoid
+%data	PREDNISONE	glucocorticoid
+%data	PRIMAQUINE DIPHOSPHATE	antimalarial
+%data	PRIMIDONE	anticonvulsant
+%data	PROBENECID	uricosuric
+%data	PROCAINAMIDE HYDROCHLORIDE	antiarrhythmic
+%data	PROCAINE HYDROCHLORIDE	anesthetic (local)
+%data	PROCHLORPERAZINE EDISYLATE	antiemetic, antipsychotic, treatment of vertigo
+%data	PROCYCLIDINE HYDROCHLORIDE	anticholinergic
+%data	PROGESTERONE	progestogen
+%data	PROPANTHELINE BROMIDE	anticholinergic
+%data	PROPIOMAZINE MALEATE	sedative, hypnotic
+%data	PROPRANOLOL HYDROCHLORIDE (-)	antihypertensive, antianginal, antiarrhythmic
+%data	POMIFERIN	antioxidant
+%data	PERSEITOL	
+%data	12a-HYDROXY-5-DEOXYDEHYDROMUNDUSERONE	
+%data	TYRAMINE	adrenergic agonist
+%data	COTININE	antidepressant
+%data	CINEOLE	anthelminthic, antiseptic, expectorant
+%data	EUGENOL	analgesic (topical), antiseptic, antifungal
+%data	ISOSORBIDE DINITRATE	antianginal
+%data	N- (2-AMINOETHYL)-4-CHLOROBENZAMIDE (RO-16-6491)	MAOb inhibitor
+%data	METHYLTHIOURACIL	antithyroid agent
+%data	PHENACEMIDE	anticonvulsant
+%data	PHENELZINE SULFATE	antidepressant
+%data	PHENINDIONE	anticoagulant
+%data	PHENOLPHTHALEIN	cathartic
+%data	PHENYLBUTAZONE	antiinflammatory
+%data	1S,2R-PHENYLPROPANOLAMINE HYDROCHLORIDE	decongestant, anorexic
+%data	PHENYTOIN SODIUM	anticonvulsant, antieleptic
+%data	PIPERAZINE	anthelmintic
+%data	PYRANTEL PAMOATE	anthelmintic
+%data	PYRILAMINE MALEATE	antihistaminic
+%data	QUININE SULFATE	antimalarial, skeletal muscle relaxant
+%data	RACEPHEDRINE HYDROCHLORIDE	bronchodilator, decongestant
+%data	RESORCINOL	keratolytic, antiseborheic
+%data	SALICYL ALCOHOL	anesthetic (local), antiinflammatory
+%data	SCOPOLAMINE HYDROBROMIDE	anticholinergic, treatment of motion sickness
+%data	SPECTINOMYCIN HYDROCHLORIDE	antibacterial
+%data	SPIRONOLACTONE	diuretic
+%data	SALICYLAMIDE	analgesic
+%data	SODIUM SALICYLATE	keratolytic
+%data	HYOSCYAMINE	anticholinergic, analgesic
+%data	LACTULOSE	laxative
+%data	MEGESTROL ACETATE	progestogen, antineoplastic
+%data	METOCLOPRAMIDE HYDROCHLORIDE	antiemetic
+%data	NIACIN	antihyperlipidemic, vitamin (enzyme cofactor)
+%data	CARBIMAZOLE	antithyroid
+%data	QUINALIZARIN	
+%data	GEDUNIN	antifeedant
+%data	5alpha-ANDROSTAN-3,17-DIONE	androgen
+%data	GAMBOGIC ACID	"antiinflammatory, cytotoxic, inhibits HeLa cells in vitro; LD50(rat) 88 mg/kg ip"
+%data	DAIDZEIN	phytoestrogen
+%data	ACTINONIN	antibacterial
+%data	AESCULIN	antiinflammatory
+%data	OXYPHENBUTAZONE	antiinflammatory
+%data	TAMOXIFEN CITRATE	estrogen antagonist, anticancer
+%data	NATEGLINIDE	antidiabetic
+%data	DERACOXIB	antiinflammatory, antiarthritic, COX-2 inhibitor
+%data	ACEBUTOLOL HYDROCHLORIDE	antihypertensive, antianginal, antiarrhythmic
+%data	CINNARAZINE	H1 antihistamine
+%data	BIOTIN	vitamin B complex
+%data	SNAP (S-NITROSO-N-ACETYLPENICILLAMINE)	muscle relaxant (smooth)
+%data	CEFOXITIN SODIUM	antibacterial
+%data	CIMETIDINE	antiulcerative
+%data	SULFABENZAMIDE	antibacterial
+%data	SULFAMETHIZOLE	antibacterial
+%data	SULFAMETHOXAZOLE	antibacterial, antipneumocystis
+%data	SULFINPYRAZONE	uricosuric
+%data	TERBUTALINE HEMISULFATE	betaadrenergic agonist, bronchodilator
+%data	TETRACAINE HYDROCHLORIDE	anesthetic (local)
+%data	TETRACYCLINE HYDROCHLORIDE	antibacterial, antiamebic, antirickettsial
+%data	THIOGUANINE	antineoplastic, purine antimetabolite
+%data	THIOTHIXENE	antipsychotic
+%data	TETRAHYDROZOLINE HYDROCHLORIDE	adrenergic agonist, nasal decongestant
+%data	THIORIDAZINE HYDROCHLORIDE	antipsychotic
+%data	URSODIOL	"anticholelithogenic; LD50(rat) 890 mg/kg ip"
+%data	TOLAZOLINE HYDROCHLORIDE	adrenergic blocker
+%data	TOLBUTAMIDE	antidiabetic
+%data	TOLMETIN SODIUM	antiinflammatory
+%data	VIDARABINE	antiviral
+%data	WARFARIN	anticoagulant, rodenticide
+%data	XYLOMETAZOLINE HYDROCHLORIDE	adrenergic agonist, nasal decongestant
+%data	ZOMEPIRAC SODIUM	analgesic, antiinflammatory
+%data	AMINOPHENAZONE	antipyretic, analgesic
+%data	BROXYQUINOLINE	antiinfectant, disinfectant
+%data	CARNITINE HYDROCHLORIDE	"antihyperlipoproteinemic, gastric and 
+pancreatic secretion stimulant"
+%data	FLOPROPIONE	antispasmodic
+%data	HEXESTROL	estrogen, antineoplastic (hormonal)
+%data	HEXETIDINE	antifungal
+%data	MECYSTEINE HYDROCHLORIDE	mucolytic
+%data	MERBROMIN	antibacterial
+%data	OCTOPAMINE HYDROCHLORIDE	adrenergic agonist
+%data	PHENETHICILLIN POTASSIUM	antibacterial
+%data	PREGNENOLONE	glucocortcoid, antiinflammatory
+%data	AZELAIC ACID	antiacne, antiproliferative agent
+%data	THEOBROMINE	diuretic, bronchodilator, cardiotonic
+%data	HYDROQUINIDINE	antiarrhythmic, antimalarial
+%data	YOHIMBINE HYDROCHLORIDE	alpha adrenergic blocker, mydriatic, antidepressant
+%data	ADENOSINE PHOSPHATE	vasodilator, neuromodulator
+%data	NALIDIXIC ACID	antibacterial
+%data	LOBELINE HYDROCHLORIDE	antiasthmatic, respiratory stimulant
+%data	HYDROXYZINE PAMOATE	anxiolytic, antihistaminic
+%data	IBUPROFEN	antiinflammatory
+%data	IMIPRAMINE HYDROCHLORIDE	antidepressant
+%data	INDAPAMIDE	diuretic, antihypertensive
+%data	INDOMETHACIN	antiinflammatory, antipyretic, analgesic
+%data	INDOPROFEN	analgesic, antiinflammatory
+%data	IODOQUINOL	antiamebic
+%data	IPRATROPIUM BROMIDE	bronchodilator, antiarrhythmic
+%data	ISONIAZID	antibacterial, tuberculostatic
+%data	ISOPROPAMIDE IODIDE	anticholinergic
+%data	ISOPROTERENOL HYDROCHLORIDE	bronchodilator
+%data	ISOXSUPRINE HYDROCHLORIDE	vasodilator
+%data	KANAMYCIN SULFATE	antibacterial
+%data	KETOCONAZOLE	antifungal
+%data	LEUCOVORIN CALCIUM	antianemic, antidote to folic acid antagonists
+%data	LEVONORDEFRIN	vasoconstrictor
+%data	MAFENIDE HYDROCHLORIDE	antibacterial
+%data	LINCOMYCIN HYDROCHLORIDE	antibacterial
+%data	MAPROTILINE HYDROCHLORIDE	antidepressant
+%data	MECLIZINE HYDROCHLORIDE	antiemetic
+%data	SODIUM MECLOFENAMATE	antiinflammatory, antipyretic
+%data	MEDROXYPROGESTERONE ACETATE	contraceptive
+%data	MEDRYSONE	glucocorticoid
+%data	MEPENZOLATE BROMIDE	anticholinergic
+%data	METAPROTERENOL	bronchodilator
+%data	METHACHOLINE CHLORIDE	cholinergic, diagnostic aid
+%data	METHICILLIN SODIUM	antibacterial
+%data	METHIMAZOLE	antihyperthyroid
+%data	METHOCARBAMOL	muscle relaxant (skeletal)
+%data	METHOTREXATE	antineoplastic, antirheumatic, folic acid antagonist
+%data	METHOXAMINE HYDROCHLORIDE	alpha1 adrenoreceptor agonist, vasoconstrictor
+%data	METHOXSALEN	antipsoriatic, pigmentation agent
+%data	METHSCOPOLAMINE BROMIDE	anticholinergic
+%data	METHYLDOPA	antihypertensive
+%data	METHYLERGONOVINE MALEATE	oxytocic
+%data	METHYLPREDNISOLONE	glucocorticoid
+%data	METOPROLOL TARTRATE	antihypertensive, antianginal
+%data	METRONIDAZOLE	antiprotozoal
+%data	MICONAZOLE NITRATE	antifungal (topical)
+%data	MINOCYCLINE HYDROCHLORIDE	antibacterial
+%data	MINOXIDIL	antihypertensive, antialopecia agent
+%data	MOXALACTAM DISODIUM	antibacterial
+%data	NADIDE	alcohol and narcotic antagonist
+%data	NALOXONE HYDROCHLORIDE	narcotic antagonist
+%data	NAPHAZOLINE HYDROCHLORIDE	adrenergic agonist, nasal decongestant
+%data	NAPROXEN(+)	antiinflammatory, analgesic, antipyretic
+%data	NIFEDIPINE	antianginal, antihypertensive
+%data	NITROFURANTOIN	antibacterial
+%data	NITROFURAZONE	antiinfective (topical)
+%data	NOSCAPINE HYDROCHLORIDE	antitussive
+%data	NITROMIDE	antibacterial, coccidiostat
+%data	NOREPINEPHRINE	adrenergic agonist, antihypotensive
+%data	NORETHINDRONE	progestogen
+%data	NORETHINDRONE ACETATE	Oral contraceptive (in combination with estrogen)
+%data	NORETHYNODREL	progestogen, in combination with estrogen as oral contraceptive
+%data	NORFLOXACIN	antibacterial
+%data	NORGESTREL	progestogen
+%data	NORTRIPTYLINE	antidepressant
+%data	NOVOBIOCIN SODIUM	antibacterial
+%data	NYLIDRIN HYDROCHLORIDE	vasodilator (peripheral)
+%data	PARACHLOROPHENOL	topical antibacterial (topical)
+%data	ORPHENADRINE CITRATE	muscle relaxant (skeletal), antihistaminic
+%data	OXACILLIN SODIUM	antibacterial
+%data	OXYMETAZOLINE HYDROCHLORIDE	adrenergic agonist, nasal decongestant
+%data	OXYQUINOLINE	antiinfectant
+%data	OXYTETRACYCLINE	antibacterial
+%data	PAPAVERINE HYDROCHLORIDE	muscle relaxant (smooth), cerebral vasodilator
+%data	OXYBENZONE	ultraviolet screen
+%data	THIODIGLYCOL	antineoplastic, alkylating agent
+%data	EPIANDROSTANEDIOL	regulation of puberty in females
+%data	BACLOFEN	muscle relaxant (skeletal)
+%data	BETHANECHOL CHLORIDE	cholinergic
+%data	BENSERAZIDE HYDROCHLORIDE	decarboxylase inhibitor
+%data	BENZOCAINE	anesthetic (topical)
+%data	BENZTHIAZIDE	diuretic, antihypertensive
+%data	BENZTROPINE	anticholinergic
+%data	BETAMETHASONE	glucocorticoid, antiinflammatory
+%data	BISACODYL	cathartic
+%data	BITHIONOL	anthelmintic, antiseptic
+%data	CAFFEINE	CNS stimulant
+%data	CARBACHOL	cholinergic, miotic
+%data	CARBAMAZEPINE	analgesic, anticonvulsant
+%data	CARBENICILLIN DISODIUM	antibacterial
+%data	CARBINOXAMINE MALEATE	antihistaminic
+%data	CARISOPRODOL	muscle relaxant (skeletal)
+%data	CEFADROXIL	antibacterial
+%data	CEFAZOLIN SODIUM	antibacterial
+%data	CEFOTAXIME SODIUM	antibacterial
+%data	CEPHALOTHIN SODIUM	antibacterial
+%data	CEPHAPIRIN SODIUM	antibacterial
+%data	CEPHRADINE	antibacterial
+%data	CHLORAMPHENICOL HEMISUCCINATE	antibacterial, antirickettsial, inhibits protein synthesis
+%data	CHLOROXYLENOL	antibacterial, topical and urinary antiseptic
+%data	CHLORPROMAZINE	antiemetic, antipsychotic
+%data	CHLORPROPAMIDE	antidiabetic
+%data	CHLORZOXAZONE	muscle relaxant (skeletal)
+%data	CICLOPIROX OLAMINE	antifungal
+%data	CINOXACIN	antibacterial
+%data	CLOMIPHENE CITRATE	gonad stimulating principle
+%data	CLOTRIMAZOLE	antifungal
+%data	CLOXACILLIN SODIUM	antibacterial
+%data	CLOXYQUIN	antibacterial, antifungal
+%data	CORTISONE ACETATE	glucocorticoid
+%data	CRESOL	antiinfectant
+%data	DACARBAZINE	antineoplastic
+%data	CROMOLYN SODIUM	antiasthmatic, antiallergy
+%data	CYCLIZINE	H1 antihistamine
+%data	CYCLOPENTOLATE HYDROCHLORIDE	mydriatic
+%data	CLOPIDOL	antiplatelet
+%data	DANAZOL	anterior pituitary suppressant
+%data	DAPSONE	antibacterial, leprostatic, dermatitis herpetiformis suppressant
+%data	DEFEROXAMINE MESYLATE	chelating agent (Fe & Al)
+%data	SODIUM DEHYDROCHOLATE	choleretic
+%data	DEMECLOCYCLINE HYDROCHLORIDE	antibacterial
+%data	DEXAMETHASONE ACETATE	glucocorticoid, antiinflammatory
+%data	DEXAMETHASONE SODIUM PHOSPHATE	glucocorticoid, antiinflammatory
+%data	DEXTROMETHORPHAN HYDROBROMIDE	antitussive
+%data	DIBENZOTHIOPHENE	keratolytic
+%data	DIBUCAINE HYDROCHLORIDE	anesthetic (local)
+%data	DICLOFENAC SODIUM	antiinflammatory
+%data	DICLOXACILLIN SODIUM	antibacterial
+%data	DICYCLOMINE HYDROCHLORIDE	anticholinergic
+%data	DIENESTROL	estrogen
+%data	DIETHYLCARBAMAZINE CITRATE	anthelmintic
+%data	DIETHYLSTILBESTROL	estrogen
+%data	DIFLUNISAL	analgesic, antiinflammatory
+%data	DIGOXIN	cardiac stimulant
+%data	DIHYDROSTREPTOMYCIN SULFATE	antibacterial, tuberculostatic
+%data	DIMENHYDRINATE	antiemetic
+%data	DIMETHADIONE	anticonvulsant
+%data	DIOXYBENZONE	ultraviolet screen
+%data	DIPHENHYDRAMINE HYDROCHLORIDE	antihistaminic
+%data	DIPHENYLPYRALINE HYDROCHLORIDE	antihistaminic
+%data	DIPYRIDAMOLE	coronary vasodilator
+%data	PYRITHIONE ZINC	antibacterial, antifungal, antiseborrheic
+%data	DISOPYRAMIDE PHOSPHATE	antiarrhythmic
+%data	DISULFIRAM	alcohol antagonist
+%data	DOPAMINE HYDROCHLORIDE	cardiotonic, antihypotensive
+%data	DOXEPIN HYDROCHLORIDE	antidepressant
+%data	DOXYCYCLINE HYDROCHLORIDE	antibacterial
+%data	DOXYLAMINE SUCCINATE	antihistaminic, hypnotic
+%data	DYCLONINE HYDROCHLORIDE	anesthetic (topical)
+%data	DYPHYLLINE	bronchodilator
+%data	TRISODIUM ETHYLENEDIAMINE TETRACETATE	chelating agent, antioxidant
+%data	EPHEDRINE (1R,2S) HYDROCHLORIDE	bronchodilator, cardiac stimulant
+%data	ADRENALINE BITARTRATE	adrenergic agonist, bronchodilator, antiglaucoma agent
+%data	ERGOCALCIFEROL	"antirachitic vitamin; LD50 (rat) 56 mg/kg po "
+%data	ESTRADIOL CYPIONATE	estrogen
+%data	ESTRADIOL VALERATE	estrogen
+%data	ESTRIOL	estrogen
+%data	ESTRONE	estrogen
+%data	ETHACRYNIC ACID	diuretic
+%data	ETHAMBUTOL HYDROCHLORIDE	antibacterial (tuberculostatic)
+%data	ETHINYL ESTRADIOL	estrogen, plus progestogen as oral contraceptive
+%data	ETHIONAMIDE	antibacterial, tuberculostatic
+%data	ETHOPROPAZINE HYDROCHLORIDE	antiparkinsonian, anticholinergic
+%data	FLUDROCORTISONE ACETATE	mineralocorticoid
+%data	FLUMETHAZONE PIVALATE	glucocorticoid, antiinflammatory
+%data	FLUOCINONIDE	antiinflammatory, glucocorticoid
+%data	FLUOROMETHOLONE	glucocorticoid, antiinflammatory
+%data	FLURBIPROFEN	antiinflammatory, analgesic
+%data	FURAZOLIDONE	antibacterial
+%data	FUROSEMIDE	diuretic, antihypertensive
+%data	FUSIDIC ACID	antibacterial
+%data	GALLAMINE	muscle relaxant (skeletal)
+%data	GEMFIBROZIL	antihyperlipoproteinemic
+%data	HETACILLIN POTASSIUM	antibacterial
+%data	GENTAMICIN SULFATE	antibacterial
+%data	GENTIAN VIOLET	antibacterial, anthelmintic
+%data	GLUCOSAMINE HYDROCHLORIDE	antiarthritic
+%data	GUAIFENESIN	expectorant
+%data	GUANABENZ ACETATE	antihypertensive
+%data	GUANETHIDINE SULFATE	antihypertensive, mitotic agent
+%data	HALAZONE	antiinfectant
+%data	HALOPERIDOL	antidyskinetic, antipsychotic
+%data	HEXACHLOROPHENE	antiinfective (topical)
+%data	HEXYLRESORCINOL	anthelmintic, topical antiseptic
+%data	HOMATROPINE BROMIDE	anticholinergic (opthalmic)
+%data	HOMATROPINE METHYLBROMIDE	anticholinergic (opthalmic)
+%data	HYDRALAZINE HYDROCHLORIDE	antihypertensive
+%data	HYDROCHLOROTHIAZIDE	diuretic
+%data	HYDROCORTISONE ACETATE	glucocorticoid, antiinflammatory
+%data	HYDROCORTISONE HEMISUCCINATE	glucocorticoid
+%data	HYDROFLUMETHIAZIDE	antihypertensive, diuretic
+%data	HYDROXYPROGESTERONE CAPROATE	progestogen
+%data	APOMORPHINE HYDROCHLORIDE	emetic
+%data	ANTIPYRINE	analgesic
+%data	ANTHRALIN	antipsoriatic
+%data	ANTAZOLINE PHOSPHATE	antihistaminic
+%data	AMPROLIUM	coccidiostat
+%data	AMPICILLIN SODIUM	antibacterial
+%data	AMOXICILLIN	antibacterial
+%data	AMIKACIN SULFATE	antibacterial
+%data	AMILORIDE HYDROCHLORIDE	Na+ channel inhibitor, diuretic
+%data	POTASSIUM p-AMINOBENZOATE	ultraviolet screen
+%data	AMINOGLUTETHIMIDE	aromatase inhibitor, antineoplastic, testosterone suppressant
+%data	SODIUM p-AMINOSALICYLATE	antibacterial, tuberculostatic
+%data	AMITRIPTYLINE HYDROCHLORIDE	antidepressant
+%data	AMODIAQUINE DIHYDROCHLORIDE	antimalarial
+%data	ACETAMINOPHEN	analgesic, antipyretic
+%data	ACETAZOLAMIDE	carbonic anhydrase inhibitor, diuretic, antiglaucoma
+%data	ACETOHYDROXAMIC ACID	urease inhibitor, antiurolithic, antbacterial
+%data	ACETYLCHOLINE	antiarrhythmic, miotic, vasodilator (peripheral)
+%data	ACETYLCYSTEINE	mucolytic
+%data	ADENOSINE	antiarrhythmic, cardiac depressant 
+%data	ALLOPURINOL	antihyperuricemia, antigout,  antiurolithic
+%data	ALVERINE CITRATE	anticholinergic
+%data	AMANTADINE HYDROCHLORIDE	"antiviral, antiparkinsonian; treatment of drug-induced extrapyrimidal reactions"
+%data	METHYL 7-DESOXYPURPUROGALLIN-7-CARBOXYLATE TRIMETHYL ETHER	
+%data	SULFANITRAN	antibacterial
+%data	TRIMETHOPRIM	antibacterial
+%data	TROPICAMIDE	anticholinergic (opthalmic)
+%data	AMINOPYRIDINE	Kchannel blocker
+%data	BROMOCRIPTINE MESYLATE	prolactin inhibitor, antiparkinsonian
+%data	TRIMEPRAZINE TARTRATE	antipruritic
+%data	7-HYDROXYETHYLTHEOPHYLLINE	phosphodiesterase inhibitor
+%data	TUAMINOHEPTANE SULFATE	adrenergic agonist
+%data	ERGONOVINE MALEATE	oxytocic, 5HT antagonist
+%data	CACODYLIC ACID	antieczema, dermatologic, herbicide
+%data	KOJIC ACID	chelator, antibacterial, skin whitening agent
+%data	METHACYCLINE HYDROCHLORIDE	antibacterial
+%data	CREATININE	
+%data	CARMOFUR	antineoplastic
+%data	BECLOMETHASONE DIPROPIONATE	antiasthmatic, topical antiinflammatory
+%data	HISTAMINE DIHYDROCHLORIDE	"H receptor agonist, induces edema in mammalian tissues; gastric secretion stimulant"
+%data	CHLOROTRIANISENE	estrogen
+%data	ERYTHROMYCIN	antibacterial
+%data	GRISEOFULVIN	antifungal, inhibits mitosis in metaphase
+%data	SPIRAMYCIN	antibacterial
+%data	USNIC ACID	antibacterial
+%data	VERATRINE SULFATE	antihypertensive
+%data	ETHAVERINE HYDROCHLORIDE	antispasmodic
+%data	DROPERIDOL	neuroleptic
+%data	FAMOTIDINE	H2 antihistamine
+%data	DROPROPIZINE	antitussive
+%data	ETODOLAC	antiinflammatory
+%data	FENOTEROL HYDROBROMIDE	betaadrenergic agonist
+%data	FENBUFEN	antiinflammatory
+%data	FENOFIBRATE	antihyperlipidemic
+%data	FENBENDAZOLE	anthelmintic
+%data	FENSPIRIDE HYDROCHLORIDE	antiinflammatory, bronchodilator
+%data	FENDILINE HYDROCHLORIDE	coronary vasodilator
+%data	MEFENAMIC ACID	antiinflammatory, analgesic
+%data	MEFEXAMIDE	stimulant (central)
+%data	PROBUCOL	antihyperlipidemic
+%data	MEBENDAZOLE	anthelmintic
+%data	PERUVOSIDE	cardiotonic
+%data	NALBUPHINE HYDROCHLORIDE	analgesic, narcotic antagonist
+%data	MEBHYDROLIN NAPHTHALENESULFONATE	H1 antihistamine
+%data	OXOLINIC ACID	antibacterial
+%data	MEBEVERINE HYDROCHLORIDE	muscle relaxant (smooth)
+%data	MECLOCYCLINE SULFOSALICYLATE	antibacterial
+%data	PROGLUMIDE	anticholinergic
+%data	MINAPRINE HYDROCHLORIDE	psychotropic
+%data	MEMANTINE HYDROCHLORIDE	muscle relaxant (skeletal)
+%data	3-AMINOPROPANESULPHONIC ACID	antibacterial
+%data	PEFLOXACINE MESYLATE	antibacterial, antiproliferative
+%data	ATENOLOL	beta adrenergic blocker
+%data	CARBETAPENTANE CITRATE	antitussive
+%data	AMINOHIPPURIC ACID	renal function diagnosis
+%data	NICERGOLINE	vasodilator
+%data	PIMOZIDE	antipsychotic
+%data	NICARDIPINE HYDROCHLORIDE	vasodilator
+%data	CHLORMADINONE ACETATE	progestin, antiandrogen
+%data	NEFOPAM	analgesic
+%data	PIRENZEPINE HYDROCHLORIDE	antiulcerative
+%data	PRAMOXINE HYDROCHLORIDE	anesthetic (topical)
+%data	MEPHENESIN	muscle relaxant (skeletal)
+%data	SULFADIMETHOXINE	antibacterial
+%data	SULFAQUINOXALINE SODIUM	antibacterial
+%data	SULFAPYRIDINE	antibacterial
+%data	SULFAGUANIDINE	antibacterial
+%data	SULFAMONOMETHOXINE	antibacterial
+%data	SULCONAZOLE NITRATE	antifungal
+%data	RITODRINE HYDROCHLORIDE	muscle relaxant (smooth)
+%data	SULPIRIDE	dopamine receptor antagonist, antipsychotic
+%data	RANITIDINE	H2 antihistamine
+%data	SPIPERONE	antipsychotic
+%data	SULOCTIDIL	peripheral vasodilator
+%data	RONIDAZOLE	antiprotozoal
+%data	SULFAMETER	antibacterial
+%data	SULFAMETHOXYPYRIDAZINE	antibacterial
+%data	SUXIBUZONE	analgesic, antipyretic, antiinflammatory
+%data	SULMAZOLE	cardiotonic
+%data	SUPROFEN	antiinflammatory
+%data	ACETAMINOSALOL	analgesic, antipyretic
+%data	SACCHARIN	sweetener
+%data	AZOBENZENE	acaricide
+%data	ACETANILIDE	analgesic, antipyretic
+%data	TODRALAZINE HYDROCHLORIDE	antihypertensive, peripheral vasodilator
+%data	ERYTHROMYCIN ESTOLATE	antibacterial
+%data	ESTRIOL METHYL ETHER	estrogen
+%data	ESTRADIOL PROPIONATE	estrogen
+%data	ESTRADIOL DIACETATE	estrogen
+%data	THIABENDAZOLE	anthelmintic
+%data	ESTRONE ACETATE	estrogen
+%data	ESTRADIOL METHYL ETHER	estrogen
+%data	ESTRADIOL ACETATE	estrogen
+%data	ECONAZOLE NITRATE	antifungal
+%data	FLUNISOLIDE	antiinflammatory
+%data	EBSELEN	antioxidant, lipoxygenase inhibitor, inhibits oxidation of LDL
+%data	5-FLUORO-5'-DEOXYURIDINE	antineoplastic, pyrimidine antimetabolite
+%data	ESTRIOL BENZYL ETHER	estrogen
+%data	ESTRADIOL-3-SULFATE, SODIUM SALT	estrogen
+%data	FUREGRELATE SODIUM	thromboxane synthetase inhibitor
+%data	TOLFENAMIC ACID	antiinflammatory, analgesia
+%data	ZAPRINAST	cGMP phosphodiesterase inhibitor
+%data	XYLAZINE	analgesic
+%data	TOLAZAMIDE	antidiabetic
+%data	ENALAPRIL MALEATE	ACE inhibitor, antihypertensive
+%data	KETOPROFEN	antiinflammatory
+%data	LISINOPRIL	ACE inhibitor
+%data	ACETYL-L-LEUCINE	antivertigo
+%data	BUFEXAMAC	antiinflammatory, analgesic, antipyretic
+%data	BUMETANIDE	diuretic
+%data	CARBENOXOLONE SODIUM	antiinflammatory, antisecretory, antiulcer
+%data	DIACERIN	antiinflammatory
+%data	FOSFOSAL	analgesic, antiinflammatory
+%data	ISOTRETINON	antiacne, anticancer
+%data	MESNA	mucolytic
+%data	TRANEXAMIC ACID	hemostatic
+%data	CEPHALEXIN	antibacterial
+%data	BRETYLIUM TOSYLATE	inhibitor of norepinephrine release
+%data	SURAMIN	antiprotozoal, trypanocidal, antiviral
+%data	CEFUROXIME SODIUM	antibacterial
+%data	VIGABATRIN	anticonvulsant
+%data	LOMEFLOXACIN HYDROCHLORIDE	antibacterial
+%data	CEFAMANDOLE SODIUM	antibacterial
+%data	FOSFOMYCIN	antibacterial
+%data	CEFMETAZOLE SODIUM	antibacterial
+%data	CEFAMANDOLE NAFATE	antibacterial
+%data	CEFOPERAZOLE SODIUM	antibacterial
+%data	PRALIDOXIME MESYLATE	cholinesterase reactivator
+%data	BISSALICYL FUMARATE	crosslinking agent (hemoglobin)
+%data	OFLOXACIN	antibacterial
+%data	PIROMIDIC ACID	antibacterial
+%data	7-NITROINDAZOLE	NO synthetase inhibitor
+%data	CEPHALORIDINE	antibacterial
+%data	7-CHLOROKYNURENIC ACID	NMDA receptor antagonist (gly)
+%data	LIOTHYRONINE	thyroid hormone blocker
+%data	6,7-DICHLORO-3-HYDROXY-2-QUINOXALINECARBOXYLIC ACID	NMDA and kainate receptor antagonist
+%data	INDOLE-2-CARBOXYLIC ACID	NMDA receptor antagonist (gly)
+%data	CYCLOCREATINE	regulator of creatine biosynthesis
+%data	ZIDOVUDINE [AZT]	RT transferase inhibitor, antiviral
+%data	5-AZACYTIDINE	antineoplastic, pyrimidine antimetabolite
+%data	QUINOLINIC ACID	differentiates between cerebral and forebrain NMDA receptors
+%data	1,2-DIMETHYLHYDRAZINE HYDROCHLORIDE	antineoplastic
+%data	t-4-AMINOCROTONIC ACID (TACA)	GABA agonist, GABA uptake inhibitor
+%data	TINIDAZOLE	antiprotozoal
+%data	CYCLOLEUCINE	NMDA receptor antagonist (gly)
+%data	ISOGUVACINE HYDROCHLORIDE	GABA agonist
+%data	AMINOCYCLOPROPANECARBOXYLIC ACID	NMDA partial agonist (gly)
+%data	1-AMINOCYCLOBUTANE CARBOXYLIC ACID	NMDA receptor antagonist
+%data	CARBIDOPA	decarboxylase inhibitor, antiparkinsonism
+%data	N (g)-NITRO-L-ARGININE	NO synthase inhibitor
+%data	ANISINDIONE	anticoagulant
+%data	TROLEANDOMYCIN	antibacterial
+%data	GUAIAZULENE	"antioxidant, inhibits lipid peroxidation inhibitor, antiinflammatory, hepatoprotectant; LD50(rat) 1550 mg/kg po "
+%data	AKLOMIDE	antiprotozoal, coccidiostat
+%data	NICOTINYL TARTRATE	vasodilator
+%data	DINITOLMIDE	antiprotozoal
+%data	AMINOHYDROXYBUTYRIC ACID	antiepileptic
+%data	BUCLADESINE	vasodilator
+%data	RETINYL ACETATE	vitamin precursor
+%data	PIPENZOLATE BROMIDE	spasmolytic
+%data	FLOXURIDINE	antineoplastic, antimetabolite
+%data	MEFLOQUINE	antimalarial
+%data	ADIPHENINE HYDROCHLORIDE	muscle relaxant (smooth)
+%data	ALTRETAMINE	antineoplastic
+%data	ALEXIDINE HYDROCHLORIDE	antibacterial
+%data	QUINAPRIL HYDROCHLORIDE	antihypertensive, ACE inhibitor
+%data	PRIDINOL METHANESULFONATE	anticholinergic
+%data	PROPENTOFYLLINE	vasodilator
+%data	AMBROXOL HYDROCHLORIDE	expectorant
+%data	AMIPRILOSE	immunomodulator, antiinflammatory
+%data	PYRITHYLDIONE	hypnotic, sedative
+%data	TIAPRIDE HYDROCHLORIDE	neuroleptic
+%data	URAPIDIL	antihypertensive
+%data	AZLOCILLIN SODIUM	antibacterial
+%data	BACAMPICILLIN HYDROCHLORIDE	antibacterial
+%data	BENDROFUMETHIAZIDE	diuretic
+%data	BENFOTIAMINE	vitamin B1
+%data	BEPRIDIL HYDROCHLORIDE	antiarrhythmic
+%data	BROMHEXINE HYDROCHLORIDE	expectorant
+%data	BROMOPRIDE	antiemetic
+%data	CEFTRIAXONE SODIUM	antibacterial
+%data	DIBEKACIN	antibacterial
+%data	VINPOCETINE	cerebral vasodilator, antimotion
+%data	TRIMIPRAMINE MALEATE	antidepressant
+%data	SECNIDAZOLE	antiameobic, antitrichomonas
+%data	CITIOLONE	hepatoprotectant
+%data	CLOFOCTOL	antibacterial
+%data	SULFACETAMIDE	antibacterial
+%data	CYCLOBENZAPRINE HYDROCHLORIDE	muscle relaxant (skeletal)
+%data	DOBUTAMINE HYDROCHLORIDE	cardiotonic
+%data	ENOXACIN	antibacterial
+%data	HEPTAMINOL HYDROCHLORIDE	vasodilator
+%data	ETHISTERONE	progestogen
+%data	FIPEXIDE HYDROCHLORIDE	psychostimulant
+%data	PARAROSANILINE PAMOATE	anthelmintic, antischistosomal
+%data	LONIDAMINE	contraceptive, spermicidal
+%data	PERHEXILINE MALEATE	coronary vasodilator
+%data	METHAPYRILENE HYDROCHLORIDE	H1 antihistamine
+%data	MEPHENTERMINE SULFATE	vasoconstrictor
+%data	METARAMINOL BITARTRATE	antihypotensive
+%data	METHAZOLAMIDE	carbonic anhydrase inhibitor
+%data	METHYLBENZETHONIUM CHLORIDE	antiinfectant
+%data	6alpha-METHYLPREDNISOLONE ACETATE	glucocorticoid
+%data	AMSACRINE HYDROCHLORIDE	antineoplastic, immune suppressive
+%data	MIDODRINE HYDROCHLORIDE	antihypertensive, vasoconstrictor
+%data	NADOLOL	betaadrenergic blocker
+%data	NALTREXONE HYDROCHLORIDE	morphine antagonist
+%data	NOMIFENSIN MALEATE	antidepressant, dopamine uptake inhibitor
+%data	PRILOCAINE HYDROCHLORIDE	anesthetic (local)
+%data	HYDROCORTISONE BUTYRATE	glucocorticoid, antiinflammatory
+%data	ROXITHROMYCIN	antibacterial
+%data	MITOXANTHRONE HYDROCHLORIDE	antineoplastic
+%data	DIPYRONE	analgesic, antipyretic
+%data	HEXAMETHONIUM BROMIDE	antihypertensive, ganglionic blocker
+%data	SULFAMERAZINE	antibacterial
+%data	URETHANE	antineoplastic, cytotoxic
+%data	THIRAM	antifungal
+%data	KETANSERIN TARTRATE	5HT2/5HT1C seritonin antagonist
+%data	RITANSERIN	antiserotonin
+%data	MIZORIBINE	immunosuppressant
+%data	PASINIAZID	antibacterial (tuberculostatic)
+%data	D-PHENYLALANINE	antidepressant
+%data	OXIBENDAZOLE	anthelmintic
+%data	RESORCINOL MONOACETATE	antiseborrheic, antipruritic
+%data	SEMUSTINE	antineoplastic
+%data	ACYCLOVIR	antiviral
+%data	RETINYL PALMITATE	provitamin, antixerophthalamic
+%data	NITRENDIPINE	antihypertensive
+%data	BENZALKONIUM CHLORIDE	antiinfective (topical)
+%data	PENTOXIFYLLINE	vasodilator
+%data	CIPROFLOXACIN	antibacterial, fungicide
+%data	CHAULMOOGRIC ACID, ETHYL ESTER	antilepretic
+%data	PRONETALOL HYDROCHLORIDE	beta adrenergic agonist, antiarrhythmic
+%data	N-AMINOHEXYL-5-CHLORO-1-NAPTHALENESULFONAMIDE HYDROCHLORIDE 	calmodulin antagonist, PDE and kinase inhibitor
+%data	N- (3-TRIFLUOROMETHYLPHENYL)PIPERAZINE HYDROCHLORIDE (TFMPP)	5HT agonist
+%data	3-METHYL-1-PHENYL-2-PYRAZOLIN-5-ONE (MCI-186)	antioxidant, lipoxygenase inhibitor
+%data	2- (2,6-DIMETHOXYPHENOXYETHYL)AMINOMETHYL-1,4-BENZODIOXANE HYDROCHLORIDE (WB 4101)	alpha1a adrenergic blocker
+%data	GABOXADOL HYDROCHLORIDE	GABAa agonist, GABAc antagonist
+%data	NABUMETONE	antiinflammatory
+%data	AZITHROMYCIN	antibacterial
+%data	3-AMINOBENZAMIDE	antiproliferative, killer cell blocker
+%data	CLOPIDOGREL SULFATE	platelet aggregation inhibitor
+%data	LORATADINE	H1 antihistamine
+%data	SELAMECTIN	antiparasitic, antimite
+%data	ATORVASTATIN CALCIUM	antihyperlipidemic, HMGCoA reductase inhibitor
+%data	NAPROXOL	antinflammatory, analgesic, antipyretic
+%data	AMCINONIDE	glucocorticoid, antiinflammatory
+%data	BUPIVACAINE HYDROCHLORIDE	anesthetic (local)
+%data	CYSTAMINE DIHYDROCHLORIDE	hepatoprotectant, radioprotectant
+%data	RAMIFENAZONE	analgesic, antipyretic, antiinflammatory
+%data	SODIUM beta-NICOTINAMIDE ADENINE DINUCLEOTIDE PHOSPHATE	cofactor in aryl & steroidal hydroxylation
+%data	NIGERICIN SODIUM	antibacterial
+%data	CYCLOPIAZONIC ACID	inhibits endoplamic reticulum Ca ATPase
+%data	BUTACAINE	anesthetic (local)
+%data	CLOBETASOL PROPIONATE	glucocorticoid, antiinflammatory
+%data	CLOPAMIDE	diuretic
+%data	CLOPERASTINE HYDROCHLORIDE	antitussive
+%data	CYPROTERONE	antiandrogen
+%data	IOPANIC ACID	radioopaque agent
+%data	KETOROLAC TROMETHAMINE	antiinflammatory
+%data	LANSOPRAZOLE	antiulcerative
+%data	MORANTEL CITRATE	anthelmintic
+%data	OXYPHENCYCLIMINE HYDROCHLORIDE	anticholinergic
+%data	PENTOLINIUM TARTRATE	antihypertensive, ganglionic blocker
+%data	PERPHENAZINE	antipsychotic
+%data	PROPAFENONE HYDROCHLORIDE	antiarrhythmic
+%data	PERICIAZINE	antipsychotic
+%data	THIOCTIC ACID	hepatoprotectant
+%data	LIVIDOMYCIN SULFATE	antibacterial
+%data	TULOBUTEROL	bronchodilator, beta adrenergic agonist
+%data	FLUTRIMAZOLE	antifungal
+%data	METHOXYAMINE HYDROCHLORIDE	hydroxymethyltransferase inhibitor
+%data	2-THIOURACIL	thyroid depressant
+%data	DIMETHYL 4,4-o-PHENYLENE-BIS (3-THIOPHANATE)	antifungal (systemic plant)
+%data	FLUCONAZOLE	antifungal
+%data	LOVASTATIN	antihyperlipidemic, HMGCoA reductase inhibitor
+%data	SPARTEINE SULFATE	oxytocic
+%data	HYDROXYCHLOROQUINE SULFATE	antimalarial, lupus suppressant
+%data	BROMPHENIRAMINE MALEATE	H1 antihistamine
+%data	CLEBOPRIDE MALEATE	antiemetic, antispasmodic
+%data	ETHYLNOREPINEPHRINE HYDROCHLORIDE	bronchodilator
+%data	TENIPOSIDE	antineoplastic
+%data	PHENOTHRIN	ectoparasiticide
+%data	SILDENAFIL	impotency therapy
+%data	METHOPRENE (S)	ectoparasiticide
+%data	TETRACHLOROISOPHTHALONITRILE	antifungal
+%data	FORMESTANE	antineoplastic, aromatase inhibitor
+%data	TRIMEDLURE	arthropod pheromone
+%data	ALAPROCLATE	antidepressant
+%data	ANCITABINE HYDROCHLORIDE	antineoplastic
+%data	GLICLAZIDE	antidiabetic
+%data	DIRITHROMYCIN	antibacterial
+%data	ACETRIAZOIC ACID	X-ray contrast medium
+%data	MELOXICAM	antiinflammatory
+%data	NILUTAMIDE	antiandrogen
+%data	MEPIVACAINE HYDROCHLORIDE	anesthetic (local)
+%data	NORCANTHARIDIN	antineoplastic, protein phosphatase inhibitor
+%data	VENLAFAXINE HYDROCHLORIDE	antidepressant
+%data	FLUOXETINE	antidepressant
+%data	3-METHYLXANTHINE	phosphodiesterase inhibitor
+%data	AMINOLEVULINIC ACID HYDROCHLORIDE	antineoplastic
+%data	TELENZEPINE HYDROCHLORIDE	antiulcer, M1 muscarinic antagonist
+%data	AVOBENZONE	sunscreen
+%data	DIPLOSALSALATE	analgesic, antipyretic
+%data	ATOVAQUONE	antipneumocystic, antimalarial
+%data	CHLORGUANIDE HYDROCHLORIDE	antimalarial
+%data	CHLORANIL	antipsoriatic
+%data	N-ACETYLASPARTIC ACID	analeptic, neurostimulant
+%data	N,N-HEXAMETHYLENEAMILORIDE	Na/H+ antiporter inhibitor, diuretic
+%data	ACRISORCIN	antifungal
+%data	FENBUTYRAMIDE	antihyperlipidemic
+%data	2-MERCAPTOBENZOTHIAZOLE	antifungal
+%data	MERCAPTAMINE HYDROCHLORIDE	depigmentation, radiation protectant
+%data	METAXALONE	muscle relaxant (skeletal)
+%data	CLARITHROMYCIN	antibacterial
+%data	2,3-DIHYDROXY-6,7-DICHLOROQUINOXALINE	NMDA receptor antagonist (gly)
+%data	SIMVASTATIN	antihyperlipidemic, HMGCoA reductase inhibitor
+%data	HYDROQUINONE	antioxidant
+%data	BETAMIPRON	sweetener
+%data	CARVEDILOL	betaadrenergic blocker
+%data	GATIFLOXACIN	antibacterial
+%data	ROSIGLITAZONE	antidiabetic
+%data	LOSARTAN	antihypertensive, AT1 angiotensin II antagonist
+%data	CANDESARTAN CILEXTIL	angiotensin 1 receptor antagonist
+%data	LEVOFLOXACIN	antibacterial
+%data	MIGLITOL	alpha-glucosidase inhibitor, antidiabetic
+%data	ORLISTAT	reversible lipase inhibitor, antiobesity
+%data	VALDECOXIB	antiinflammatory, COX-2 inhibitor
+%data	MOXIFLOXACIN HYDROCHLORIDE	antibacterial
+%data	PIOGLITAZONE HYDROCHLORIDE	antidiabetic
+%data	TOLTERODINE HYDROCHLORIDE	muscarinic receptor antagonist
+%data	BENAZEPRIL HYDROCHLORIDE	ACE inhibitor, antihypertensive
+%data	FAMCICLOVIR	antiviral
+%data	EZETIMIBE	sterol absorption inhibitor
+%data	ALMOTRIPTAN	5HT 1B/2D receptor agonist
+%data	OLMESARTAN MEDOXOMIL	Angiotensin II inhibitor prodrug, antihypertensive
+%data	CEFTIBUTEN	antibacterial
+%data	CEFDINIR	antibacterial
+%data	VALSARTAN	Angiotensin II inhibitor, antihypertensive
+%data	SIBUTRAMINE HYDROCHLORIDE	anorexic, antidepressant, uptake inhibitor (5HT, norepinephrine, dopamine)
+%data	TORSEMIDE	diuretic, inhibits Na/K/2Cl carrier system
+%data	RIBOFLAVIN	"Vitamin B2; Vitamin cofactor; LD50(rat) 560 mg/kg ip"
+%data	PERINDOPRIL ERBUMINE	antihypertensive, ACE inhibitor
+%data	TEGASEROD MALEATE	5HT4 receptor agonist, peristaltic stimulant
+%data	CITICOLINE	cognition enhancer, phosphocholine cytidyltransferase activator
+%data	TROXERUTIN	vasoprotectant
+%data	CANRENONE	"aldosterone antagonist; antifibrogenic"
+%data	SINOMENINE	"weak abortifacient, immunosuppressant, analgesic, antiinflammatory; LD50 (po) 580 mg/kg; (ip) 285 mg/kg(mouse)"
+%data	SERTRALINE HYDROCHLORIDE	antidepressant, 5HT uptake inhibitor
+%data	ALFLUZOCIN	alpha(1)-adrenergic blocker
+%data	TRANDOLAPRIL	antihypertensive, ACE inhibitor
+%data	TELITHROMYCIN	antibacterial
+%data	OXAPROZIN	antiinflammatory
+%data	PROPRANOLOL HYDROCHLORIDE (+/-)	antihypertensive, antianginal, antiarrhythmic
+%data	CROTAMITON	antipruritic, scabicide
+%data	BENZANTHRONE	hepatotoxic, P450 suppressant
+%data	8-CYCLOPENTYLTHEOPHYLLINE	A1 adenosine agonist
+%data	DESMETHYLDIHYDROCAPSAICIN	analgesic (topical), depletes Substance P
+%data	BENZAMIL HYDROCHLORIDE	Na channel inhibitor
+%data	PARAXANTHINE	adenosine receptor agonist
+%data	4- (3-BUTOXY-4-METHOXYBENZYL)IMIDAZOLIDIN-2-ONE	cAMP PDE inhibitor
+%data	LORGLUMIDE SODIUM	CCK receptor antagonist
+%data	PINACIDIL	K channel agonist, antihypertensive
+%data	LOXAPINE SUCCINATE	antipsychotic
+%data	1R,2S-PHENYLPROPYLAMINE	decongestant
+%data	LOPERAMIDE HYDROCHLORIDE	Ca channel blocker
+%data	EFAROXAN HYDROCHLORIDE	insulin secretagogue, alpha2 adrenorecetor antagonist
+%data	EDROPHONIUM CHLORIDE	acetylcholinesterase inhibitor
+%data	AMINOBENZTROPINE	muscarinic agonist
+%data	METOLAZONE	diuretic, antihypertensive
+%data	alpha-METHYL-L-TYROSINE	tyrosine hydroxylase inhibitor
+%data	VESAMICOL HYDROCHLORIDE	acetylcholine transport blocker (vesicular)
+%data	VERAPAMIL HYDROCHLORIDE	adrenegic blocker, Ca channel blocker, coronary vasodilator, antiarrhythmic
+%data	MEXAMINE	5HT agonist
+%data	TILORONE	antiviral
+%data	CLOMIPRAMINE HYDROCHLORIDE	antidepressant
+%data	CHLORMEZANONE	anxiolytic, muscle relaxant
+%data	1,3-DIPROPYL-8-CYCLOPENTYLXANTHINE [DPCPX]	A1 adenosine antagonist
+%data	ETHYL 1-BENZYL-3-HYDROXY- 2-OXO[5H]PYRROLE-4-CARBOXYLATE	aldose reductase inhibitor
+%data	ASTEMIZOLE	H1 antihistamine (nonsedating)
+%data	HYDROXYTACRINE MALEATE	cholinesterase inhibitor, antiparkinsonian
+%data	9-AMINO-1,2,3,4-TETRAHYDROACRIDINE HYDROCHLORIDE	anticholinesterase, K channel blocker
+%data	N-ACETYLNEURAMIC ACID	immunomodulator, adjuvant
+%data	ACECAINIDE HYDROCHLORIDE	antiarrhythmic
+%data	AMOXEPINE	antidepressant, inhibits norepinephrine uptake
+%data	PHENOXYBENZAMINE HYDROCHLORIDE	alpha adrenergic blocker
+%data	AMIODARONE HYDROCHLORIDE	adrenergic agonist, coronary vasodilator, Ca channel blocker
+%data	ALPRENOLOL	betaadrenergic blocker
+%data	TRANYLCYPROMINE HYDROCHLORIDE	antidepressant, MAO inhibitor
+%data	3-HYDROXYBENZYLHYDRAZINE DIHYDROCHLORIDE	central decarboxylase inhibitor
+%data	1- (2-METHOXYPHENYL)PIERAZINE HYDROCHLORIDE	5HT1 receptor agonist
+%data	NIPECOTIC ACID	GABA uptake inhibitor
+%data	PENTETRAZOLE	analeptic, circulation stimulant
+%data	CELASTROL	antineoplastic, antiinflamatory, NO synthesis inhibitor, chaperone stimulant
+%data	FLUTAMIDE	antiandrogen
+%data	GLAFENINE	analgesic
+%data	DROFENINE HYDROCHLORIDE	antispasmodic
+%data	FLUMEQUINE	antibacterial
+%data	FLUNARIZINE HYDROCHLORIDE	vasodilator
+%data	FLUFENAZINE HYDROCHLORIDE	H1 antihistamine
+%data	PHENTOLAMINE HYDROCHLORIDE	antihypertensive
+%data	N-ACETYLPROLINE	antirheumatic
+%data	ACETYLGLUTAMIC ACID	excitatory aminoacid
+%data	ACETYLTRYPTOPHAN	antidepressant
+%data	ACEMETACIN	antiinflammatory
+%data	KETOTIFEN FUMARATE	antiasthmatic
+%data	MOLSIDOMINE	antianginal
+%data	BENFLUOREX HYDROCHLORIDE	antihyperlipoproteinemic
+%data	TRIAMCINOLONE DIACETATE	antiinflammatory
+%data	TRICHLORMETHIAZIDE	diuretic, antihypertensive
+%data	TRIAMTERENE	diuretic
+%data	PROPYLTHIOURACIL	antihyperthyroid
+%data	SULFASALAZINE	anticolitis and Crohn's disease
+%data	SULFISOXAZOLE	antibacterial
+%data	TRANYLCYPROMINE SULFATE	antidepressant
+%data	TOLNAFTATE	antifungal
+%data	ACETYLTRYPTOPHANAMIDE	antidepressant, nutrient
+%data	ACETYLSEROTONIN	inhibits hydroxyindole-O-methyltransferase
+%data	SUPROFEN METHYL ESTER	antiinflammatory
+%data	SULFACHLORPYRIDAZINE	antibacterial
+%data	NIFLUMIC ACID	analgesic, antiinflammatory
+%data	PHTHALYLSULFATHIAZOLE	antibacterial
+%data	BETAMETHASONE VALERATE	glucocorticoid
+%data	CLEMASTINE	antihistaminic
+%data	HYDROCORTISONE SODIUM PHOSPHATE	glucocorticoid
+%data	SULFAMETHAZINE	antibacterial
+%data	TRIPELENNAMINE CITRATE	antihistaminic
+%data	PYRIMETHAMINE	antimalarial
+%data	PYRAZINAMIDE	antibacterial, tuberculostatic
+%data	PYRVINIUM PAMOATE	anthelmintic
+%data	ZEARALENONE	estrogen
+%data	NONOXYNOL-9	spermatocide, contraceptive
+%data	OXFENDAZOLE	anthelmintic
+%data	3-ISOBUTYL-1-METHYLXANTHINE (IBMX)	phosphodiesterase inhibitor
+%data	AMITRAZ	pesticide, carcinogen
+%data	PURPURIN	xanthin oxidase inhibitor, irritant
+%data	GENETICIN	antibacterial
+%data	TRIADIMEFON	antifungal, P450 inhibitor
+%data	ASPARTAME	sweetener
+%data	BIFONAZOLE	antifungal, calmodulin antagonist
+%data	CHLOROPHYLLIDE Cu COMPLEX Na SALT	antineoplastic
+%data	REBAMIPIDE	antiulcer, antioxidant
+%data	DIBENZOYLMETHANE	antineoplastic
+%data	TYLOSIN TARTRATE	antibacterial
+%data	SARAFLOXACIN HYDROCHLORIDE	antibacterial
+%data	6-AMINONICOTINAMIDE	antineoplastic, apoptosis inducer
+%data	PROTHIONAMIDE	antibacterial
+%data	RIFAXIMIN	antibacterial, RNA synthesis inhibitor
+%data	INDOLE-3-CARBINOL	antineoplastic
+%data	SECURININE	GABAA receptor blocker, CNS stimulant
+%data	ELAIDYLPHOSPHOCHOLINE	antineoplastic
+%data	AZELASTINE HYDROCHLORIDE	"H1 antihistamine (nonsedating); leucotriene synthesis blocker"
+%data	RILUZOLE	anticonvulsant, glutamate release inhibitor
+%data	MILTEFOSINE	antineoplastic
+%data	3,3'-DIINDOLYLMETHANE	apoptosis inducer
+%data	CHLOROCRESOL	antiinfectant
+%data	CYCLOSERINE	antibacterial (tuberculostatic)
+%data	METHENAMINE	antibacterial (urinary)
+%data	TRIFLUOPERAZINE HYDROCHLORIDE	antipsychotic
+%data	TRIHEXYPHENIDYL HYDROCHLORIDE	anticholinergic, antiparkinsonian
+%data	L-PHENYLALANINOL	antiulcer
+%data	4'-DEMETHYLEPIPODOPHYLLOTOXIN	antineoplastic
+%data	L-ALANINOL	antiproliferative
+%data	4-AMINOETHYLBENZENESULFONYL FLUORIDE HYDROCHLORIDE	serine protease inhibitor
+%data	VALERYL SALYCILATE	COX-1 inhibitor
+%data	TRANILAST	antiallergic, mast cell degranulation inhibitor, angiogenesis blocker
+%data	CEPHARANTHINE	antineoplastic, hepatoprotectant, radiopropective
+%data	GINKGOLIC ACID	cytotoxic, apoptosis inducer, antitubercular
+%data	APRAMYCIN	"antibacterial; LD50(iv) 280mg/kg(mouse)"
+%data	MADECASSIC ACID	wound healing
+%data	OXICONAZOLE NITRATE	antifungal
+%data	HUPERZINE A	anticholinesterase, cognition enhancer
+%data	PALMATINE	uterine contractant, antibacterial, antiarrhythmic, inotropic, adrenocorticotropic, anticholinesterase, analgesic
+%data	DIALLYL SULFIDE	anitbacterial, antifungal, antineoplastic, antihypercholesterolaemic, hepatoprotectant
+%data	CARBADOX	antibacterial
+%data	PERILLYL ALCOHOL	"antineoplastic, apoptosis inducer; skin irritant, LD50(rat) 2100 mg/kg po"
+%data	AMLODIPINE BESYLATE	Ca channel blocker
+%data	AVOCADYNE	antibacterial, antifungal
+%data	PROMAZINE HYDROCHLORIDE	antipsychotic
+%data	PROMETHAZINE HYDROCHLORIDE	antihistaminic
+%data	SULFATHIAZOLE	antibacterial
+%data	THEOPHYLLINE	bronchodilator
+%data	TRIAMCINOLONE ACETONIDE	antiinflammatory
+%data	TRIMETHOBENZAMIDE HYDROCHLORIDE	antiemetic
+%data	TRIPROLIDINE HYDROCHLORIDE	antihistaminic
+%data	SULFANILAMIDE	antibacterial
+%data	OLEANDOMYCIN PHOSPHATE	antibacterial
+%data	XANTHURENIC ACID	
+%data	GUANIDINE CARBONATE	striated muscle stimulant
+%data	BUTAMBEN	anesthetic (local)
+%data	CINCHONIDINE	antimalarial
+%data	CINCHONINE	antimalarial
+%data	TOLPERISONE HYDROCHLORIDE	muscle relaxant (skeletal)
+%data	HARMOL HYDROCHLORIDE	MAO inhibitor
+%data	BENZYL ISOTHIOCYANATE	antineoplastic, antibacterial, antifungal
+%data	ACEXAMIC ACID	wound healing agent
+%data	TRAZODONE HYDROCHLORIDE	antidepressant
+%data	MENTHOL(-)	analgesic (topical), antipruritic agent
+%data	THIAMPHENICOL	antibacterial
+%data	CHLORPROTHIXENE HYDROCHLORIDE	antipsychotic
+%data	DIOSMIN	vascular protectant
+%data	PAROMOMYCIN SULFATE	antibacterial, antiamebic
+%data	NIFENAZONE	analgesic, antiinflammatory
+%data	PYRIDOSTIGMINE BROMIDE	cholinergic
+%data	ISOXICAM	antiinflammatory
+%data	LABETALOL HYDROCHLORIDE	adrenergic blocker
+%data	LASALOCID SODIUM	antibacterial
+%data	LEVAMISOLE HYDROCHLORIDE	immunomodulator
+%data	TETROQUINONE	keratolytic
+%data	CHLOROACETOXYQUINOLINE	antifungal
+%data	NAFRONYL OXALATE	vasodilator
+%data	EXALAMIDE	antifungal
+%data	SAFROLE	anesthetic (topical) and antiseptic, pediculicide
+%data	RAUWOLSCINE HYDROCHLORIDE	alpha2 adrenergic antagonist
+%data	ANETHOLE	expectorant, gastric stimulant, insecticide
+%data	COLFORSIN	adenylate cyclase activator, antiglaucoma, hypotensive, vasodilator
+%data	PACLITAXEL	antineoplastic
+%data	TRYPTAMINE	psychotropic
+%data	SPERMIDINE TRIHYDROCHLORIDE	ornithine decarboxylase inhibitor
+%data	LUPININE	antifeedant, antiinflammatory, oxytoxic
+%data	SALSOLINE	antihypertensive, antihistamine
+%data	CYTISINE	antiinflammatory, respiratory stimulant
+%data	TANNIC ACID	nonspecific enzyme/receptor blocker
+%data	OXCARBAZEPINE	antipsychotic
+%data	PICROPODOPHYLLOTOXIN	"antineoplastic; 10% cytotoxicity of podophyllotoxin"
+%data	ISOLIQUIRITIGENIN	aldose reductase inhibitor, antineoplastic, antiinflammatory
+%data	ZOXAZOLAMINE	muscle relaxant, antirrheumatic
+%data	BOVINOCIDIN (3-nitropropionic acid)	antineoplastic
+%data	TETRAHYDROPALMATINE	analgesic, hypnotic, papaverine-like
+%data	NIMUSTINE	antineoplastic
+%data	TETRANDRINE	analgesic, antineoplastic, antihypertensive, lymphotoxin
+%data	CRUSTECDYSONE	insect molting hormone
+%data	PODOFILOX	"antineoplastic, inhibits microtubule assembly, and human DNA topoisomerase II; antimitotic agent"
+%data	AMINOTHIAZOLE	antithyroid agent
+%data	BETAINE HYDROCHLORIDE	antiarteriosclerotic, hypolipaemic, hepatoprotectant

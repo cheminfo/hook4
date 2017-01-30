@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+
+	</head>
+
+	<body onunload="closingWindow();" onfocus="refreshWindows();">
+
+window 1
+
+	
+	
+	<script language="javascript">
+		var windowManager;
+		if (opener.windowManager) {
+			windowManager=opener.windowManager;
+		}
+	
+		function closingWindow() {
+			if (windowManager) {
+				windowManager.remove(window);
+			}
+			
+		}
+		
+		function refreshWindows() {
+			if (windowManager) {
+				windowManager.refreshWindows();
+			}
+		}
+		
+		function getFeature() {
+			return "Nothing ...";
+		}
+		
+		// this function will ask the windowManager what are the current open windows
+		// and will ask to all the windows some info about them using "getFeature()";
+		
+		function updateLinks() {
+			var allFeatures="";
+			
+			windows=windowManager.windows;
+			for (var i=0; i<windows.length; i++) {
+				if ( windows[i].getFeature() ) {
+					allFeatures+=windows[i].getFeature();
+				}
+			}
+			
+			show(allFeatures+new Date());
+		}
+	
+	
+		function show(toShow) {
+			document.getElementById("output").innerHTML=toShow;
+		}
+	
+	</script>
+	
+	
+	<span id="output"></span>
+	
+	
+	</body>
+
+</html>

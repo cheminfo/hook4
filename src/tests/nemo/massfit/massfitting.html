@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+	
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+		archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+		codebase="../../../" width="800" height="600" id="nemo" name="nemo">
+	</applet>
+
+
+<br>
+
+<table>
+<tr>
+<td>Global shift: <input type="text" value=0 name="globalShift" size=4 id="globalShift">
+	Peak witdh: <input type="text" value=0 name="gaussParam" size=4 id="gaussParam">
+	WindowPoints: <input type="text" value=0 name="windowPoints" size=4 id="windowPoints">
+	Similarity: <input type="text" value=0 name="Similarity" size=4 id="similarity">
+	R: <input type="text" value=0 name="R" size=4 id="R">
+	<button onclick="fitPrediction();">Fit prediction</button>
+</td></tr>
+<tr>
+<td>Pd(PPh3)(PPh2C6H4SO3)(CD2Cl2)</td>
+<td><button onclick="addExperimental('Pd(PPh3)(PPh2C6H4SO3)(CD2Cl2)-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('Pd(PPh3)(PPh2C6H4SO3)(CD2Cl2).jdx');">Add calc.</button></td>
+</tr>
+<tr>
+<td>Al22O16Me35</td>
+<td><button onclick="addExperimental('Al22O16Me35-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('Al22O16Me35.jdx');">Add calc.</button></td>
+</tr>
+<tr>
+<td>Al24O18Me37</td>
+<td><button onclick="addExperimental('Al24O18Me37-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('Al24O18Me37.jdx');">Add calc.</button></td>
+</tr>
+<tr>
+<td>Al25O21Me33Cl</td>
+<td><button onclick="addExperimental('Al25O21Me33Cl-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('Al25O21Me33Cl.jdx');">Add calc.</button></td>
+</tr>
+<tr>
+<td>Al29O23Me42</td>
+<td><button onclick="addExperimental('Al29O23Me42-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('Al29O23Me42.jdx');">Add calc.</button></td>
+</tr>
+<tr>
+<td>C32H27IrN5</td>
+<td><button onclick="addExperimental('C32H27IrN5-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('C32H27IrN5.jdx');">Add calc.</button></td>
+</tr>
+<tr>
+<td>MS2UV HR</td>
+<td><button onclick="addExperimental('ms2uv-exp-1620.jdx');">1620</button></td>
+<td><button onclick="addCalculated('ms2uv1620CH3O2.jdx');">CH3O2</button></td>
+<td><button onclick="addCalculated('ms2uv1620CH3O3-S.jdx');">CH3O3-S</button></td>
+<td><button onclick="addCalculated('ms2uv1620CH4O2P-S.jdx');">CH4O2P-S</button></td>
+<td><button onclick="addCalculated('ms2uv1620O3.jdx');">O3</button></td>
+<td><button onclick="addCalculated('ms2uv1620O3P-S.jdx');">O3P-S</button></td>
+<td><button onclick="addCalculated('ms2uv1620PO4-CH4S.jdx');">PO4-CH4S</button></td>
+</tr>
+<tr>
+<td>MS2UV</td>
+<td><button onclick="addExperimental('ms2uv-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addExperimental('ms2uv-exp1221.jdx');">MS2UV 1221</button></td>
+<td><button onclick="addCalculated('ms2uv.jdx');">Add calc.</button></td>
+<td><button onclick="addCalculated('ms2uvSO.jdx');">Add calc. SO</button></td>
+<td><button onclick="addCalculated('ms2uvP.jdx');">Add calc. P</button></td>
+<td><button onclick="addCalculated('ms2uvC2H2O4P-NS.jdx');">Add calc. C2H2O4P-NS</button></td>
+<td><button onclick="addCalculated('ms2uvC2H3O3.jdx');">Add calc. C2H3O3</button></td>
+<td><button onclick="addCalculated('ms2uvC3H3O4-N2.jdx');">Add calc. C3H3O4-N2</button></td>
+
+</tr>
+<tr>
+<td>MS2UV 1215</td>
+<td><button onclick="addExperimental('ms2uv-exp1215.jdx');">MS2UV 1215</button></td>
+<td><button onclick="addCalculated('ms2uv1215HO3P-S.jdx');">HO3P-S</button></td>
+<td><button onclick="addCalculated('ms2uv1215CH3O2.jdx');">CH3O2</button></td>
+<td><button onclick="addCalculated('ms2uv1215O3.jdx');">O3.jdx</button></td>
+<td><button onclick="addCalculated('ms2uv1215HO3P-S.jdx');">HO3P-S</button></td>
+</tr>
+<tr>
+<td>Ru12N24O24C216H216</td>
+<td><button onclick="addExperimental('Ru12N24O24C216H216-exp.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('Ru12N24O24C216H216.jdx');">Add calc.</button></td>
+<td><button onclick="addCalculated('Ru12N24O24C216H216+3.jdx');">Add calc. +3</button></td>
+<td><button onclick="addCalculated('Ru12N24O24C216H216+4.jdx');">Add calc. +4</button></td>
+</tr>
+<tr>
+<td>Test</td>
+<td><button onclick="addExperimental('test.jdx');">Add exp.</button></td>
+</tr>
+<tr>
+<td>ProjectUSB</td>
+<td><button onclick="addExperimental('Sample1PeakID1.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('C14H21N7.jdx');">Add calc.</button></td>
+<td><button onclick="addCalculated('C21H28N4O2.jdx');">Add calc. +3</button></td>
+<td><button onclick="addCalculated('C21H34N2O3.jdx');">Add calc. +4</button></td>
+<td><button onclick="addCalculated('C22H27F3N4O2.jdx');">Add calc. +</button></td>
+</tr>
+<tr>
+<td>ProjectUSB-2</td>
+<td><button onclick="addExperimental('Sample1PeakID2.jdx');">Add exp.</button></td>
+<td><button onclick="addCalculated('C14H21N7.jdx');">Add calc.</button></td>
+<td><button onclick="addCalculated('C21H28N4O2.jdx');">Add calc. +3</button></td>
+<td><button onclick="addCalculated('C21H34N2O3.jdx');">Add calc. +4</button></td>
+<td><button onclick="addCalculated('C22H27F3N4O2.jdx');">Add calc. +</button></td>
+</tr>
+<tr>
+</table>
+
+<br>
+
+<br><br>
+jSONResult: for details about the fitting process.
+<br>
+<textarea id="jSONResult" rows=13 cols=150>
+</textarea> 
+<script language="javascript">
+
+var cont=0;
+
+
+function fitPrediction() {
+	
+	nemo.createNewSpectrum('diff');
+	var script = 'var experimental=getSpectraData("experimental");';
+	script+='var  predictions = new Array();';
+	script+='var max='+cont+';';
+	script+='for(i=0;i<max;i++)';
+	script+='	predictions[i]=getSpectraData("theoretical"+i);';
+	script+='var result=massFitting(experimental,predictions);';
+	script+='jsonResult.put(result);';
+	script+='var nbPoints=experimental.getNbPoints();';
+	script+='var peakWidth=result.getDouble("gaussParam");';
+	script+='var globalShift=result.getDouble("globalShift");';
+	script+='for(i=0;i<max;i++){';
+	script+='	shift(predictions[i],globalShift);';
+	script+='	gaussian(predictions[i],experimental,peakWidth);';
+	script+='}';
+	script+='var diffSpectrum = getSpectraData("diff");';
+	script+='var x=defaultAPI.getJavaArray_double(nbPoints);';
+	script+='var y=defaultAPI.getJavaArray_double(nbPoints);';
+	script+='for(i=0;i<nbPoints;i++){';
+	script+='	x[i]=(experimental.getSpectraDataX())[i];';
+	script+='	y[i]=(experimental.getSpectraDataY())[i];';
+	script+='}';
+	script+='defaultAPI.defineSpectraData(diffSpectrum,x,y);';
+	script+='diffSpectrum.setFirstX(experimental.getFirstX());';
+	script+='diffSpectrum.setLastX(experimental.getLastX());';
+	script+='diffSpectrum.setDataType(experimental.getDataType());';
+	script+='if(experimental.isDataClassPeak())';
+	script+='	diffSpectrum.setDataClass(diffSpectrum.DATACLASS_PEAK);';
+	script+='var factors=result.optJSONObject(\'factors\');';
+	script+='if(factors==null)';
+	script+='	factors=jsonResult;';
+	script+='for(i=0;i<max;i++){';
+	script+='	factor=factors.get(i).get(\'y\')/predictions[i].getMaxY();';
+	script+='	addSpectraDatas(predictions[i],null,factor,1,0);';
+	script+='	addSpectraDatas(diffSpectrum,predictions[i],1,-1,0);';
+	script+='	spectraDisplay.getSpectra("theoretical"+i).setLocation(0,-10);';
+	script+='	spectraDisplay.getSpectra("theoretical"+i).setMultFactor(0.9*factors.get(i).get(\'y\')/experimental.getMaxY()/factor);';
+	script+='}';
+	
+	var jsonString =nemo.runScript(script);
+	nemo.setColor('red');
+
+	var jSONResult=eval("("+jsonString+")");
+	
+	document.getElementById("globalShift").value=jSONResult[0].globalShift;
+	document.getElementById("gaussParam").value=jSONResult[0].gaussParam;
+	document.getElementById("windowPoints").value=jSONResult[0].windowPoints;
+	document.getElementById("similarity").value=jSONResult[0].similarity;
+	document.getElementById("R").value=jSONResult[0].R;
+	document.getElementById("jSONResult").value=jsonString;
+	
+}
+
+function addExperimental(jcamp) {
+	//nemo.addJcamp(jcamp);
+	nemo.addJcamp(jcamp,"experimental");
+}
+
+function addCalculated(jcamp) {
+	nemo.addJcamp(jcamp,"theoretical"+cont);
+	cont++;
+	//nemo.addJcamp(jcamp);
+	//nemo.scaleSpectrum(0.25);
+	nemo.setColor('dark green');
+	//nemo.vMoveSpectrum(150);
+}
+
+
+</script>
+
+	
+	</body>
+
+</html>

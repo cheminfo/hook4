@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+	  archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+	  codebase="../../" width="800" height="600" name="nemo">
+	</applet>
+
+
+<br>
+<h2>800 MHz</h2>
+<button onclick="nemo.addJcamp('fid/eb-800-DQD.dx');">Add FID DQD</button>
+<button onclick="nemo.addJcamp('fid/eb-800-qseq.dx');">Add FID qseq</button>
+<button onclick="nemo.addJcamp('fid/eb-800-qsim.dx');">Add FID qsim</button>
+
+<h2>Other</h2>
+
+<button onclick="nemo.addJcamp('fid/fid-dpx400.dx');">Add FID dpx400</button>
+<button onclick="nemo.addJcamp('fid/fid-500.dx');">Add FID 500</button>
+<button onclick="nemo.addJcamp('fid/fid-500.dx');">Add FID 500</button>
+
+<p>
+<button onclick="transfer()">Transfer</button> <button onclick="reapply()">Reapply</button>
+<br>
+<script language="javascript">
+function transfer() {
+	xml=nemo.getXML();
+	textarea=document.getElementById("xmlContent");
+	textarea.value=xml;
+	nemo2.setXML(xml);
+}
+
+function reapply() {
+	textarea=document.getElementById("xmlContent");
+	nemo2.setXML(textarea.value);
+}
+
+</script>
+
+	<applet code="org.cheminfo.hook.nemo.Nemo"  
+	 archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+	 codebase="../../" width="600" height="400" name="nemo2">
+	</applet>
+
+<textarea id="xmlContent" rows=20 cols=100></textarea>
+
+<br>
+
+	
+	</body>
+
+</html>

@@ -1,0 +1,20 @@
+<nemo.SpectraDisplay uniqueID="1" horRefSpectrumID="6" leftLimit="10.00526" rightLimit="-0.008221938882814256" movementType="3" relHeight="1.0" bottomLimit="10.005" relWidth="1.0" topLimit="-0.008221938882814256" relY="0.0" nbLinks="0" relX="0.0" vScale="true" is2D="true" primaryColor="255,0,0" verRefSpectrumID="5" hScale="true" absoluteYScale="false" >
+<nemo.HorizontalScale nbLinks="0" primaryColor="0,0,255" uniqueID="2" >
+</nemo.HorizontalScale>
+<nemo.VerticalScale nbLinks="0" primaryColor="0,0,255" uniqueID="3" >
+</nemo.VerticalScale>
+<nemo.Spectra hasPredictionLabels="1" isSmooth="true" uniqueID="4" integralsBaseArea="0.0" url="file:////Users/lpatiny/Documents/workspace/hook3/src/tests/nemo/mdea/mdea-cosy.dx" magFactor="0.9" lastX="-0.008221938882814256" relHeight="0.775" isVertical="false" firstX="10.005" secondaryColor="255,255,0" hasIntegrals="1" relWidth="0.8500000000000001" relY="0.15" integralsRelBottom="0.07407133069145587" nbLinks="0" relX="0.15" lowerContour="4.0" hasPeakLabels="1" is2D="1" primaryColor="255,127,0" integralsMagFactor="1.0" >
+<nemo.Spectra.Process>
+</nemo.Spectra.Process>
+</nemo.Spectra>
+<nemo.Spectra hasPredictionLabels="1" isSmooth="true" uniqueID="5" integralsBaseArea="0.0" url="file:////Users/lpatiny/Documents/workspace/hook3/src/tests/nemo/mdea/mdea.dx" magFactor="0.9" lastX="-0.007961938882819505" relHeight="0.15" isVertical="true" firstX="10.00526" secondaryColor="255,255,0" hasIntegrals="1" relWidth="0.5391573482428115" relY="0.0" integralsRelBottom="0.38270187523918864" nbLinks="0" relX="-0.10435303514376998" lowerContour="-Infinity" hasPeakLabels="1" is2D="0" primaryColor="255,127,0" integralsMagFactor="1.0" >
+<nemo.Spectra.Process>
+baselineCorrectionHW(spectraData,34,10000.0);
+</nemo.Spectra.Process>
+</nemo.Spectra>
+<nemo.Spectra hasPredictionLabels="1" isSmooth="true" uniqueID="6" integralsBaseArea="0.0" url="file:////Users/lpatiny/Documents/workspace/hook3/src/tests/nemo/mdea/mdea.dx" magFactor="0.9" lastX="-0.007961938882819505" relHeight="0.15" isVertical="false" firstX="10.00526" secondaryColor="255,255,0" hasIntegrals="1" relWidth="0.8500000000000001" relY="0.0" integralsRelBottom="0.38270187523918864" nbLinks="0" relX="0.15" lowerContour="-Infinity" hasPeakLabels="1" is2D="0" primaryColor="255,127,0" integralsMagFactor="1.0" >
+<nemo.Spectra.Process>
+baselineCorrectionHW(spectraData,34,10000.0);
+</nemo.Spectra.Process>
+</nemo.Spectra>
+</nemo.SpectraDisplay>

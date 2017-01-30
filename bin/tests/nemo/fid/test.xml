@@ -1,0 +1,15 @@
+<nemo.SpectraDisplay uniqueID="1" bottomLimit="-6513213.444173955" is2D="false" vScale="false" relWidth="1.0" primaryColor="255,0,0" nbLinks="0" movementType="3" leftLimit="12.030790968902924" relY="0.0" relHeight="1.0" relX="0.0" topLimit="1.0747294337388228E8" rightLimit="-0.9867879696957598" hScale="true" >
+<nemo.HorizontalScale nbLinks="0" uniqueID="2" >
+</nemo.HorizontalScale>
+<nemo.VerticalScale nbLinks="0" uniqueID="3" >
+</nemo.VerticalScale>
+<nemo.Spectra hasPredictionLabels="1" isSmooth="false" uniqueID="4" integralsBaseArea="0.0" url="file:///Users/lpatiny/Documents/workspace7/hook3/src/tests/nemo/fid/fid-500.dx" magFactor="0.9" lastX="-0.9867879696957598" relHeight="0.925" isVertical="false" firstX="12.030790968902924" secondaryColor="255,255,0" hasIntegrals="1" relWidth="1.0" relY="-0.02012072434607646" integralsRelBottom="0.10876067214095382" nbLinks="0" relX="0.0" lowerContour="-Infinity" hasPeakLabels="1" is2D="0" primaryColor="0,0,0" integralsMagFactor="1.0" >
+<nemo.Spectra.Process>
+brukerSpectra(spectraData,70);
+zeroFilling(spectraData,16384,0);
+fourierTransform(spectraData);
+phaseCorrection(spectraData,-0.18608562924688954,0.20438725946111447);
+baselineCorrectionHW(spectraData,60,10000.0);
+</nemo.Spectra.Process>
+</nemo.Spectra>
+</nemo.SpectraDisplay>

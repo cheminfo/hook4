@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf8">
+	</head>
+
+	<body>
+
+	<table>
+	<tr>
+	<td>
+		<applet code="org.cheminfo.hook.nemo.Nemo"  id="nemo" 
+			archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+			codebase="../../../" width="800" height="500" name="nemo">
+		</applet><br>
+		From: <input type="text" value=1 name="from" size=4 id="from"> to <input type="text" value=10 name="to" size=4 id="to"> ppm. 
+		Frequency <input type="text" value=400000000 name="frequency" size=4 id="frequency"> Hz.
+		Line Width <input type="text" value=1 name="lineWidth" size=4 id="lineWidth"> Hz.
+		Max Cluster <input type="text" value=8 name="maxClusterSize" size=4 id="maxClusterSize">
+		<button onclick="simulateJW('simulationSimple')">simple</button><button onclick="simulateJW('simulationComplex')">complex</button>
+	</td>
+	<td><INPUT type="button" value="Transfer" onClick="transfer();"></td>
+	<td>
+		<applet code="org.cheminfo.hook.nemo.Nemo"
+				archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+				codebase="../../../" width="600" height="400" id="nemo2" name="nemo2"> </applet>
+	</td>
+	
+	</tr></table>
+
+<table>
+<tr><th>Script</th><th>JSON answer</th><th>XML</th></tr>
+<tr>
+<td>
+<textarea id="theScript" cols=40 rows=4>
+var spectraData=getSpectraData("spectraData");
+simulateNMRSpectrum(spectraData, OPTIONS);
+fourierTransform(spectraData);
+addNoise(spectraData,100000000);
+</textarea>
+</td>
+<td>
+<textarea id="theScript2" cols=40 rows=4>
+var spectraData=getSpectraData("spectraData");
+var result = assignment2H(spectraData, OPTIONS);
+out.println(result);
+paintPeaks("spectraData",result);
+</textarea>
+</td>
+<td>
+<textarea id="jsonout" cols=40 rows=4></textarea>
+</td>
+<td>
+<textarea id="xmlout" cols=40 rows=4></textarea>
+</td>
+</tr>
+</table>
+
+
+<br>
+<script language="javascript">
+var nemo=document.getElementById("nemo");
+var nemo2=document.getElementById("nemo2");
+
+function simulateJW(textareaID) {
+	var spectraData=nemo.createNewSpectrum('spectraData');
+	var textarea=document.getElementById(textareaID);
+	var from = document.getElementById("from").value;
+	var to = document.getElementById("to").value;
+	var lw = document.getElementById("lineWidth").value;
+	var frequency = document.getElementById("frequency").value;
+	var maxCluster = document.getElementById("maxClusterSize").value;
+	
+	var options='"'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", '+frequency+','+from+', '+to+', '+lw+', "PPM", '+maxCluster;
+	
+	//var toExecute=document.getElementById("theScript").innerHTML.replace(/OPTIONS/,options);
+	var toExecute=document.getElementById("theScript").value.replace(/OPTIONS/,options);
+	var test=nemo.runScript("");
+	document.getElementById("jsonout").value=nemo.runScript(toExecute);
+
+	//Adding the peaks assignment
+	toExecute=document.getElementById("theScript2").value.replace(/OPTIONS/,options);
+	document.getElementById("jsonout").value=nemo.runScript(toExecute);
+	
+}
+</script>
+
+<textarea id="simulationSimple" rows=5 cols=100>
+1	1H	2			1	2	d	7.597	3	d	2.264
+2	1H	5			1	3	d	20
+3	1H	6			1
+</textarea>
+<br>
+<br>
+<textarea id="simulationComplex" rows=5 cols=100>
+5	1H	6.707			1	8	d	14.689	9	d	7.597
+6	1H	3.919			1	10	d	7.012	11	d	7.012	12	d	7.012
+7	1H	3.919			1	10	d	7.012	11	d	7.012	12	d	7.012
+8	1H	4.793			1	5	d	14.689	9	d	2.264
+9	1H	4.738			1	5	d	7.597	8	d	2.264
+10	1H	1.233			1	6	d	7.012	7	d	7.012
+11	1H	1.233			1	6	d	7.012	7	d	7.012
+12	1H	1.233			1	6	d	7.012	7	d	7.012
+</textarea>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	function transfer() {
+	var xml = document.nemo.getXML();
+	nemo2.setXML(xml);
+	var element = document.getElementById("xmlout");
+		if (element) {
+		element.value = xml;
+		
+		} else {
+			alert("no output element");
+		}
+		
+	}
+</script>
+
+</body>
+
+</html>

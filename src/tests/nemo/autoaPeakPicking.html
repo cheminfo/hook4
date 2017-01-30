@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<title>JCAMP Visualiser</title>
+<script type="text/javascript">
+
+
+function setOutput(value) {
+	value=value+"";
+	alert(escape(value));
+	var element = document.getElementById("stdout");
+	if (element) {
+		element.value = value.replace("<","&lt;").replace(">","&gt;");
+	} else {
+		alert("no output element");
+	}
+}
+
+function getOutput(value) {
+	var element = document.getElementById("stdout");
+	if (element) {
+		return element.value.replace("&lt;","<").replace("&gt;",">");
+	} else {
+		alert("no output element");
+	}
+}
+
+function getNmrTable(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var nmrTable=nemoElement.getNmrTable();
+	setOutput(nmrTable);
+}
+
+function getXY(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var spectraData=nemoElement.getSpectraData();
+	setOutput(spectraData.toXY());
+}
+
+function getJcamp(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var spectraData=nemoElement.getSpectraData();
+	setOutput(spectraData.toJcamp());
+}
+
+function addJcampFromTextarea(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var spectraData=nemoElement.addJcamp(document.getElementById("jcampTest").value);
+}
+
+function getJSON(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var json=nemoElement.getJSON();
+	setOutput(json);
+}
+
+
+
+function getNmrHtml(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var nmrHtml=nemoElement.getNmrHtml();
+	setOutput(nmrHtml);
+}
+
+function getHOSETable(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var nmrTable=nemoElement.getHoseCodes4Assignment();
+	setOutput(nmrTable);
+}
+
+function simulate2D() {
+	var form = document.simForm;
+	var minDistance = document.simForm.maxDistance.value;
+	var maxDistance = document.simForm.minDistance.value;
+	var nucleus1 = document.simForm.nucleus1.value;
+	var nucleus2 = document.simForm.nucleus2.value;
+	var inputData = document.theForm.prediction.value;
+	document.nemo.simulate2DSpectrum(inputData,nucleus1,
+			nucleus1,minDistance,maxDistance,
+			true);
+}
+
+function predict2D() {
+	var form = document.simForm;
+	var minDistance = document.simForm.maxDistance.value;
+	var maxDistance = document.simForm.minDistance.value;
+	var inputData = document.theForm.prediction.value;
+	document.nemo.addPrediction(inputData,
+			minDistance,maxDistance);
+}
+
+
+function addExperiment(){
+	var num = document.experiment.expNumber.value;
+	//alert('experimental/cosy_'+num+".jdx");
+	nemo.addJcamp('experimental/cosy_'+num+".jdx");
+	nemo.addJcampVertical('experimental/h1_'+num+".jdx");
+	nemo.setMolfileFromUrl('experimental/mol_'+num+".mol");
+	nemo2.addJcamp('experimental/hmbc_'+num+".jdx");
+	nemo2.addJcampVertical('experimental/h1_'+num+".jdx");
+	nemo2.setMolfileFromUrl('experimental/mol_'+num+".mol");
+}
+
+function addHSQC(){
+	var num = document.experiment.expNumber.value;
+	nemo2.addJcamp('experimental/hsqc_'+num+".jdx");
+	nemo2.setColor('red');
+}
+</script>
+
+
+</head>
+
+<body bgcolor="white">
+
+<p>
+<table border=1>
+	<tr>
+		<td valign="top">
+		<applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+			codebase="../../" width="600" height="600" name="nemo" id="nemo">
+			<param name="OPTIONS" value="smart,tools,undo,flags,colors,insert,processing,test"/>
+		</applet> <br>
+		<form name="experiment">Experiment number <select name="expNumber">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select> 
+		<INPUT type="button" value="Add spectra"
+			onclick="addExperiment();">
+		<INPUT type="button" value="Reset" onclick="nemo2.clearAll();nemo.clearAll();"> 
+		<INPUT type="button" value="Superimpose HSQC"
+			onclick="addHSQC();">
+		<br>
+		</form>
+		</td>
+
+		<td valign="top"><applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+			codebase="../../" width="600" height="600" name="nemo2" id="nemo2">
+			<param name="OPTIONS" value="smart,tools,undo,flags,colors,insert,processing,test"/>
+			</applet> <br>	
+		</td>
+
+
+
+	</tr>
+</table>
+
+</html>

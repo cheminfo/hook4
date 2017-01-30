@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title></title>
+	</head>
+
+	<body bgcolor="white">
+
+<script language="javascript">
+
+function addFlexi()
+{
+	hook.setDataFromFlexiEx(document.form.table.value);
+	loadFields();
+	loadModes();
+}
+
+
+function loadFields() {
+        while (document.form.measureCombo.length>0) {
+                document.form.measureCombo.remove(0);
+        }
+        var values=document.hook.getDisplayableFieldsString()+"";
+        var fields=values.split(/[\t]/);
+        var opt=document.createElement("option");
+        opt.appendChild(document.createTextNode("TYPE"));
+        opt.setAttribute("value","TYPE");
+        document.form.measureCombo.appendChild(opt);
+
+        for (var i=0; i<fields.length; i++) {
+                var opt=document.createElement("option");
+                opt.appendChild(document.createTextNode(""+fields[i]));
+                opt.setAttribute("value",""+fields[i]);
+                document.form.measureCombo.appendChild(opt);
+        }
+        if (fields.length>0) {
+                document.form.measureCombo.selectedIndex=1;
+        } else {
+                document.form.measureCombo.selectedIndex=0;
+        }
+}
+
+
+function loadModes() {
+        while (document.form.modeCombo.length>0) {
+                document.form.modeCombo.remove(0);
+        }
+
+        var values=document.hook.getAvailableModes()+"";
+        var fields=values.split(/[\t]/);
+
+        for (var i=0; i<fields.length; i++) {
+                var opt=document.createElement("option");
+                opt.appendChild(document.createTextNode(""+fields[i]));
+                opt.setAttribute("value",""+fields[i]);
+                document.form.modeCombo.appendChild(opt);
+        }
+ 
+        document.form.modeCombo.selectedIndex=0;
+}
+
+function performCorrection()
+{
+	document.hook.performParabolicCorrection();
+	loadFields();
+}
+
+function performNormalisation()
+{
+	document.hook.performNormalisation();
+	loadFields();
+}
+
+function testLC()
+{
+	window.open("");
+}
+</script>
+
+	<p>
+	<applet codebase="../.." code="org.cheminfo.hook.zedcalculator2.ZedCalculator2.class" width="1000" height="700" name="hook" MAYSCRIPT>
+	</applet>
+
+<script language="javascript">
+        setTimeout("loadData(); loadModes()",100);
+//        setTimeout("loadData(); loadFields()",100);
+</script>
+
+	<form name="form">
+		<INPUT type="button" value="Add" onClick=addFlexi()>
+		<INPUT type="button" value="XML COPY" onClick="	document.form.table.value=hook.getXML();">
+		<INPUT type="button" value="Inject XML" onClick="hook.setXML(form.table.value);">
+		<INPUT type="button" value="Dummy Inject XML" onClick="dummy.setXML(form.table.value);">
+		<INPUT type="button" value="ZED" onClick="hook.setZedMode('zed')">
+		<INPUT type="button" value="ZED PRIME" onClick="hook.setZedMode('zed-prime')">
+		<INPUT type="button" value="Neg And Samples" onClick="hook.setZedMode('neg_and_samples')">
+		<INPUT type="button" value="Correction" onClick="performCorrection()">
+		<INPUT type="button" value="Normalisation" onClick="performNormalisation()">
+		<INPUT type="button" value="Test1" onClick="testLC()">
+		<INPUT type="button" value="Test2" onClick="hook.testJS()">
+		<SELECT name="measureCombo" onchange="document.hook.setVisibleField(document.form.measureCombo.value)"></SELECT><p>
+		<SELECT name="modeCombo" onchange="document.hook.setZedMode(document.form.modeCombo.value)"></SELECT>
+	
+		</SELECT>
+
+		<p>
+		<textarea name="table" rows="10" cols="100"></textarea>
+
+	</form>
+
+
+	
+	</body>
+
+</html>

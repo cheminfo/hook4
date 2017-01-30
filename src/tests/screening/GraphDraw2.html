@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser by Damiano Banfi</title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet codebase="../.." archive="ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/blas.jar" code="org.cheminfo.hook.graphdraw2.GraphDraw2.class" width="1000" height="750" name="hook" cache_option="No">
+	</applet>
+
+	<form name="form">
+		<INPUT type="button" value="Add Serie" onClick="hook.addSerieFromFlexi(document.form.table.value, document.form.serieName.value, 'point', 'x', 'y', 'xErr', 'yErr', document.form.color.value, '')">
+
+		<INPUT type="button" value="Fit Sigmoid" onClick="hook.fitSigmoid(document.form.serieName.value, document.form.lockTop.checked, document.form.topValue.value, document.form.lockBottom.checked, document.form.bottomValue.value, document.form.lockRate.checked, document.form.rateValue.value)">
+		<INPUT type="button" value="Fit Sigmoid" onClick="hook.fitSigmoidLMA(document.form.serieName.value, document.form.lockTop.checked, document.form.topValue.value, document.form.lockBottom.checked, document.form.bottomValue.value, document.form.lockRate.checked, document.form.rateValue.value)">
+		<p>
+		Name: <textarea name='serieName' rows='1' cols='15'></textarea><p>
+		Color: <textarea name='color' rows='1' cols='15'></textarea><p>
+		Lock Top <input type="checkbox" name="lockTop"><textarea name='topValue' rows='1' cols='15'></textarea><br> 
+		Lock Bottom <input type="checkbox" name="lockBottom"><textarea name='bottomValue' rows='1' cols='15'></textarea><br> 
+		Lock Rate <input type="checkbox" name="lockRate"><textarea name='rateValue' rows='1' cols='15'></textarea><br> 
+
+		<INPUT type="button" value="getXML" onclick="document.form.xmlTable.value=hook.getXml()" /><p>
+		<INPUT type="button" value="setXML" onclick="hook.setXml(document.form.xmlTable.value)" /><p>
+
+		<textarea name="table" rows="10" cols="100"></textarea>
+		<textarea name="xmlTable" rows="10" cols="100"></textarea>
+
+	</form>
+
+
+	
+	</body>
+
+</html>

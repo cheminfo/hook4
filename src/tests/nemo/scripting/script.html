@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf8">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+One of the way to run script is to make the applet run the script in an interactive mode.<p>
+For this you first need to add the spectra (or create new one with createNewSpectrum). Naming the spectra will allow to retrieve them in the javascript code using getSpectraData('spectrumName').
+
+<p>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+		code="org.cheminfo.hook.nemo.Nemo"  archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+		codebase="../../../" width="800" height="600" name="nemo" id="nemo">
+	</applet>
+
+<script language="javascript">
+
+var nemo=document.getElementById("nemo");
+
+var spectrumExperimental=nemo.addJcamp("Al22O16Me35-exp.jdx","experimental");
+var spectrumTheoretical=nemo.addJcamp("Al22O16Me35.jdx","theoretical0");
+
+
+
+function fitPrediction() {
+	
+	var script = 'var experimental=getSpectraData("experimental");';
+	script += 'var url="http://www.chemcalc.org/cheminfo/servlet/org.chemcalc.ChemCalc?resolution=0.01&mf=";'; 
+	script += 'var mfs=["C24H30N6O2H+","C22H27F3N4O2H+","C21H34N2O3H+","C21H28N4O2H+"];';
+	script += 'var predictions = new Array();';
+	script += 'var i=0;';
+	script += 'for (i=0;i<mfs.length;i=i+1) {';
+	script += 'predictions[i]= loadJCamp(url+mfs[i]);';
+	script += '}';
+	script += 'var result=massFitting(experimental,predictions);';
+	script +='jsonResult.put(result);';
+
+
+	var jsonString =nemo.runScript(script);
+	nemo.setColor('red');
+
+	var jSONResult=eval("("+jsonString+")");
+		
+	document.getElementById("result").value=jsonString;
+	
+}
+
+<br>
+
+Myscript: 
+<textarea id="theScript" cols=80 rows=10>
+
+var experimental=getSpectraData("experimental");
+var predictions=getSpectraData("theoretical");
+
+massFitting(experimental,predictions);
+
+</textarea>
+
+<button onclick="fitPrediction()">Run Script</button>
+<br>Result:
+<textarea id="result" cols=80 rows=10>
+</textarea>
+
+</body>
+
+</html>

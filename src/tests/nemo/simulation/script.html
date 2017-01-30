@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf8">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+One of the way to run script is to make the applet run the script in an interactive mode.<p>
+For this you first need to add the spectra (or create new one with createNewSpectrum). Naming the spectra will allow to retrieve them in the javascript code using getSpectraData('spectrumName').
+
+<p>
+	<applet code="org.cheminfo.hook.nemo.Nemo"  
+			archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+			codebase="../../../" width="800" height="600" name="nemo" id="nemo">
+	</applet>
+
+<script language="javascript">
+
+var nemo=document.getElementById("nemo");
+
+var spectrumTheoretical=nemo.addJcamp("Al22O16Me35.jdx","theoretical");
+
+
+</script>
+<br>
+
+Myscript: 
+<textarea id="theScript" cols=80 rows=10>
+var theoretical=getSpectraData("theoretical");
+
+var valor =  obtainFormula(theoretical);
+
+out.println(valor);
+
+
+</textarea>
+
+<button onclick="document.getElementById('result').innerHTML=nemo.runScript(document.getElementById('theScript').innerHTML)">Run Script</button>
+<br>Result:
+<textarea id="result" cols=80 rows=10>
+</textarea>
+
+</body>
+
+</html>

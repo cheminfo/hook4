@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hook4.makejar" basedir="." default="all">
+	<property name="depdir" location="dependencies" />
+	<taskdef resource="proguard/ant/task.properties" classpath="../library/lib/proguard4_9.jar" />
+
+
+	
+	<!-- include rhino for scripting ? -->
+	<property name="use_rhino" value="false" />
+
+	<!-- read in properties from files: this makes the buildfile slimmer -->
+	<property file="./builder.properties/default.properties" />
+	<property file="./builder.properties/scripting.properties" />
+	<property file="./builder.properties/math.properties" />
+	<property file="./builder.properties/screening.properties" />
+
+	
+	
+	<target name="propconfig">
+		<echo>Java home is ${java.home}</echo>
+		<!-- this seems cumbersome but ant does not allow to alter properties! -->
+		<condition property="pglibs" value="${mac_libs}">
+			<os family="mac" />
+		</condition>
+		<condition property="pglibs" value="${windows_libs}">
+			<os family="windows" />
+		</condition>
+		<condition property="pglibs" value="${linux_libs}">
+			<os family="unix" />
+		</condition>
+		<condition property="rhino_call" value="extract_rhino" else="dummy">
+			<istrue value="${use_rhino}" />
+		</condition>
+		<tstamp>
+			<format property="build_time" pattern="yyyy-MM-dd-HH" timezone="Europe/Zurich" />
+		</tstamp>
+		<echo>Current build time ${build_time}</echo>
+		<echo>Creating build properties file</echo>
+		<propertyfile file="./bin/build.properties">
+			<entry key="build_time" value="${build_time}" />
+		</propertyfile>
+	</target>
+
+	<!--
+	To begin with extract all required jars into the dependencies directory 
+	-->
+	<target name="prepare" depends="propconfig">
+		<antcall target="clean">
+		</antcall>
+		<mkdir dir="${depdir}" />
+
+		<unjar dest="${depdir}">
+			<fileset dir="../library/lib">
+				<include name="blas.jar" />
+				<include name="lapack.jar" />
+				<include name="xerbla.jar" />
+				<include name="colt.jar" />
+				<include name="json.jar" />
+				<include name="concurrent.jar" />
+				<include name="jfftpack.jar" />
+				<include name="f2jutil.jar" />
+				<include name="cheminfo.md5.jar" />
+				<include name="cheminfo.js.jar" />
+				<include name="lingpipe-2.4.0.jar" />
+				<include name="httpclient-4.3.jar" />
+				<include name="httpcore-4.3.jar" />
+				<include name="httpmime-4.3.jar" />
+				<include name="commons-logging-1.1.3.jar" />
+				<include name="commons-codec-1.6.jar" />
+				<include name="commons-lang3-3.0.1.jar" />
+				<include name="commons-email-1.3.1.jar" />
+				<include name="joda-time-2.1.jar" />
+
+				<include name="servlet.jar" />
+				<include name="iText-2.1.4.jar" />
+				<include name="joda-time-2.1.jar" />
+
+				<include name="batik*.jar" />
+			</fileset>
+		</unjar>
+
+		<!--
+                iText is in dbcreator project and Lims project so it does not have to be here except if we want to generate
+                pdf from the application !
+                <unjar src="../library/lib/iText-2.1.4.jar" dest="${depdir}" />
+                <unjar src="../library/lib/cheminfo.js.jar" dest="${depdir}" />
+        -->
+		
+		<antcall target="${rhino_call}">
+		</antcall>
+	</target>
+
+	<target name="extract_rhino">
+		<echo>!!! USING RHINO !!!</echo>
+		<unjar src="../library/lib/cheminfo.js.jar" dest="${depdir}" />
+	</target>
+
+	<target name="dummy" />
+
+	<!--
+	Extract required jars for scripting
+	-->
+	<target name="prepdevelkit" depends="propconfig">
+		<antcall target="clean">
+		</antcall>
+		<mkdir dir="${depdir}" />
+		<unjar src="../library/lib/blas.jar" dest="${depdir}" />
+		<unjar src="../library/lib/lapack.jar" dest="${depdir}" />
+		<unjar src="../library/lib/xerbla.jar" dest="${depdir}" />
+		<unjar src="../library/lib/jfftpack.jar" dest="${depdir}" />
+		<unjar src="../library/lib/f2jutil.jar" dest="${depdir}" />
+		<unjar src="../library/lib/cheminfo.js.jar" dest="${depdir}" />
+		<unjar src="../library/lib/cheminfo.md5.jar" dest="${depdir}" />
+		<unjar src="../library/lib/json.jar" dest="${depdir}" />
+		<unjar src="../library/lib/httpclient-4.1.3.jar" dest="${depdir}" />
+		<unjar src="../library/lib/httpcore-4.1.4.jar" dest="${depdir}" />
+		<unjar src="../library/lib/httpmime-4.1.3.jar" dest="${depdir}" />
+		<unjar src="../library/lib/commons-logging-1.1.3.jar" dest="${depdir}" />
+		<unjar src="../library/lib/commons-lang3-3.0.1.jar" dest="${depdir}" />
+		<unjar src="../library/lib/commons-io-2.4.jar" dest="${depdir}" />
+		<unjar src="../library/lib/commons-codec-1.6.jar" dest="${depdir}" />
+		<unjar src="../library/lib/commons-email-1.3.1.jar" dest="${depdir}" />
+		<unjar src="../library/lib/javax.mail.jar" dest="${depdir}" />
+		<unjar src="../library/lib/jblas-1.2.3.jar" dest="${depdir}" />
+		
+		<!--unjar src="../library/lib/hook4-proprietary.jar" dest="${depdir}" /-->
+		<!-- put -->
+		<javadoc sourcefiles="src/org/cheminfo/hook/nemo/SpectraData.java" destdir="${depdir}">
+
+		</javadoc>
+		<!-- Build the library file for proguard to so that it can find the correct references to
+		the classes  -->
+		<jar destfile="jars/${scripting_lib_jar}">
+			<fileset dir="bin">
+				<include name="**/nemo/filters/*.class" />
+				<include name="**/scripting/*/*.class" />
+				<include name="**/function/*.class" />
+				<include name="**/function/basic/*.class" />
+				<include name="**/function/scripting/ScriptingInstance.class" />
+				<include name="**/iplugin/*.class" />
+			</fileset>
+		</jar>
+		<!--
+		Build the jar file that contains the sources that will be included in the development kit 
+		-->
+		<jar destfile="jars/${scripting_src_jar}">
+			<fileset dir="src">
+				<include name="**/nemo/filters/*.java" />
+				<include name="**/scripting/*.java" />
+				<include name="**/scripting/*/*.java" />
+				<include name="**/function/*.java" />
+				<include name="**/function/basic/*.java" />
+				<include name="**/function/scripting/*" />
+				<include name="**/iplugin/*.java" />
+			</fileset>
+		</jar>
+	</target>
+
+
+	<!--
+	Clean the dependency directory
+	-->
+	<target name="clean">
+		<delete dir="${depdir}" />
+	</target>
+
+
+	<target name="all" depends="nemo,nemo-appli">
+	</target>
+
+	<!--
+	Build hook4-full jar 
+	-->
+	<target name="hook4-full" depends="prepare">
+		<mkdir dir="jars" />
+		<delete file="jars/hook4-full.jar" />
+		<jar destfile="jars/hook4-full.jar" manifest="src/manifest.txt" level="9">
+			<fileset dir="bin">
+				<exclude name="lib/*" />
+				<exclude name="tests/**" />
+				<exclude name="**/tests/**" />
+				<exclude name="**/tests/*.class" />
+				<exclude name="**/nmr/prediction" />
+				<exclude name="plugins/*" />
+				<exclude name="ext-lib/*" />
+			</fileset>
+			<fileset dir="${depdir}">
+				<exclude name="META-INF/**" />
+				<exclude name="**/*.java" />
+				<exclude name="**/*.mol" />
+				<exclude name="**/*dx" />
+				<exclude name="**/*.dtd" />
+				<exclude name="**/README" />
+				<exclude name="**/version.properties" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<!--
+	Build nemo-full jar. A hook4 without JS 
+	-->
+	<target name="nemo-full" depends="prepare">
+		<mkdir dir="jars" />
+		<delete file="jars/nemo-full.jar" />
+		<jar destfile="jars/nemo-full.jar" manifest="src/manifest.txt" level="9">
+			<fileset dir="bin">
+				<exclude name="lib/*" />
+				<exclude name="tests/**" />
+				<exclude name="ext-lib/**" />
+				<exclude name="nemo*" />
+				<exclude name="nemo*" />
+				<exclude name="**/*.js" />
+				<exclude name="**/tests/**" />
+				<exclude name="**/tests/*.class" />
+				<exclude name="**/nmr/prediction" />
+				<exclude name="**/*.json" />
+				<exclude name="plugins/*" />
+				<exclude name="plugin.properties" />
+				<exclude name="molfiles*" />
+				
+			</fileset>
+			<fileset dir="${depdir}">
+				<exclude name="META-INF/**" />
+				<exclude name="**/*.java" />
+				<exclude name="**/*.mol" />
+				<exclude name="**/*dx" />
+				<exclude name="**/*.dtd" />
+				<exclude name="**/README" />
+				<exclude name="org/joda/**" />
+				<exclude name="org/mozilla/**" />
+				<exclude name="org/apache/**" />
+				<exclude name="**/version.properties" />
+			</fileset>
+			<fileset dir="src">
+				<include name="plugin.properties" />
+			</fileset>
+		</jar>
+	</target>
+	<!--
+	Build the nemo package
+	-->
+	<target name="nemo" depends="nemo-full">
+		<proguard>
+			${pglibs}
+			
+			-injars      jars/nemo-full.jar
+			-outjars     jars/nemo.jar
+			${default_options}
+			
+			-defaultpackage org.cheminfo.hook
+			<!-- default public -->
+			${default_applet}
+			${scripting_libs}
+			${spectradata_plug}
+		</proguard>
+		<!-- For testing the scripting languaje with a plugin" -->
+
+	</target>
+	<target name="nemo-sim" depends="nemo-full">
+		<proguard>
+			${pglibs}
+			
+			-injars      jars/nemo-full.jar
+			-outjars     jars/nemo-sim.jar
+	
+			${default_options}
+			
+			-defaultpackage org.cheminfo.hook
+			<!-- default public -->
+			${default_public}
+			<!-- scripting -->
+			${scripting_min}
+		</proguard>
+		<!-- For testing the scripting languaje with a plugin" -->
+
+	</target>
+
+	<target name="nemo-appli" depends="hook4-full">
+		<proguard>
+			${pglibs}
+	
+			${library_jars}
+			
+			-injars      jars/hook4-full.jar
+			-outjars     jars/hook3servlet.jar
+	
+			${default_options}
+			
+			<!-- 			-defaultpackage org.cheminfo.hook -->
+				
+			<!-- default public -->
+			${default_public}
+			<!-- keep public in application -->
+			${appli_public}
+			<!-- scripting -->
+			${scripting_libs}
+			
+			${default_applet}
+			${spectradata_plug}
+		</proguard>
+	</target>
+
+	<target name="devel_docs">
+		<mkdir dir="${devel_doc_tmp}" />
+		<javadoc destdir="${devel_doc_tmp}" public="true" classpath="src">
+
+		</javadoc>
+		<jar destfile="jars/devel_kit.jar">
+			<fileset dir="${devel_doc_tmp}">
+			</fileset>
+		</jar>
+		<!--
+		<delete dir="${devel_doc_tmp}">
+		</delete>
+		-->
+	</target>
+
+</project>

@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>nmrdb.org</title>
+<link rel="stylesheet" href="/themes/nmrdb/styles/styles.css" type="text/css" />
+</head>
+
+<body>
+
+<script language=javascript>
+window.onresize=checkFrameSize;
+		
+function checkFrameSize() { 
+
+theIframes=document.getElementsByTagName("iframe");
+if (theIframes.length>0) {
+	if (theIframes[0].height>100) {
+	var winW = 630, winH = 460;
+	if (parseInt(navigator.appVersion)>3) {
+	 if (navigator.appName=="Netscape") {
+	  winW = window.innerWidth;
+	  winH = window.innerHeight;
+	 }
+	 if (navigator.appName.indexOf("Microsoft")!=-1) {
+	  winW = document.body.offsetWidth;
+	  winH = document.body.offsetHeight-300;
+	 }
+	}
+
+
+	theIframes[0].height=winH-200;
+	theIframes[0].width=winW-260;
+	}
+	}
+}
+
+</script>
+
+
+
+
+
+<center>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="left" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/themes/nmrdb/images/rigla_sus.jpg" style="background-repeat:repeat-x; background-position:top">
+        <tr>
+          <td width="5" background="/themes/nmrdb/images/colt_stanga_sus.jpg" style="background-position:top left; background-repeat:no-repeat"></td>
+          <td height="15" colspan="3" align="right" valign="top"><table height="16" border="0" cellpadding="2" cellspacing="1">
+            <tr>
+              <td align="center" valign="middle" background="/themes/nmrdb/images/colt_butoane_sus.jpg" bgcolor="#FFA37F" style="background-repeat:no-repeat; background-position:bottom left"><a href="" class="menu2">&nbsp;&nbsp;Home&nbsp;&nbsp;</a></td>
+              <td align="center" valign="middle" background="/themes/nmrdb/images/colt_butoane_sus.jpg" bgcolor="#FFA37F" style="background-repeat:no-repeat; background-position:bottom left"><a href="/contact" class="menu2">&nbsp;&nbsp;Contact&nbsp;&nbsp;</a></td>
+            </tr>
+          </table></td>
+          <td width="7" background="/themes/nmrdb/images/colt_dreapta_sus.jpg" style="background-position:right top; background-repeat:no-repeat"></td>
+        </tr>
+        <tr>
+          <td height="52" background="/themes/nmrdb/images/rigla_stanga.gif" style="background-repeat:repeat-y; background-position:left" >&nbsp;</td>
+          <td height="60" colspan="3" align="left" valign="middle" class="lineover"><table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="189" height="55" align="left" valign="middle" background="/themes/nmrdb/images/logo.jpg"   style="background-repeat:no-repeat; background-position:top left"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="42" height="33">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left" valign="top" class="motto">Database of NMR spectra </td>
+                </tr>
+              </table></td>
+              </tr>
+          </table></td>
+          <td background="/themes/nmrdb/images/rigla_dreapta.jpg" style="background-position:right; background-repeat:repeat-y">&nbsp;</td>
+        </tr>
+        
+        <tr>
+          <td background="/themes/nmrdb/images/rigla_stanga.gif" style="background-repeat:repeat-y; background-position:left">&nbsp;</td>
+          <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="left" valign="top">
+              
+              
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="left" valign="top" background="/themes/nmrdb/images/bgtablemenu.gif">
+                  <table border="0" cellspacing="2" cellpadding="3">
+                    <tr>
+                      <td><ul   class='menu'><li ><a  href='/about'>About</a> </li><li ><a  href='/search'>Search</a> </li><li ><a  href='/resurector'>NMR Resurrector</a> </li><li ><a  href='/nemo'>NMR Assigner</a> </li><li class="current" ><span>NMR Predictor</span></li><li ><a  href='/links'>Links</a> </li><li ><a  href='/contact'>Contact</a> </li></ul></td>
+                    </tr>
+                  </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <div style="padding:1px 10px 0;">
+                      <h1>NMR Predictor </h1>
+                  
+                  <!-- CONTENT COLUMN -->
+                    		
+This page allows to predict the spectrum from the chemical structure based on "Spinus". You may find more information on the authors <a href="http://www2.chemie.uni-erlangen.de/services/spinus/index.html" target="_blank">website</a>.<p>
+
+<b>References</b><br>
+<ul>
+<li>
+Aires-de-Sousa, M. Hemmer, J. Gasteiger, &#8220;<a target="_blank"
+ href="http://pubs.acs.org/isubscribe/journals/alljournals/jtext.cgi?ancham/74/i01/abs/ac010737m">Prediction
+   of 1H NMR Chemical Shifts Using Neural Networks</a>&#8221;, <i>Analytical Chemistry</i>,
+       <b>2002</b>, <i>74</i>(1), 80-90 most of the proton descriptors are
+ explained. In that work they were used for the prediction of 1H NMR chemical
+ shifts by counterpropagation neural networks.
+<li>
+Y. Binev, J. Aires-de-Sousa,
+"<a target="_blank"
+ href="http://pubs.acs.org/cgi-bin/sample.cgi/jcisd8/2004/44/i03/abs/ci034228s.html">Structure-Based
+    Predictions of 1H  NMR Chemical Shifts Using Feed-Forward Neural Networks</a>",
+        <i>J. Chem.     Inf. Comp. Sci.</i>, <b>2004</b>,&nbsp;<span
+ class="text"><i><span class="textitalics">44</span></i><span
+ class="text">(3), 940-945 </span></span>the development of the FFNNs and
+the selection of descriptors is explained.
+<li>
+Y. Binev, M. Corvo, J.
+Aires-de-Sousa, "<a target="_blank"
+ href="http://pubs.acs.org/cgi-bin/sample.cgi/jcisd8/2004/44/i03/abs/ci034229k.html">The
+    Impact of Available  Experimental Data on the Prediction of 1H NMR Chemical
+    Shifts by Neural Networks</a>",      <i>J. Chem.     Inf. Comp. Sci.</i>,
+        <b>2004</b>, <span class="text"><i><span class="textitalics">44</span></i><span
+ class="text">(3), 946-949</span></span> the use of an additional memory
+is described. </p>
+</ul>
+
+
+
+ 	<script language="javascript">
+		
+		var SIMULATOR_URL="/tools/predictor.cgi";
+		
+		var requester=null;
+		
+		
+		function initializeRequester() {
+		/* Even though the XMLHttpRequest object allows us to call the open() method multiple times, 
+			each object can really only be used for one call, as the onreadystatechange event doesn't 
+			update again once readyState changes to "4" (in Mozilla). Therefore, we have to create a new 
+			XMLHttpRequest object every time we want to make a remote call.
+		*/
+		
+		 /* Check for running connections */ 
+			if (requester != null && requester.readyState != 0 && requester.readyState != 4) {
+				requester.abort(); 
+			} 
+			
+			try { 
+				requester = new XMLHttpRequest(); 
+			} catch (error) { 
+				try { 
+					requester = new ActiveXObject("Microsoft.XMLHTTP"); 
+				} catch (error) { 
+					requester = null;
+					return false; 
+				} 
+			}
+			return true; 
+		}
+		
+
+
+		function getPrediction(molfile) {
+			if (initializeRequester()) {
+				/* Changes in the readyState variable can be monitored using a special onreadystatechange listener,
+				so we'll need to set up a function to handle the event when the readyState is changed.
+				*/
+
+				parameters="molfile="+escape(molfile);
+				requester.onreadystatechange = showPage;
+				
+				requester.open('POST', SIMULATOR_URL, true);
+				requester.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				requester.setRequestHeader("Content-length", parameters.length);
+				requester.setRequestHeader("Connection", "close");
+				requester.send(parameters);
+ 			} else {
+ 				alert("Unable to initialize Ajax");
+ 			}
+		}
+		
+		function showPage() {
+			// 0   Uninitialised
+			// 1   Loading
+			// 2   Loaded
+			// 3   Interactive
+			// 4   Completed
+			if (requester.readyState == 4) {
+				if (requester.status == 200) {
+				
+				
+					// we need to convert the answer to a inline assignment (ACS type) so that we can use it directly
+					var acsStyle="";
+					var tabStyle="";
+					var answer=requester.responseText;
+					document.form.tableformat.value=answer;
+	//		alert(answer);
+
+					answer=answer.replace(/\n\r/g,"\r");
+					answer=answer.replace(/\n/g,"\r");
+					var lines=answer.split("\r");
+
+
+					// we will create the tab-delimited prediciton data
+					for (var i=0; i<(lines.length-1); i++) {
+						var fields=lines[i].split("\t");
+						if (fields.length>3) {
+							tabStyle+=fields[0]+"\t1H\t"+fields[2]+"\t\t\t1\t";
+							var numberJ=fields[3];
+                                                        if (numberJ>0) {
+                                                                for (var j=0; j<numberJ; j++) {
+                                                                        tabStyle+=fields[j*3+4]+"\td\t"+fields[j*3+6]+"\t";
+                                                                }
+							}
+							tabStyle+="\r";
+						}
+					}
+					document.form.tableformat.value=tabStyle;
+
+
+					//TODO we should take into account symmetrical molcules
+						
+					// we will suppress the lines that are identical and add in the last column the integration
+					var numberIdentical=1;
+					for (var i=0; i<(lines.length-1); i++) {
+						
+						// we should not take into account the first column ...
+						var currentLine=lines[i];
+						var nextLine=lines[i+1];
+						
+						if (currentLine.indexOf("\t")>0) currentLine=currentLine.substring(currentLine.indexOf("\t"));
+						if (nextLine.indexOf("\t")>0) nextLine=nextLine.substring(nextLine.indexOf("\t"));
+						
+						if (currentLine==nextLine) {
+							numberIdentical++;
+							lines[i]="";
+						} else {
+							lines[i]+="\t"+numberIdentical;
+							numberIdentical=1;
+						}
+						
+						
+					}
+					
+					
+					for (var i=0; i<lines.length; i++) {
+						var fields=lines[i].split("\t");
+						
+						if (fields.length>3) {
+						
+							var hID=fields[0];
+							var cID=fields[1];
+							var delta=fields[2];
+							var numberJ=fields[3];
+							var integration=fields[numberJ*3+4];
+						
+							if (acsStyle.length>0) acsStyle+=", ";
+							
+							acsStyle+=delta;
+							if (numberJ>0) {
+								var multiplicity="";
+								var multiplet=2;
+								var coupling="";
+
+								var jCoupling=new Array();
+								for (var j=0; j<numberJ; j++) {
+									jCoupling[j]=fields[j*3+6];
+								}
+
+								jCoupling.sort(sortNumber);
+
+								for (var j=0; j<numberJ; j++) {
+									// what about the same coupling constant ???
+									// we should check and compile the multiplicity
+									if ((j<(numberJ-1)) && (jCoupling[j]==jCoupling[j+1])) {
+										multiplet+=1;
+									} else {
+										multiplicity+=getMultiplet(multiplet);
+										if (coupling.length>0) coupling+=", ";
+										coupling+="J="+jCoupling[j];
+										multiplet=2;
+									}
+								}
+								acsStyle+=" ("+cID+", "+integration+"H, "+multiplicity+", "+coupling+")";
+							} else {
+								acsStyle+=" ("+cID+", "+integration+"H)";
+							
+							}
+						}
+					}
+
+					document.form.assignment.value=acsStyle;
+					document.nemo.clearAll();
+					document.nemo.setMolfile(document.form.molfile.value);
+					document.nemo.addSimulatedSpectrum(acsStyle);
+				}
+			}
+		}
+
+		function sortNumber(a, b) {
+			return b - a;
+		}
+
+		function getMultiplet(multiplet) {
+			switch (multiplet) {
+				case 1: 
+					return "s";
+				case 2: 
+					return "d";
+				case 3: 
+					return "t";
+				case 4: 
+					return "q";
+				case 5: 
+					return "quint";
+				case 6: 
+					return "hex";
+				case 7: 
+					return "hept";
+				case 8: 
+					return "o";
+				case 9: 
+					return "n";
+				default : 
+					return "m";
+			}
+		
+		}
+
+		function startEditor() {
+			window.open('/tools/jme/jme_window.html','JME','width=500,height=450,scrollbars=no,resizable=yes');
+		}
+	
+		function fromEditor(mol, smiles) {
+		
+		  if (smiles=="") {
+		    alert ("no molecule submitted");
+		    return;
+		  }
+		  document.form.molfile.value=mol;
+		  document.nemo.clearAll(); 
+		  document.nemo.setMolfile(document.form.molfile.value);
+		  getPrediction(document.form.molfile.value);
+		}
+
+
+		</script>
+		
+		
+		
+		<p>
+		
+<form action="/cheminfo/servlet/org.cheminfo.hook.appli.HookServlet" method="post" target="_blank" name="form" onSubmit="document.form.xmlString.value=document.nemo.getXML(); return true;">
+	
+		<table width="172" border="0" cellspacing="2" cellpadding="0">
+			<tr>
+				<td><applet code="org.cheminfo.hook.nemo.Nemo"
+				archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+			   codebase="../../../" width="800" height="500" name="nemo">
+					<param name="options" value="polarnitro">
+					You need to <a href="http://www.java.com/getjava/">install java 1.4</a> or later to see this applet.
+				</applet></td>
+				<td valign="top">
+					<table width="180" border="0" cellspacing="1" cellpadding="3">
+						<tr>
+							<th valign="top" colspan=2>How to proceed ?</th>
+						</tr>
+						<tr>
+							<th valign="top" bgcolor="#ffffff"></th>
+								<td bgcolor="#ffffff">
+								<p>If you are really in hurry, just click <a href="#" onclick="document.form.molfile.value=document.form.ethylvinylether.value; document.nemo.clearAll(); document.nemo.setMolfile(document.form.molfile.value); getPrediction(document.form.molfile.value); return false;">here</a> to get a predicted spectrum of ethylvinylether.</p>
+								</td>
+						</tr>
+						<tr>
+							<th valign="top" bgcolor="#cccccc">1.</th>
+
+<td bgcolor="#cccccc"><a href="#" onclick="startEditor(0); return false;" title="Draw fragment">Draw a molecule,</a> test with <a href="#" onclick="document.form.molfile.value=document.form.ethylvinylether.value; document.nemo.clearAll(); document.nemo.setMolfile(document.form.molfile.value); getPrediction(document.form.molfile.value); return false;">ethylvinylether</a> or upload a molfile:<p>
+                                                                        <iframe height=58 width=266 src="/tools/upload-mol2.php"></iframe>
+
+			<p>
+
+Molfile:<br>
+<textarea name="molfile" style="display: block;" rows="6" cols="40">
+</textarea>
+
+<textarea name="ethylvinylether" style="display: none;">ethylvinylether.mol
+  
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+   -1.4289    0.2062    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.7145   -0.2062    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000    0.2062    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.7145   -0.2062    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.4289    0.2062    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  2  1  2  0      
+  3  2  1  0      
+  4  3  1  0      
+  5  4  1  0      
+M  END
+</textarea></p>
+
+			<p></p>
+						</tr>
+						<tr>
+							<th valign="top" bgcolor="#eeeeee">2.</th>
+							<td bgcolor="#eeeeee">
+			You are now ready to predict the NMR spectrum. Just click <a href="#" onclick="getPrediction(document.form.molfile.value); return false;">here</a> to proceed.
+							</td>
+						</tr>
+						<tr>
+							<th valign="top" bgcolor="#cccccc">3.</th>
+							<td bgcolor="#cccccc">
+								You may also copy the ACS assignment 
+								
+			<p><textarea name="assignment" rows="5" cols="40"></textarea></p>
+							</td>
+						</tr>
+						<tr><td>
+							<p><textarea name="tableformat" rows="1" cols="1"></textarea>
+						</td></tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+Size: <input type="text" value=800 name="width" size=4> x <input type="text" value=600 name="height" size=4>
+<input type="hidden" value="http://www.nmrdb.org/cheminfo/servlet/org.dbcreator.MainServlet?action=SendFieldAction&tableName=mass&fieldName=jcamp&uniqueIDValue=1984" name="url">
+<input type="hidden" value="" name="xmlString">
+<input type="hidden" value="72" name="resolution">
+<input type="hidden" value="0" name="rotate">
+<input type="hidden" value="" name="options">
+<input type="hidden" value="png" name="format">
+
+<input class="smallbutton" type="submit" onclick="document.form.rotate.value=0;document.form.resolution.value=72;document.form.format.value='png';document.form.options.value='nmrAcs,nmrTable';" value="Get Image">
+<input class="smallbutton" type="submit" onclick="document.form.rotate.value=1;document.form.width.value=1400;document.form.height.value=1000;document.form.format.value='png';document.form.resolution.value=100;document.form.options.value='print';" value="Print A4">
+<input class="smallbutton" type="submit" onclick="document.form.rotate.value=1;document.form.width.value=800;document.form.height.value=600;document.form.format.value='pdf';document.form.options.value='';" value="Get PDF">
+<input class="smallbutton" type="submit" onclick="document.form.rotate.value=0;document.form.width.value=800;document.form.height.value=600;document.form.format.value='png';document.form.resolution.value=100;document.form.options.value='print,nmrAcs,nmrTable';" value="Print Report">
+<input class="smallbutton" type="submit" onclick="simulateJW('tableformat')" value="Superimpose"><br>
+
+		</form>
+<button onclick="alert(document.nemo.getXML());">Test</button>
+
+<p>We thanks <a href="http://www.mol-net.com" target="_blank">Molecular Networks</a> for providing the predicting engine.</p>
+
+<script language="javascript">
+	function simulateJW(textareaID) {
+		textarea=document.getElementById(textareaID);
+		from = -1;
+		to = 10;
+		lw = 1;
+		maxsize = 9;
+		nemo.createNewSpectrum();
+		nemo.runScript('simulateJW2Spectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+		nemo.runScript('fourierTransform(spectraData);');
+	}
+
+	function setSmiles(smiles) {
+		if (initializeRequester()) {
+			requester.onreadystatechange = setMolfileFromWeb;				
+			var theUrl="/cheminfo/servlet/com.actelion.research.chem.MEAServlet?format=mol&smiles="+escape(smiles);
+			requester.open("GET", theUrl, true);
+ 			requester.send(null);
+
+		} else {
+ 			alert("Unable to initialize Ajax");
+ 		}		
+	}
+
+	function setMolfileFromWeb() {
+		if (requester.readyState == 4) {
+			if (requester.status == 200) {
+				document.form.molfile.value=requester.responseText;
+				document.nemo.setMolfile(document.form.molfile.value);
+				getPrediction(document.form.molfile.value);
+			}
+		}
+	}
+
+	var smiles=unescape("");
+	if (smiles.length>1) {
+		setSmiles(smiles);
+	
+	}
+
+</script>
+
+
+
+                    </div>
+                  </td>
+                </tr>
+              </table></td>
+              <td width="186" align="left" valign="top"><table width="100%" border="0" cellspacing="2" cellpadding="0">
+                <tr>
+                  <td align="left" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#efefef">
+                    <tr>
+                             <td width="43%">&nbsp;</td>
+        <td width="57%" height="22" align="center" valign="middle" background="/themes/nmrdb/images/colt_rught.jpg" bgcolor="#FF4800" class="rightmenutitle" style="background-position:left bottom; background-repeat:no-repeat">Quick search </td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="2">
+                        <tr>
+                          <td height="35" valign="middle">Search by chemical shift:<br><input name="text" type="text" size="19" id="searchText" onkeyup="if(event.keyCode==13) location='/quicksearch?searchValue=' + this.value"/></td>
+                          <td width="39" align="center" valign="middle"><table width="30" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td height="18" align="center" valign="middle" background="/themes/nmrdb/images/colt_go.jpg" bgcolor="#FFA37F" class="go" style="background-repeat:no-repeat; background-position:right top"><a href="javascript:location='/search?searchValue=' + document.getElementById('searchText').value">GO</a></td>
+                              </tr>
+                          </table></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="left" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#efefef">
+                    <tr>
+                      <td height="22" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td width="60" height="22" align="center" valign="middle" background="/themes/nmrdb/images/colt_rught.jpg" bgcolor="#FF4800" style="background-position:left bottom; background-repeat:no-repeat" class="rightmenutitle">News</td>
+                          </tr>
+                      </table></td>
+                    </tr>
+
+                    
+
+                  </table></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table></td>
+          <td background="/themes/nmrdb/images/rigla_dreapta.jpg" style="background-repeat:repeat-y; background-position:right"></td>
+        </tr>
+        <tr>
+          <td height="21" colspan="5" align="left" valign="middle" bgcolor="#E2E2E2" class="textcopyright">&nbsp;&nbsp;&nbsp;&nbsp;  Copyright: Luc Patiny - Ecole Polytechnique F&eacute;d&eacute;rale de Lausanne - <a href="http://cheminformatics.epfl.ch">cheminformatics.epfl.ch</a></td>
+          </tr>
+        <tr>
+          <td height="9" background="/themes/nmrdb/images/rigla_stanga.gif" style="background-repeat:repeat-y; background-position:left"></td>
+          <td colspan="3" align="left" valign="top">&nbsp;</td>
+          <td background="/themes/nmrdb/images/rigla_dreapta.jpg" style="background-repeat:repeat-y; background-position:right"></td>
+        </tr>
+        <tr>
+          <td height="7" background="/themes/nmrdb/images/colt_stanga_jos.jpg" style="background-repeat:no-repeat; background-position:bottom left"></td>
+          <td height="7" background="/themes/nmrdb/images/rigla_jos.jpg" style="background-position:bottom; background-repeat:repeat-x"></td>
+          <td width="109" height="7" background="/themes/nmrdb/images/rigla_jos.jpg" style="background-repeat:repeat-x; background-position:bottom"></td>
+          <td height="7" background="/themes/nmrdb/images/rigla_jos.jpg"></td>
+          <td height="7" background="/themes/nmrdb/images/colt_dreapta+jos.jpg"></td>
+        </tr>
+        
+      </table></td>
+    </tr>
+  </table>
+</center>
+
+<script language=javascript>
+checkFrameSize();
+</script>
+</body>
+</html>

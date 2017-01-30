@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>SOM Demo</title>
+	
+<SCRIPT language="javascript">
+
+function getColumnNames(anObject) {
+	number=anObject.getAttribute("id").replace(/[a-zA-Z]/g,"");
+	if (document.getElementById("random"+number).checked) {
+		dimension=document.getElementById("randomDimension"+number).value;
+		var columnNames= new Array();
+		for (i=0; i<dimension; i++) {
+			columnNames[i]="dim "+(i+1);
+		}
+		setColumns(columnNames);
+	} else {
+		analyzeHeader(document.getElementById("data"+number));
+	}
+}
+
+
+function analyzeHeader(textarea) {
+	endOfLine=0;
+	position=textarea.value.indexOf("\n");
+	if (position>0) endOfLine=position;
+	position=textarea.value.indexOf("\r");
+	if ((position>0) & (position<endOfLine)) endOfLine=position;
+	if (position=0) return;
+	columnNames=textarea.value.substring(0,endOfLine).split("\t");
+	
+	setColumns(columnNames);
+	
+}
+
+function setColumns(columnNames) {
+
+	// we should apply this to the table to define which columns are used and not used
+	// here we will construct the table manualy, it will be faster to do ...
+	theTable="<table>";
+	theTable+="<tr><th>Parameter</th><th>Use for calculation</th><th>type</th></tr>";
+	for (i=0; i<columnNames.length; i++) {
+		theTable+="<tr><td>"+columnNames[i]+"</td>";
+		theTable+="<td><input type='checkbox' checked id='columnUsed"+i+"'></td>";
+		theTable+="<td><select name='selectName' size=1><option selected value=''>Value</option>";
+		theTable+="<option value='smiles'>SMILES</option>";
+		theTable+="<option value='cctelionID'>Actelion ID</option>";
+		theTable+="</select></td></tr>";
+	}
+	theTable+="</table>";
+	
+	document.getElementById("parametersSelection").innerHTML=theTable;
+	
+	// we shoud apply this to the pop-up menu
+}
+
+function toggleVisibility(serieName)
+{
+	hook.setSerieVisibility( serieName, !hook.getSerieVisibility(serieName) );
+}
+function toggleRandom(checkBox) {
+	number=checkBox.getAttribute("id").replace(/[a-zA-Z]/g,"");
+	if (checkBox.checked) {
+		document.getElementById("data"+number).setAttribute("disabled","true");
+		document.getElementById("randomNumber"+number).removeAttribute("disabled");
+		document.getElementById("randomDimension"+number).removeAttribute("disabled");
+	} else {
+		document.getElementById("data"+number).removeAttribute("disabled");	
+		document.getElementById("randomNumber"+number).setAttribute("disabled","true");
+		document.getElementById("randomDimension"+number).setAttribute("disabled","true");
+	}
+	
+}
+
+function startCalculation() {
+	// we should send the data with the use flag and the "mimeType"
+	
+
+	if (document.form.random0.checked) {
+		document.hook.addRandomData(0, document.form.randomNumber0.value, document.form.randomDimension0.value);
+	} else {
+		// we should use real data
+	}	
+	
+	
+	document.hook.setGridSize(document.form.gridSize.value);
+	document.hook.setNumberEpoch(document.form.numberEpoch.value);
+	
+	
+
+	
+	document.hook.startCalculation();
+}
+
+/*
+	We should update the view
+*/
+function updateView(fromObject) {
+	idName=fromObject.getAttribute("id");
+	number=idName.replace(/[a-zA-Z]/g,"");
+	setName=document.getElementById("viewName"+number).value;
+	type=idName.replace("view","").replace(/[0-9]/g,"");
+	if (type=="Show") {
+		document.hook.setSerieVisibility(setName,fromObject.checked);
+	}
+
+}
+
+</SCRIPT>
+</head>
+
+	<body bgcolor="white">
+	
+	<form name="form">
+	<h1>We will set up the conditions for the SOM:</h1>
+			<table>
+				<tr>
+<td>Grid size (number of cols and rows):</td>
+				<td><input type="text" name="gridSize" value="20" size="6" maxlength="20"></td>
+			</tr>
+				<td>Number of epoch:</td>
+				<td><input type="text" name="numberEpoch" value="30" size="6"></td>
+				</tr>
+				<tr>
+			<td>Initial learning speed</td>
+				<td><input type="text" name="initialLearningSpeed" value="0.1" size="6"></td>
+			</tr><tr>
+			<td>Epoch effect on distance</td>
+				<td><select name="epochDistanceEffect" size="1">
+						<option selected value="one">Linear decrease to 0</option>
+
+					</select></td>
+			</tr><tr>
+			<td>Epoch effect on influence</td>
+				<td><select name="epochInfluenceEffect" size="1">
+						<option selected value="one">Linear decrease to 0</option>
+					</select></td>
+				<tr>
+<td>Learning data:<br>
+					tab-delimited format with the first line containing the column name</td>
+				<td><textarea id="data0" rows="4" cols="67" onchange="getColumnNames(this);" disabled>
+Red	Green	Blue
+0.406006254	0.261358854	0.268486175
+0.856125532	0.518611099	0.993419553
+0.742221531	0.93074517	0.441204968
+0.238165588	0.990281528	0.953575279
+0.014072786	0.373685929	0.553209576
+0.869998948	0.926148706	0.057412285
+0.137960734	0.583508267	0.744078085
+0.011504938	0.935824428	0.382100429
+0.553433772	0.860777022	0.909280414
+0.0096672	0.240630918	0.092161632
+0.147390332	0.209026429	0.4554452
+				</textarea><br>
+						<input type="checkbox" id="random0" onclick="toggleRandom(this); getColumnNames(this);" checked> Use 
+						<input type="text" id="randomNumber0" onchange="getColumnNames(this);" value="1000"> random objects of dimension 
+						<input type="text" id="randomDimension0" onchange="getColumnNames(this);" value="3" size="6"></td>
+			</tr>
+				<tr>
+				<td></td>
+				<td><button onclick="analyzeHeader(document.form.data0); return false;">Analyze data</button></td>
+			</tr>
+			</table>
+			<h1>Set parameters use and types:</h1>
+
+			<span id="parametersSelection"></span>
+
+			<h1></h1>
+			<p></p>
+			<table><tr><td>
+	
+	</td><td valign="top">
+						<table width="180" border="1" cellspacing="2" cellpadding="0">
+							<tr>
+								<td>Use multi-processor</td>
+								<td><input type="checkbox" name="checkboxName" value="checkboxValue"></td>
+								<td></td>
+							</tr>
+						</table>
+						<br>
+						<button onclick="startCalculation(); this.setAttribute('disabled','true'); return false;">Start calculation</button></td></tr></table>
+			
+			<applet code="org.cheminfo.hook.som.SomDemo"
+				codebase="../../" width="620" height="640" name="hook" id="hook">
+	
+			<h1>Describe representation:</h1>
+			<table width="921" border="1" cellspacing="2" cellpadding="0">
+				<tr>
+					<th>Data set name</th>
+					<th>Show</th>
+					<th>Representation</th>
+					<th>Red</th>
+					<th>Blue</th>
+					<th>Green</th>
+				</tr>
+				<tr>
+					<td><input type="text" id="viewName0" value="Learning Set" disabled size="14"></td>
+					<td><input type="checkbox" id="viewShow0" checked onchange="updateView(this);"></td>
+					<td><select id="viewType0" onchange="updateView(this);" size="1">
+							<option value="one">background</option>
+							<option value="two">background 50%</option>
+							<option selected value="three">dot</option>
+						</select></td>
+					<td><select id="viewRed0" size="1" onchange="updateView(this);">
+							<option value="neighbour">Neighbour</option>
+						</select></td>
+					<td><select id="viewBlue0" size="1" onchange="updateView(this);">
+							<option value="neighbour">Neighbour</option>
+						</select></td>
+					<td><select id="viewGreen0" size="1" onchange="updateView(this);">
+							<option value="neighbour">Neighbour</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="viewName1" value="Test Set 1" disabled size="14"></td>
+					<td><input type="checkbox" id="viewShow1" onchange="updateView(this);"></td>
+					<td><select id="viewType1" onchange="updateView(this);" size="1">
+							<option value="one">background</option>
+							<option value="two">background 50%</option>
+							<option value="three">dot</option>
+						</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="viewName2" value="Test Set 2" disabled size="14"></td>
+					<td><input type="checkbox" id="viewShow2" onchange="updateView(this);"></td>
+					<td><select id="viewType2" size="1" onchange="updateView(this);">
+							<option value="one">background</option>
+							<option value="two">background 50%</option>
+							<option value="three">dot</option>
+						</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="viewName3" value="Test Set 3" disabled size="14"></td>
+					<td><input type="checkbox" id="viewShow3" onchange="updateView(this);"></td>
+					<td><select id="viewType3" onchange="updateView(this);" size="1">
+							<option value="one">background</option>
+							<option value="two">background 50%</option>
+							<option value="three">dot</option>
+						</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="viewName3" value="Cell value" disabled size="14"></td>
+					<td><input type="checkbox" id="viewShow3" onchange="updateView(this);"></td>
+					<td><select id="viewType3" onchange="updateView(this);" size="1">
+							<option value="one">background</option>
+							<option value="two">background 50%</option>
+							<option value="three">dot</option>
+						</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="viewName3" value="Neighbour" disabled size="14"></td>
+					<td><input type="checkbox" id="viewShow3" checked onchange="updateView(this);"></td>
+					<td><select id="viewType3" onchange="updateView(this);" size="1">
+							<option value="one">background</option>
+							<option value="two">background 50%</option>
+							<option value="three">dot</option>
+						</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>Test set data 1:<br>
+						tab-delimited format, no header</td>
+					<td><textarea id="data1" rows="4" cols="67" disabled></textarea><br>
+						<input type="checkbox" id="random1" onclick="toggleRandom(this);" checked> Use 
+						<input type="text" id="randomNumber1" value="1000"> random objects of dimension 
+						<input type="text" id="randomDimension1" value="3" size="6"></td>
+				</tr>
+				<tr>
+					<td>Test set data 2:<br>
+						tab-delimited format, no header</td>
+					<td><textarea id="data2" rows="4" cols="67" disabled></textarea><br>
+						<input type="checkbox" id="random2" onclick="toggleRandom(this);" checked> Use 
+						<input type="text" id="randomNumber2" value="1000"> random objects of dimension 
+						<input type="text" id="randomDimension2" value="3" size="6"></td>
+				</tr>
+				<tr>
+					<td>Test set data 3:<br>
+						tab-delimited format, no header</td>
+					<td><textarea id="data3" rows="4" cols="67" disabled></textarea><br>
+						<input type="checkbox" id="random3" onclick="toggleRandom(this);" checked> Use 
+						<input type="text" id="randomNumber3" value="1000"> random objects of dimension 
+						<input type="text" id="randomDimension3" value="3" size="6"></td>
+				</tr>
+			</table>
+			<button onclick="document.form.output.value=document.hook.getMatchEvolution();">Get match evolution</button><button onclick="document.form.output.value=document.hook.getMatchEvolution();">Get cell population</button> <button onclick="toggleVisibility('learningData');">Toggle Visibility</button>
+			<p><textarea name="output" rows="10" cols="100"></textarea></p>
+		</form>
+
+	
+	</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<title>JCAMP Visualiser</title>
+</head>
+
+<body bgcolor="white">
+<table border=1>
+<tr><td><p><applet code="org.cheminfo.hook.nemo.Nemo"
+	archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+	codebase="../../../" width="800" height="500" name="nemo"> </applet> <br>
+From: <input type="text" value=0 name="from" size=4 id="from">
+to: <input type="text" value=5 name="to" size=4 id="to"> ppm.
+Line Width: <input type="text" value=3.4 name="lineWidth" size=4	id="lineWidth"> Hz 
+<br>Max. Cluster size: <input type="text" value=7 name="maxsize" size=4	id="maxsize">
+Frequecy: <input type="text" value=400000000 name="freq" size=4	id="freq"> Hz
+</td>
+	<td>
+	</td>
+</table>
+<table border=1>
+	<tr>
+		<td>
+		<button style="background-color:green" onclick="simulateJW2('simulationSimple1')">Simulate spectrum</button>
+		<button onclick="nemo.addJcamp('4-methyl.jdx');">Add spectrum</button>
+		</td><td>
+		<br>Fit region
+		<br>From: <input type="text" value=6 name="fitfrom" size=4 id="fitfrom">
+			to: <input type="text" value=9 name="fitto" size=4 id="fitto"> ppm.
+		<br><button onclick="fitPrediction();">Fit prediction</button>
+		<br>
+		</td>
+	</tr>
+</table>
+<script language="javascript1.2">
+
+function simulateJW2(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	frq= document.getElementById("freq").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateJW2Spectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'",'+frq+','+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.setColor('dark green');
+	nemo.addSmartPeaksForSimulation(textarea.value,from,to,lw,"PPM",maxsize);
+}
+
+function compare() {
+	var s1 = (nemo.getSpectraData(0)).getArrayYasString();
+    var s1 = s1 + "";
+    y1 = s1.split("|");
+    var s2 = nemo.getSpectraData(1).getArrayYasString();
+    var s2 = s2 + "";
+    y2 = s2.split("|");
+    var diff = 0;
+    for(var i=0;i<y1.length;i=i+1){
+		//sum=sum+1;
+		diff = diff+(y1[i]-y2[i])*(y1[i]-y2[i]);	
+	}
+    alert('Diference '+diff);
+	
+}
+</script> 
+Cut and paste your system here<br>
+<textarea id="simulationSimple1" rows=13 cols=120>
+18	1H	0.891			1	14	d	6.72
+19	1H	0.891			1	14	d	6.72
+20	1H	0.891			1	14	d	6.72
+15	1H	0.895			1	14	d	6.4
+16	1H	0.895			1	14	d	6.4
+17	1H	0.895			1	14	d	6.4
+11	1H	1.16			1	8	d	6.08
+12	1H	1.16			1	8	d	6.08
+13	1H	1.16			1	8	d	6.08
+10	1H	1.2			1	9	d	14.1	8	d	8.3	14	d	5.1
+9	1H	1.39			1	10	d	14.08	14	d	8.32	8	d	6.4
+14	1H	1.71			1	15	d	6.72	16	d	6.72	17	d	6.72	18	d	6.72	19	d	6.72	20	d	6.72	9	d	8.3	10	d	5.1
+8	1H	3.85			1	10	d	8.3	9	d	6.4	11	d	6.08	12	d	6.08	13	d	6.08
+</textarea> <br>
+</body>
+
+</html>

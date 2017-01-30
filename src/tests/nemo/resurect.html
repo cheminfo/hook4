@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf8">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+<applet name="nemo" code="org.cheminfo.hook.nemo.Nemo"  
+  archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+  codebase="../../" width="800" height="600" id="nemo">
+<param name="SOURCE_FILE" value="1h.dx"></param>
+	</applet>
+<p>
+
+<span id="cdcl3">7.26 (s, CHCl3), 1.56 (s, H2O), 2.10 (s, AcOH), 2.17 (s, Acetone), 2.10 (s, Acetonitrile), 1.28 (s, tBuOH), 1.43 (s, cyclohexane), 5.30 (s, CH2Cl2), 1.21 (s, Et2O), 3.48 (s, Et2O), 8.02 (s, DMF), 2.96 (s, DMF), 2.88 (s, DMF), 3.71 (s, Dioxane), 1.25 (s, EtOH), 3.72 (s, EtOH), 2.05 (s, AcOEt), 4.12 (s, AcOEt), 1.26 (s, AcOEt), 3.76 (s, EthyleneGlycol), 0.86 (s, Grease), 1.26 (s, Grease), 3.49 (s, MeOH), 1.22 (s, isoPropanol), 4.04 (s, isoPropanol), 8.62 (s, pyridine), 7.29 (s, Pyridine), 7.68 (s, pyridine), 0.07 (s, SiliconeGrease), 1.85 (s, THF), 3.76 (s, THF), 2.36 (s, toluene), 7.17 (s, toluene), 7.25 (s, toluene), 1.03 (s, Et3N), 2.53 (s, Et3N)</span>
+</p>
+<p>
+
+	<button onclick="add(document.getElementById('cdcl3').value);">Add CDCl3 impurities</button>
+	<button onclick="set(document.getElementById('cdcl3').value);">Set CDCl3 impurities</button>
+</p>
+
+<textarea id="inputString" cols=80 rows=5>4.48 (s, 2H), 5.26 (dd, 1H, J 11.0, J 1.0 Hz), 5.75 (dd, 1H, J 17.6, J 1.0 Hz), 6.69 (dd, 1H, J 17.6, J 11.0 Hz), 7.35 (m, 4H)</textarea>
+<button onclick="add(document.getElementById('inputString').value);">Add string</button>
+
+<br>
+Angewandte Chemie<textarea id="inputString2" cols=80 rows=5>
+1H-NMR (400 MHz, CDCl3) 5.96 (dd, J1 = 10.0 Hz, J2 = 5.4 Hz, 1 H), 5.71 (dd, J1 = 
+10.1 Hz, J2 = 1.1 Hz, 1 H), 5.14 (br. s, 1 H), 4.71 (dd, J1 = 11.1 Hz, J2 = 3.7 Hz, 1 H), 
+4.07 (sept., J = 6.2 Hz, 1 H), 2.41 (dd, J1 = 17.7 Hz, J2 = 11.2 Hz, 1 H), 2.23 (dd, J1 = 
+17.7 Hz, J2 = 4.1 Hz, 1 H), 1.29 (d, J = 6.2 Hz, 3 H), 1.19 (d, J = 6.1 Hz, 3 H), 1.00 (t, 
+J = 7.8 Hz, 9 H), 0.63 (q, J = 7.8 Hz, 6 H).  </textarea>
+<button onclick="add(document.getElementById('inputString2').value);">Add string</button>
+
+<br>
+JOC<textarea id="inputString3" cols=80 rows=5>
+H-NMR (CDCl, 300 MHz) 3.68 (s, 2H), 3.70-3.74 (m, 4H), 3.93 (dd, 1H, J = 9.7, 
+J2 = 3.7), 4.49 (d, 2 H, J = 4.1), 4.56-4.61 (m, 1H), 5.12 (s, 2H), 5.81 (d, 1H, J = 7.5), 
+7.24-7.37 (m, 10H). </textarea>
+<button onclick="add(document.getElementById('inputString3').value);">Add string</button>
+
+<br>
+Tetrahedron<textarea id="inputString4" cols=80 rows=5>
+1H NMR (CDCl3, 400 MHz) d: 5.55 (d, J = 8.1 Hz, 1H, H-10 ), 4.72 (br s, 1H,  
+.79 (m, 1H, H-50 ), 3.53 (m, 2H, H-30 , H-40 ), 3.42  
+(m, 1H, H-20 ), 3.15 (dd, J = 6.0 Hz, J = 10.0 Hz, 1H, H-3), 3.00 (td, J = 11.0 Hz,  
+J = 4.5 Hz, 1H, H-19), 1.69 (s, 1H, H-30), 0.98, 0.95, 0.94, 0.83, 0.75 (all s, 5  
+3H, H-23, H-24, H-25, H-26, H-27)</textarea>
+<button onclick="add(document.getElementById('inputString4').value);">Add string</button>
+
+<br>Parenthesis<textarea id="inputString5" cols=80 rows=5>
+1H NMR (400 MHz, CDCl3): d/ppm 0.89 (t, 3H, J = 7.0 Hz, CH3), 1.23-1.45 {m, 24H, CH3(CH2)12- 
+}, 1.77 (qt, 2H, J = 7.4 Hz, -CH2CH2COO-), 2.58 (t, 2H, J = 7.5 Hz, -CH2COO-), 7.14 (d, 2H, J = 
+8.7 Hz, Ar-H), 7.26 (d, 2H, J = 8.7 Hz, Ar-H), 7.41 (dd, 1H, J = 7.8 Hz, 4.9 Hz, Ar-H), 8.30 (d, 1H, 
+J = 7.9 Hz, Ar-H), 8.51 (s, 1H, CH=N), 8.71 (dd, 1H, J = 4.7 Hz, 1.4 Hz, Ar-H), 9.02 (d, 1H, J = 
+1.4 Hz, Ar-H). 
+</textarea>
+<button onclick="add(document.getElementById('inputString5').value);">Add string</button>
+
+<br>
+J. Org. Chem.<textarea id="inputString6" cols=80 rows=5>
+1H NMR (CDCl3) δ 10.58 (b, 1H), 7.40 (d, 1H, J = 8.0 Hz), 6.19 (d, 1H, J = 7.6 Hz), 4.88 (s, 1H), 4.46 (m, 1H), 4.25 (m, 1H), 4.08 (m, 1H), 3.90−3.95 (m, 2H), 2.17 (s, 3H), 1.02 (s, 9H), 1.01 (s, 9H), 0.89 (s, 9H), 0.12 (s, 3H), 0.11 (s, 3H)</textarea>
+<button onclick="add(document.getElementById('inputString6').value);">Add string</button>
+
+
+<textarea id="xy">
+##TITLE= Al29C42H126O23 - resolution: 0.0010
+##JCAMP-DX= 5.00
+##DATA TYPE= MASS SPECTRUM
+##DATA CLASS= PEAK TABLE
+##ORIGIN= Generated spectrum based on ChemCalc www.chemcalc.org
+##SPECTROMETER/DATA SYSTEM= Based on ChemCalc isotopic distribution calculator
+##XUNITS= M/Z
+##YUNITS= RELATIVE ABUNDANCE
+##NPOINTS= 40
+##MAXY= 100
+##MINY= 0
+##PEAK TABLE= (XY..XY)
+1779.356, 0
+1781.356, 100
+1782.359, 46.71385238
+1782.36, 0.92221331
+1782.362, 1.89028354
+1783.36, 4.61106656
+1783.362, 10.3913524
+1783.363, 0.68969325
+1783.364, 0.0037138
+1783.365, 0.88235682
+1783.366, 0.01640984
+1783.368, 0.01716365
+1784.363, 2.14954718
+1784.364, 0.04481311
+1784.365, 1.46396539
+1784.366, 0.29630731
+1784.367, 0.00383472
+1784.368, 0.19613901
+1784.369, 0.01110147
+1784.371, 0.007636
+1785.364, 0.10168751
+1785.366, 0.47716811
+1785.367, 0.03060252
+1785.368, 0.14658676
+1785.369, 0.07704724
+1785.37, 0.0022316
+1785.371, 0.02667333
+1785.372, 0.00304046
+1785.374, 0.00121684
+1786.367, 0.04631304
+1786.369, 0.06693508
+1786.37, 0.00982317
+1786.371, 0.01087821
+1786.372, 0.0111283
+1786.374, 0.001907
+1787.368, 0.00112488
+1787.37, 0.00842672
+1787.372, 0.00518406
+1787.373, 0.00108354
+1789.373, 0
+##END=
+</textarea>
+<button onclick="appletElement.addJcamp(document.getElementById('xy').value);">Add XY</button>
+
+
+
+<script language="javascript">
+
+var appletElement=document.getElementById("nemo");
+
+function add(value) {
+	appletElement.addSimulatedSpectrum(value,1);
+}
+
+function set() {
+	appletElement.setSimulatedSpectrum(value,1);
+}
+
+</script>
+
+
+	</body>
+
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui>
+	<specific_button
+		class="org.cheminfo.hook.nemo.ChangeHydrogenContractionState" img="hydrogen.gif"
+		overtxt="Change hydrogen contraction state" targetPanel="specific"
+		enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.FullSpectraActionButton"
+		img="zoomfull.gif" overtxt="Full Spectra" targetPanel="specific"
+		enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.ZoomActionButton"
+		img="zoomin.gif" overtxt="Zoom (simple click for zoom out)"
+		targetPanel="specific" enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.Zoom2DActionButton"
+		img="zoom.gif" overtxt="1D / 2D Zoom (simple click for zoom out)"
+		targetPanel="specific" enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.VZoomActionButton"
+		img="zoomhin.gif" overtxt="Increase Magnification" targetPanel="specific"
+		enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.SlideActionButton"
+		img="hmove.gif" overtxt="Move Spectra Horizontally" targetPanel="specific"
+		enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.PeakPickingActionButton"
+		img="peakpicking.gif" overtxt="Peak Picking. (press SHIFT to invert logic)"
+		targetPanel="specific" enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.PeakDetectionActionButton"
+		img="autointegrate.gif" overtxt="Auto peak picking" targetPanel="specific"
+		enabled="true" applet_option="test" />
+	<specific_button class="org.cheminfo.hook.nemo.MultipletAnalysisActionButton"
+		img="multiplet.gif" overtxt="Analyze multiplet" targetPanel="specific"
+		enabled="false" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.ApodizationActionButton"
+		img="apodyse.gif" overtxt="Apodization" targetPanel="preprocessing"
+		enabled="true" applet_option="processing" />
+	<specific_button class="org.cheminfo.hook.nemo.FourierTransformActionButton"
+		img="ft.gif" overtxt="Automatic fourier transform" targetPanel="preprocessing"
+		enabled="true" applet_option="processing" />
+	<specific_button class="org.cheminfo.hook.nemo.PhaseCorrectionActionButton"
+		img="phase.gif" overtxt="Automatic phase correction" targetPanel="preprocessing"
+		enabled="true" applet_option="processing" />
+	<specific_button
+		class="org.cheminfo.hook.nemo.BaselineCorrectionActionButton" img="baseline.gif"
+		overtxt="Automatic baseline correction" targetPanel="preprocessing"
+		enabled="true" applet_option="processing" />
+	<specific_button
+		class="org.cheminfo.hook.nemo.ManualFourierTransformActionButton" img="manual_ft.gif"
+		overtxt="Manual fourier transform" targetPanel="preprocessing"
+		enabled="true" applet_option="processing" />
+	<specific_button
+		class="org.cheminfo.hook.nemo.ManualPhaseCorrectionActionButton" img="manual_phase.gif"
+		overtxt="Manual phase correction" targetPanel="preprocessing" enabled="true"
+		applet_option="processing" />
+	<specific_button
+		class="org.cheminfo.hook.nemo.ManualBaselineCorrectionActionButton"
+		img="manual_baseline.gif" overtxt="Manual baseline correction"
+		targetPanel="preprocessing" enabled="true" applet_option="processing" />
+	<specific_button class="org.cheminfo.hook.nemo.PredictSpectrumActionButton"
+		img="predictSpectrum.gif" overtxt="Predict NMR spectrum" targetPanel="specific"
+		enabled="false" applet_option="test" />
+	<specific_button class="org.cheminfo.hook.nemo.AssignPredictionActionButton"
+		img="assignPrediction.gif" overtxt="Assign prediction" targetPanel="specific"
+		enabled="true" applet_option="test" />
+	<specific_button class="org.cheminfo.hook.nemo.SmartPickingActionButton"
+		img="smartpicking.gif" overtxt="Smart Peak Picking, (press SHIFT for manual Picking)"
+		targetPanel="specific" enabled="true" applet_option="smart" />
+	<specific_button class="org.cheminfo.hook.nemo.InsertActionButton"
+		img="insert.gif" overtxt="Create an insert, just draw a rectangle"
+		targetPanel="specific" enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.IntegrateActionButton"
+		img="integrate.gif" overtxt="Integrate" targetPanel="specific"
+		enabled="true" applet_option="" />
+	<specific_button class="org.cheminfo.hook.nemo.Analysis2DActionButton"
+		img="smartpicking2d.gif"
+		overtxt="2D NMR Analysis (press SHIFT (ALT for vertical) to force new 2D Smart Peak Label)"
+		targetPanel="specific" enabled="true" applet_option="none" />
+	<specific_button class="org.cheminfo.hook.nemo.NextActionButton"
+		img="next.gif" overtxt="Next" targetPanel="specific" enabled="true"
+		applet_option="processing" />
+</ui>

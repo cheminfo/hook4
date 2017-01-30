@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+			codebase="../../" width="800" height="600" id="nemo" name="nemo">
+	</applet>
+
+<br>
+<button onclick="nemo.addJcamp('nmr/mestrec.jdx');">Mestrec</button>
+
+
+
+<button onclick="getNmrHtml('nemo');">Get NMR HTML</button>
+<button onclick="getPeakHtml('nemo');">Get Peak HTML</button>
+<br>
+
+Result:
+<textarea id="stdout" rows=10 cols=140></textarea>
+
+
+<script language="javascript">
+
+function getNmrHtml(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var nmrHtml=nemoElement.getNmrHtml();
+	setOutput(nmrHtml);
+}
+
+function getPeakHtml(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var nmrHtml=nemoElement.getPeakHtml(true);
+	setOutput(nmrHtml);
+}
+
+function setOutput(value) {
+	var element = document.getElementById("stdout");
+	if (element) {
+		element.value = value; //.replaceAll("<","&lt;").replaceAll(">","&gt;");
+	} else {
+		alert("no output element");
+	}
+}
+
+
+</script>
+
+	
+	</body>
+
+</html>

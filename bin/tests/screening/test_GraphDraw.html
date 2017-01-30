@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser by Damiano Banfi</title>
+	</head>
+
+<SCRIPT language="javascript">
+
+function transferXML()
+{
+	document.form.table.value=document.hook.getXML();
+	document.hook2.setXML(document.hook.getXML());
+}
+
+</SCRIPT>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet code="org.cheminfo.hook.graphdraw.GraphDraw.class" width="800" height="600" name="hook">
+	</applet>
+
+	<applet code="org.cheminfo.hook.graphdraw.GraphDraw.class" width="400" height="300" name="hook2">
+	</applet>
+
+
+	<form name="form">
+		<INPUT type="button" value="Add Serie from file" onClick="hook.addSerie('table1.txt', 'magenta', '')">
+		<INPUT type="button" value="Add Serie from file" onClick="hook.addSerie('table3.txt', 'cyan', '')">
+
+		<INPUT type="button" value="Transfer XML" onClick="transferXML()">
+
+		<p>
+
+		<p>
+		<textarea name="table" rows="10" cols="100"></textarea>
+
+	</form>
+
+
+	
+	</body>
+
+</html>

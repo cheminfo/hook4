@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<title>JCAMP Visualiser</title>
+</head>
+
+<body bgcolor="white">
+<table border=1>
+<tr><td><p><applet code="org.cheminfo.hook.nemo.Nemo"
+	archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/colt.jar,ext-lib/concurrent.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/hook3-proprietary.jar"
+	codebase="../../../" width="800" height="500" name="nemo"> </applet> <br>
+From: <input type="text" value=0.5 name="from" size=4 id="from">
+to <input type="text" value=6 name="to" size=4 id="to"> ppm.
+Line Width <input type="text" value=1 name="lineWidth" size=4
+	id="lineWidth"> Hz <br>Max. Cluster size <input type="text" value=9 name="maxsize" size=4
+	id="maxsize"></td>
+	<td><p align="center"><a><img src="testcase2.png" border="0" alt="2D Mol"></a></p>
+	</td>
+</table>
+<table border=1>
+	<tr>
+		<td>
+		<button style="background-color:gray" onclick="simulateJW('simulationSimple')">sim. JW(Accurate)</button>
+		<button style="background-color:green" onclick="simulateJW2('simulationSimple')">sim. JW2(Faster)</button>
+		<button style="background-color:red" onclick="simulateOT('simulationSimple')">simulate
+		Other</button>
+		<button style="background-color:orange" onclick="simulateEX('simulationSimple')">simulate
+		Exact</button>
+		<button onclick="compare()">Compare</button>
+		<br>
+		<script language="javascript1.2">
+function simulateJW(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateJWSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+function simulateJW2(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateJW2Spectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.setColor('dark green');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+function simulateOT(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.setColor('red');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+function simulateEX(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	maxsize = document.getElementById("maxsize").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateExactSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM",'+maxsize+');');
+	nemo.runScript('fourierTransform(spectraData);');
+	nemo.setColor('dark orange');
+	nemo.addSmartPeaksForSimulation(textarea.value,500000000,from,to,"PPM",maxsize);
+}
+</script>
+<textarea id="simulationSimple" rows=20 cols=120>
+86	1H	4.6			1	101	d	6.17
+87	1H	4.64			1	105	d	5.55	106	d	5.55
+88	1H	4.78			1	103	d	6.19	104	d	6.19
+90	1H	4.79			1	111	d	3.29
+92	1H	4.65			1	107	d	6.12	108	d	6.13
+93	1H	4.53			1	112	d	3.46
+94	1H	4.67			1	109	d	6.13	110	d	6.13
+97	1H	4.68			1	140	d	6.79	141	d	6.79	142	d	6.79
+98	1H	4.67			1	138	d	6.16	139	d	6.16
+99	1H	4.16			1	100	d	17.29
+100	1H	4.09			1	99	d	17.29
+101	1H	3.97			1	86	d	6.17	130	d	3.77
+102	1H	4.75			1	149	d	6.79	150	d	6.79	151	d	6.79
+103	1H	1.71			1	88	d	6.19	146	d	6.8
+104	1H	1.71			1	88	d	6.19	146	d	6.8
+105	1H	1.72			1	87	d	5.55	145	d	6.8
+106	1H	1.72			1	87	d	5.55	145	d	6.8
+107	1H	1.7			1	92	d	6.12	147	d	6.8
+108	1H	1.7			1	92	d	6.13	147	d	6.8
+109	1H	1.71			1	94	d	6.13	148	d	6.8
+110	1H	1.71			1	94	d	6.13	148	d	6.8
+111	1H	2.13			1	90	d	3.29	155	d	6.93	156	d	6.93	157	d	6.93	164	d	6.93	165	d	6.93	166	d	6.93
+112	1H	2.1			1	93	d	3.46	158	d	6.93	159	d	6.93	160	d	6.93	161	d	6.93	162	d	6.93	163	d	6.93
+113	1H	3.07			1
+114	1H	3.07			1
+115	1H	3.07			1
+116	1H	5.36			1	120	d	15.65	143	d	7.53	144	d	7.53
+117	1H	3.08			1
+118	1H	3.08			1
+119	1H	3.08			1
+120	1H	5.35			1	116	d	15.65	152	d	7.21	153	d	7.21	154	d	7.21
+121	1H	3.07			1
+122	1H	3.07			1
+123	1H	3.07			1
+124	1H	3.07			1
+125	1H	3.07			1
+126	1H	3.07			1
+127	1H	3.07			1
+128	1H	3.07			1
+129	1H	3.07			1
+130	1H	1.7			1	101	d	3.77	143	d	7.18	144	d	7.18	167	d	6.78	168	d	6.78	169	d	6.78
+131	1H	3.06			1
+132	1H	3.06			1
+133	1H	3.06			1
+135	1H	3.08			1
+136	1H	3.08			1
+137	1H	3.08			1
+138	1H	1.69			1	98	d	6.16	194	d	7.02	195	d	7.02	196	d	7.02
+139	1H	1.69			1	98	d	6.16	194	d	7.02	195	d	7.02	196	d	7.02
+140	1H	1.28			1	97	d	6.79
+141	1H	1.28			1	97	d	6.79
+142	1H	1.28			1	97	d	6.79
+143	1H	1.97			1	116	d	7.53	130	d	7.18
+144	1H	1.97			1	116	d	7.53	130	d	7.18
+145	1H	1.55			1	105	d	6.8	106	d	6.8	176	d	6.65	177	d	6.65	178	d	6.65	185	d	6.65	186	d	6.65	187	d	6.65
+146	1H	1.55			1	103	d	6.8	104	d	6.8	188	d	6.65	189	d	6.65	190	d	6.65	191	d	6.65	192	d	6.65	193	d	6.65
+147	1H	1.55			1	107	d	6.8	108	d	6.8	170	d	6.65	171	d	6.65	172	d	6.65	173	d	6.65	174	d	6.65	175	d	6.65
+148	1H	1.55			1	109	d	6.8	110	d	6.8	179	d	6.65	180	d	6.65	181	d	6.65	182	d	6.65	183	d	6.65	184	d	6.65
+149	1H	1.27			1	102	d	6.79
+150	1H	1.27			1	102	d	6.79
+151	1H	1.27			1	102	d	6.79
+152	1H	1.52			1	120	d	7.21
+153	1H	1.52			1	120	d	7.21
+154	1H	1.52			1	120	d	7.21
+155	1H	0.76			1	111	d	6.93
+156	1H	0.76			1	111	d	6.93
+157	1H	0.76			1	111	d	6.93
+158	1H	0.8			1	112	d	6.93
+159	1H	0.8			1	112	d	6.93
+160	1H	0.8			1	112	d	6.93
+161	1H	0.8			1	112	d	6.93
+162	1H	0.8			1	112	d	6.93
+163	1H	0.8			1	112	d	6.93
+164	1H	0.76			1	111	d	6.93
+165	1H	0.76			1	111	d	6.93
+166	1H	0.76			1	111	d	6.93
+167	1H	0.89			1	130	d	6.78
+168	1H	0.89			1	130	d	6.78
+169	1H	0.89			1	130	d	6.78
+170	1H	0.9			1	147	d	6.65
+171	1H	0.9			1	147	d	6.65
+172	1H	0.9			1	147	d	6.65
+173	1H	0.9			1	147	d	6.65
+174	1H	0.9			1	147	d	6.65
+175	1H	0.9			1	147	d	6.65
+176	1H	0.94			1	145	d	6.65
+177	1H	0.94			1	145	d	6.65
+178	1H	0.94			1	145	d	6.65
+179	1H	0.9			1	148	d	6.65
+180	1H	0.9			1	148	d	6.65
+181	1H	0.9			1	148	d	6.65
+182	1H	0.9			1	148	d	6.65
+183	1H	0.9			1	148	d	6.65
+184	1H	0.9			1	148	d	6.65
+185	1H	0.94			1	145	d	6.65
+186	1H	0.94			1	145	d	6.65
+187	1H	0.94			1	145	d	6.65
+188	1H	0.94			1	146	d	6.65
+189	1H	0.94			1	146	d	6.65
+190	1H	0.94			1	146	d	6.65
+191	1H	0.94			1	146	d	6.65
+192	1H	0.94			1	146	d	6.65
+193	1H	0.94			1	146	d	6.65
+194	1H	0.89			1	138	d	7.02	139	d	7.02
+195	1H	0.89			1	138	d	7.02	139	d	7.02
+196	1H	0.89			1	138	d	7.02	139	d	7.02
+</textarea> <br>
+</td>
+</body>
+</html>
+</textarea> <br>
+</td>
+</body>
+</html>

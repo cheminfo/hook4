@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf8">
+	</head>
+
+	<body>
+
+Using this webpage we will show how to display a function in the applet.
+
+We should take care that we add by default 2 spectra (onload event):
+
+
+	<table>
+	<tr>
+		<td>
+			<applet code="org.cheminfo.hook.nemo.Nemo"  id="nemo" archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/colt.jar,ext-lib/concurrent.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/hook3-proprietary.jar,ext-lib/json.jar" codebase="../../../" width="800" height="500" name="nemo">
+			</applet>
+		</td>
+		<td>
+			<INPUT type="button" value="Transfer" onClick="transfer();">
+		</td>
+		<td>
+			<applet code="org.cheminfo.hook.nemo.Nemo"
+				archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+				codebase="../../../" width="600" height="400" id="nemo2" name="nemo2">
+			</applet>
+		</td>
+	</tr>
+	</table>
+	
+	<table border=1>
+	<tr>
+		<td><h3>Spectra Data 1</h3></td> 
+		<td><h3>Spectra Data 2</h3></td>
+	</tr>
+	<tr>
+		<td><button onclick="horizontalLine(1)">Horizontal Line</button></td> 
+		<td><button onclick="horizontalLine(2)">Horizontal Line</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="diagonalLine(1)">Diagonal Line</button></td>
+		<td><button onclick="diagonalLine(2)">Diagonal Line</button></td>	
+	</tr>
+	<tr>
+		<td><button onclick="oneGaussPeak(1)">1GP</button></td>
+		<td><button onclick="oneGaussPeak(2)">1GP</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="twoGaussPeak(1)">2GP</button></td>
+		<td><button onclick="twoGaussPeak(2)">2GP</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="randomFunction(1)">Random</button></td>
+		<td><button onclick="randomFunction(2)">Random</button></td>
+	</tr>
+	<tr>
+		<button onclick="document.getElementById('result').innerHTML=nemo.runScript(document.getElementById('theScript').innerHTML)">Run Script</button>	
+	</tr>
+	<tr>
+	<tr>
+		<td>C23H27N2O4</td>
+		<td><button onclick="addExperimental();">Add exp - Calc</button></td>
+		<td><button onclick="gaussSpectrum();">Gauss.</button></td>
+	</tr>
+		<INPUT type="button" value="Reset" onclick="nemo.clearAll();">
+		<INPUT type="button" value="addSpectraDatas" onclick="addSpectra();">
+		<INPUT type="button" value="Compare Spectra" onclick="compareSpectra();">
+	</tr>
+	</table>
+<table>
+<tr><th>Script</th><th>JSON answer</th><th>XML</th></tr>
+<tr>
+<td>
+<textarea id="theScript" cols=80 rows=10>
+var theoretical=getSpectraData("theoretical");
+
+
+</textarea>
+
+
+
+</td>
+<td>
+<textarea id="jsonout" cols=40 rows=4></textarea>
+</td>
+<td>
+<textarea id="xmlout" cols=40 rows=4></textarea>
+</td>
+</tr>
+</table>
+
+
+<br>
+
+<button onclick="document.getElementById('result').innerHTML=nemo.runScript(document.getElementById('theScript').innerHTML)">Run Script Formula</button>
+
+
+<script language="javascript">
+
+var nemo=document.getElementById("nemo");
+
+function runScript(spectraID) {
+	var spectraDataName="spectraData"+spectraID;
+	nemo.getSpectrum(spectraDataName); // we create a spctrum or load the target it the spectrum already exists
+};
+
+function setFunction(functionScript, spectraID) {
+	var spectraData = "spectraData"+spectraID;
+	functionScript+='var '+spectraData+'=SD.defineSpectraData(null, x, y);';
+	functionScript+='Nemo.plotSpectraData('+spectraData+',"'+spectraData+'");';
+	document.getElementById("theScript").value=functionScript;
+	document.getElementById("jsonout").value=nemo.runScript(functionScript);
+}
+
+
+function horizontalLine(spectraID) {
+	var functionScript="var x=[]; var y=[]; for (var i=0; i<1000; i++) { x[i]=i; y[i]=10;}";
+	setFunction(functionScript, spectraID);
+};
+
+function diagonalLine(spectraID) {
+	var functionScript="var x=[]; var y=[]; for (var i=0; i<1000; i++) { x[i]=i; y[i]=i;}";
+	setFunction(functionScript, spectraID);
+};
+
+function addSpectra(){
+	document.getElementById("jsonout").value=nemo.runScript('var spectraData1=getSpectraData("spectraData1"); ; var spectraData2=getSpectraData("spectraData2"); ; addSpectraDatas(spectraData1, spectraData2, 0.1, 0.2, 100);');
+};
+
+
+function oneGaussPeak(spectraID) {
+	var functionScript="var x=[]; var y=[]; for (var i=0; i<1000; i++) {; x[i]=i; y[i]=Math.sin(i/10);}";
+	setFunction(functionScript, spectraID);
+};
+
+function twoGaussPeak(spectraID) {
+	var functionScript="var x=[]; var y=[]; for (var i=0; i<1000; i++) {; x[i]=i; y[i]=Math.sin(i*5)*Math.exp(-i/10);}";
+	setFunction(functionScript, spectraID);
+};
+
+
+
+function randomFunction(spectraID) {
+	var functionScript='var x=[]; var y=[]; for (var i=0; i<1000; i++) {\ny[i]=1 + Math.floor(Math.random() * 1000);\nx[i]=i;\n};';
+	setFunction(functionScript, spectraID);
+};
+
+
+function addExperimental() {
+	var nemo=document.getElementById("nemo");
+	
+	var spectrumTheoretical=nemo.addJcamp("download.jdx","theoretical");
+	var spectrumExperimental=nemo.addJcamp("download-exp.jdx","experimental");
+}
+
+function gaussSpectrum() {
+
+}
+
+
+</script>
+
+
+
+<script type="text/javascript">
+	
+	function transfer() {
+	var xml = document.nemo.getXML();
+	nemo2.setXML(xml);
+	var element = document.getElementById("xmlout");
+		if (element) {
+		element.value = xml;
+		
+		} else {
+			alert("no output element");
+		}
+		
+	}
+	
+	
+	
+</script>
+
+</body>
+
+</html>

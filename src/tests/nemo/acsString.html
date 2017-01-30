@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf8">
+<title>JCAMP Visualiser</title>
+<script type="text/javascript">
+
+
+function acsFormatter(json) {
+	this.json=json;
+	this.shifts="";
+	this.parenthesis="";
+	this.spectro="";
+
+	this.formatAcs=function () {
+		this.appendSeparator();
+		if (this.json['assignment_1H']) {
+			this.formatAcs_default(this.json['assignment_1H'], false, 2, 1);
+		}
+		this.appendSeparator();
+		if (this.json['assignment_13C']) {
+			this.formatAcs_default(this.json['assignment_13C'], false, 1, 0);
+		}
+		return this.shifts;
+	}
+
+	this.formatAcs_default=function(assignment, ascending, decimalDelta, decimalJ) {
+		this.appendSeparator();
+		this.appendSpectroInformation(assignment);
+		var numberLines=assignment.numberLines;
+		for (var i=1; i<=numberLines; i++) {
+			if (false) {
+				var currentLine=assignment['line'+i];
+			} else {
+				var currentLine=assignment['line'+(numberLines-i+1)];
+			}
+			if (currentLine) {
+				this.appendSeparator();
+				this.appendDelta(currentLine,decimalDelta);
+				this.appendParenthesis(currentLine,decimalJ);
+			}
+		}
+	}
+
+	this.appendSpectroInformation=function(assignment) {
+		if (assignment.nucleus) {
+			this.shifts+=this.formatNucleus(assignment.nucleus);
+		}
+		this.shifts+=" NMR";
+		if ((assignment.solvent) || (assignment.frequency)) {
+			this.shifts+=" (";
+			if (assignment.frequency) {
+				this.shifts+=(assignment.frequency*1).toFixed(0)+" MHz";
+				if (assignment.solvent) this.shifts+=", ";
+			}
+			if (assignment.solvent) {
+				this.shifts+=this.formatMF(assignment.solvent);
+			}
+			this.shifts+=")";
+		}
+		this.shifts+=" δ ";
+	}
+
+	this.appendDelta=function(line, nbDecimal) {
+		if (line.delta1) {
+			if (line.delta2) {
+				if (line.delta1<line.delta2) {
+					this.shifts+=line.delta1.toFixed(nbDecimal)+"-"+line.delta2.toFixed(nbDecimal);
+				} else {
+					this.shifts+=line.delta2.toFixed(nbDecimal)+"-"+line.delta1.toFixed(nbDecimal);
+				}
+			} else {
+				this.shifts+=line.delta1.toFixed(nbDecimal);
+			}
+		}
+	}
+
+	this.appendParenthesis=function(line, nbDecimal) {
+		// need to add assignment - coupling - integration
+		this.parenthesis="";
+		this.appendMultiplicity(line);
+		this.appendIntegration(line);
+		this.appendCoupling(line,1);
+		this.appendAssignment(line);
+		
+		
+		if (this.parenthesis.length>0) {
+			this.shifts+=" ("+this.parenthesis+")";
+		}
+	}
+
+	this.appendIntegration=function(line) {
+		if (line.pubIntegration) {
+			this.appendParenthesisSeparator();
+			this.parenthesis+=line.pubIntegration;
+		} else if (line.integration) {
+			this.appendParenthesisSeparator();
+			this.parenthesis+=line.integration.toFixed(0)+" H";
+		}
+	}
+
+	this.appendAssignment=function(line) {
+		if (line.pubAssignment) {
+			this.appendParenthesisSeparator();
+			this.parenthesis+=this.formatAssignment(line.pubAssignment);
+		}
+	}
+
+	this.appendMultiplicity=function(line) {
+		if (line.pubMultiplicity) {
+			this.appendParenthesisSeparator();
+			this.parenthesis+=line.pubMultiplicity;
+		} else if (line.multiplicity) {
+			this.appendParenthesisSeparator();
+			this.parenthesis+=line.multiplicity;
+		}
+	}
+
+	this.appendCoupling=function(line, nbDecimal) {
+		if (line.j) {
+			var i=1;
+			var j="<i>J</i> = ";
+			while (line.j['line'+i]) {
+				if (j.length>11) j+=", ";
+				j+=line.j['line'+i].value.toFixed(nbDecimal);
+				i++;
+			}
+			if (j.length>1) {
+				this.appendParenthesisSeparator();
+				this.parenthesis+=j+" Hz";
+			}
+		}
+
+	}
+	
+	this.formatAssignment=function (assignment) {
+		assignment=assignment.replace(/([0-9])/g,"<sub>$1</sub>");
+		assignment=assignment.replace(/\"([^\"]*)\"/g,"<i>$1</i>");
+		return assignment;
+	}
+
+	this.formatMF=function (mf) {
+		mf=mf.replace(/([0-9])/g,"<sub>$1</sub>");
+		return mf;
+	}
+	
+	this.formatNucleus=function (nucleus) {
+		nucleus=nucleus.replace(/([0-9])/g,"<sup>$1</sup>");
+		return nucleus;
+	}
+	
+	this.appendSeparator=function() {
+		if ((this.shifts.length>0) && (! this.shifts.match(/ $/))) {
+			this.shifts+=", ";
+		}
+	}
+
+	this.appendParenthesisSeparator=function() {
+		if ((this.parenthesis.length>0) && (! this.parenthesis.match(", $"))) this.parenthesis+=", ";
+	}
+	
+}
+
+</script>
+<body>
+
+
+<span id="result"></span>
+
+<p>
+
+<textarea id="jsonTest">
+{"assignment_1H":{"line5":{"multiplicity":"dd","delta1":6.716391985892637,"j":{"line1":{"value":8.989394182764055,"multiplicity":"d"},"numberLines":2,"line2":{"value":2.517970685221486,"multiplicity":"d"}},"integration":1,"nucleus":"1H","pubIntegration":"50' H","pubMultiplicity":"","pubAssignment":""},"line3":{"multiplicity":"s","delta1":3.6625144920818506,"integration":1.9843187766286992,"nucleus":"1H","pubIntegration":"","pubMultiplicity":"","pubAssignment":""},"line1":{"multiplicity":"s","delta1":2.2184970296478053,"integration":3.001830771343021,"nucleus":"1H","pubIntegration":"","pubMultiplicity":"","pubAssignment":""},"line7":{"multiplicity":"d","delta1":7.039041497432555,"j":{"line1":{"value":2.4631575880743055,"multiplicity":"d"},"numberLines":1},"integration":0.9978564334372356,"nucleus":"1H","pubIntegration":"","pubMultiplicity":"","pubAssignment":""},"numberLines":8,"frequency":"399.682468187609","line2":{"multiplicity":"s","delta1":3.324441717507028,"integration":2.0606407967906675,"nucleus":"1H","pubIntegration":"","pubMultiplicity":"","pubAssignment":"s br"},"line6":{"multiplicity":"d","delta1":6.925245457852149,"j":{"line1":{"value":8.979345007429254,"multiplicity":"d"},"numberLines":1},"integration":0.9950188774688156,"nucleus":"1H","pubIntegration":"","pubMultiplicity":"","pubAssignment":"C\"H\"2CH3"},"line4":{"multiplicity":"m","delta1":3.8407380406502014,"integration":3.060069576715213,"nucleus":"1H","pubIntegration":"","pubMultiplicity":"","pubAssignment":"","delta2":3.7021467771653125},"nucleus":"1H","line8":{"multiplicity":"m","delta1":7.661431945235615,"integration":3.996457910909237,"nucleus":"1H","pubIntegration":"","pubMultiplicity":"","pubAssignment":""},"solvent":"DMSO"}}
+</textarea>
+
+<script>
+
+var jsonValue = document.getElementById("jsonTest").innerHTML;
+var json=eval('(' + jsonValue + ')');
+var toTest=new acsFormatter(json);
+
+document.getElementById("result").innerHTML=toTest.formatAcs();
+
+
+
+</script>
+
+</body>
+</html>

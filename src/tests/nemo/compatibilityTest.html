@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<title>JCAMP Visualiser</title>
+<script type="text/javascript">
+	function getJSON() {
+		//var json = "";
+		var json = document.nemo.getJSON();
+		//alert(json);
+		var element = document.getElementById("jsonview");
+		if (element) {
+				element.value = json;
+		} else {
+				alert("no output element");
+		}
+	}
+	function setXML(element) {
+		nemo.setXML(element.value);
+	}
+</script>
+</head>
+<body bgcolor="white">
+<p>
+<table>
+	<tr>
+		<td>
+			<applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.3.jar,../../library/lib/httpcore-4.3.jar,../../library/lib/httpmime-4.3.jar,../lib/actelion.jar"
+			codebase="../../" width="600" height="600" name="nemo" id="nemo">
+			<param name="OPTIONS" value="smart,tools,undo,flags,colors,insert,processing,test"/>
+			</applet> 
+			<br>
+		<td>
+		<h2>output</h2>
+		<span id="stdout"></span></td>
+	</tr>
+</table>
+
+<INPUT type="button" value="set XML1" onClick="setXML(document.getElementById('xmlview1'));">
+<INPUT type="button" value="set XML2" onClick="setXML(document.getElementById('xmlview2'));">
+<INPUT type="button" value="get JSON" onClick="getJSON();">
+<form name="theForm">
+
+<textarea name="xmlview1" id="xmlview1" rows="15" cols="100">		
+&lt;nemo.SpectraDisplay uniqueID=&quot;1&quot; bottomLimit=&quot;-7119929.345858052&quot; is2D=&quot;false&quot; vScale=&quot;false&quot; relWidth=&quot;1.0&quot; primaryColor=&quot;255,0,0&quot; nbLinks=&quot;0&quot; absoluteYScale=&quot;false&quot; movementType=&quot;3&quot; leftLimit=&quot;11.71692&quot; relY=&quot;0.0&quot; relHeight=&quot;1.0&quot; relX=&quot;0.0&quot; topLimit=&quot;3.228722039874753E8&quot; rightLimit=&quot;-0.9050337019790096&quot; hScale=&quot;true&quot; &gt;
+&lt;moldraw.ActMoleculeDisplay IDCode=&quot;didH@@RYm^Fh@@@@&quot; displayIDLevel=&quot;0&quot; primaryColor=&quot;NULL&quot; relWidth=&quot;0.23894862604540024&quot; relY=&quot;0.2787456445993031&quot; relHeight=&quot;0.34843205574912894&quot; relX=&quot;0.023894862604540025&quot; EncodedCoordinates=&quot;S~xi.ix&amp;gt;S~xixiS~'&amp;ques;&amp;gt;=\48&quot; expandedAtoms=&quot;&quot; &gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;8&quot; atomID=&quot;0&quot; symmetryRank=&quot;7&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;0&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;9&quot; atomID=&quot;1&quot; symmetryRank=&quot;1&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;1&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;10&quot; atomID=&quot;2&quot; symmetryRank=&quot;3&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;2&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;11&quot; atomID=&quot;3&quot; symmetryRank=&quot;2&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;3&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;12&quot; atomID=&quot;4&quot; symmetryRank=&quot;4&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;1&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;4&quot; erasable=&quot;false&quot; linkType0=&quot;0&quot; link0=&quot;13&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;13&quot; atomID=&quot;5&quot; symmetryRank=&quot;4&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;1&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;5&quot; erasable=&quot;false&quot; linkType0=&quot;0&quot; link0=&quot;12&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;14&quot; atomID=&quot;6&quot; symmetryRank=&quot;5&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;1&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;6&quot; erasable=&quot;false&quot; linkType0=&quot;0&quot; link0=&quot;15&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;15&quot; atomID=&quot;7&quot; symmetryRank=&quot;5&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;1&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;7&quot; erasable=&quot;false&quot; linkType0=&quot;0&quot; link0=&quot;14&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;16&quot; atomID=&quot;8&quot; symmetryRank=&quot;6&quot; primaryColor=&quot;255,255,0&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;8&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;/moldraw.ActMoleculeDisplay&gt;
+&lt;nemo.HorizontalScale nbLinks=&quot;0&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;2&quot; &gt;
+&lt;/nemo.HorizontalScale&gt;
+&lt;nemo.VerticalScale nbLinks=&quot;0&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;3&quot; &gt;
+&lt;/nemo.VerticalScale&gt;
+&lt;nemo.Spectra hasPredictionLabels=&quot;1&quot; isSmooth=&quot;true&quot; uniqueID=&quot;4&quot; integralsBaseArea=&quot;-704273.3095262595&quot; url=&quot;http://127.0.0.1/scripting/hook4/bin/tests/nemo/98-85-1_zg.jdx&quot; magFactor=&quot;0.9&quot; lastX=&quot;-0.9050337019790096&quot; relHeight=&quot;0.925&quot; isVertical=&quot;false&quot; firstX=&quot;11.71692&quot; secondaryColor=&quot;NULL&quot; hasIntegrals=&quot;1&quot; relWidth=&quot;1.0&quot; relY=&quot;-0.017421602787456445&quot; integralsRelBottom=&quot;0.09417082587814295&quot; nbLinks=&quot;0&quot; relX=&quot;0.0&quot; lowerContour=&quot;-Infinity&quot; hasPeakLabels=&quot;1&quot; is2D=&quot;0&quot; primaryColor=&quot;0,0,0&quot; integralsMagFactor=&quot;1.0&quot; &gt;
+&lt;nemo.Spectra.Process&gt;
+&lt;/nemo.Spectra.Process&gt;
+&lt;nemo.Integral nbLinks=&quot;0&quot; publicationValue=&quot;&quot; stopIndex=&quot;6166&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;21&quot; startIndex=&quot;5343&quot; &gt;
+&lt;/nemo.Integral&gt;
+&lt;nemo.Integral nbLinks=&quot;0&quot; publicationValue=&quot;&quot; stopIndex=&quot;9434&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;19&quot; startIndex=&quot;8730&quot; &gt;
+&lt;/nemo.Integral&gt;
+&lt;nemo.SpectraTextEntity relHeight=&quot;0.2825124776344288&quot; relWidth=&quot;0.23894862604540024&quot; primaryColor=&quot;0,0,0&quot; relY=&quot;0.018834165175628588&quot; relX=&quot;0.011947431302270013&quot; relFontSize=&quot;0.08&quot; entityText=&quot;TimePrinted:11/6/2014_16:11:24&amp;crlf;title:{TITLE}&amp;crlf;user:{$USER}&amp;crlf;filename:{$NAME}/{$EXPNO}&amp;crlf;pulprog:{$PULPROG}&amp;crlf;solvent:{$SOLVENT}&amp;crlf;NS:{$NS}&amp;crlf;Frequency:{$BF1}MHz&quot; &gt;
+&lt;/nemo.SpectraTextEntity&gt;
+&lt;nemo.SmartPeakLabel linkType0=&quot;0&quot; comment=&quot;&quot; highlightPropagationType=&quot;1&quot; uniqueID=&quot;18&quot; peak3=&quot;4.8425456822300506&quot; erasable=&quot;true&quot; publicationAssignment=&quot;&quot; peak2=&quot;4.858641792556254&quot; peak1=&quot;4.874795245796576&quot; stopXUnits=&quot;4.8425456822300506&quot; peak0=&quot;4.890938404790317&quot; startXUnits=&quot;4.890938404790317&quot; heterolink=&quot;true&quot; nbPeaks=&quot;4&quot; predicted=&quot;false&quot; link0=&quot;19&quot; maximumPropagationLevel=&quot;2&quot; intensity3=&quot;1.1800865538275683E7&quot; publicationType=&quot;&quot; intensity2=&quot;3.469616448374055E7&quot; intensity1=&quot;3.4300050738915645E7&quot; intensity0=&quot;1.1288364751712123E7&quot; nbLinks=&quot;1&quot; forceMassif=&quot;false&quot; pattern=&quot;0101010101010104&quot; primaryColor=&quot;255,0,255&quot; homolink=&quot;true&quot; &gt;
+&lt;/nemo.SmartPeakLabel&gt;
+&lt;nemo.SmartPeakLabel nbPeaks=&quot;10&quot; peak9=&quot;7.28326096909111&quot; peak8=&quot;7.289713806599839&quot; peak7=&quot;7.295807864927591&quot; peak6=&quot;7.299119690699096&quot; peak5=&quot;7.303914627076067&quot; peak4=&quot;7.3114265759063475&quot; peak3=&quot;7.341191275830285&quot; peak2=&quot;7.362500835683534&quot; peak1=&quot;7.3664241290293395&quot; pattern=&quot;0000000000000000&quot; peak0=&quot;7.375148553252639&quot; nbLinks=&quot;1&quot; stopXUnits=&quot;7.28326096909111&quot; link0=&quot;21&quot; homolink=&quot;true&quot; uniqueID=&quot;20&quot; publicationAssignment=&quot;&quot; heterolink=&quot;true&quot; maximumPropagationLevel=&quot;2&quot; comment=&quot;&quot; highlightPropagationType=&quot;1&quot; publicationType=&quot;&quot; intensity9=&quot;1.946473585131626E7&quot; forceMassif=&quot;false&quot; intensity8=&quot;3.743474024048416E7&quot; intensity7=&quot;2.713950358569808E7&quot; intensity6=&quot;2.363579658206798E7&quot; intensity5=&quot;3.093146124790629E7&quot; intensity4=&quot;2.737340191647757E7&quot; startXUnits=&quot;7.375148553252639&quot; erasable=&quot;true&quot; intensity3=&quot;1.7496249554079518E7&quot; intensity2=&quot;1.7757513060106328E8&quot; predicted=&quot;false&quot; intensity1=&quot;1.6630737012194455E8&quot; linkType0=&quot;0&quot; intensity0=&quot;2.965465291570305E8&quot; primaryColor=&quot;255,0,255&quot; &gt;
+&lt;/nemo.SmartPeakLabel&gt;
+&lt;/nemo.Spectra&gt;
+&lt;/nemo.SpectraDisplay&gt;
+</textarea> 
+<textarea name="xmlview2" id="xmlview2" rows="15" cols="100">		
+&lt;nemo.SpectraDisplay uniqueID=&quot;27&quot; bottomLimit=&quot;-3698808.642256675&quot; is2D=&quot;false&quot; vScale=&quot;false&quot; relWidth=&quot;1.0&quot; primaryColor=&quot;255,0,0&quot; nbLinks=&quot;0&quot; absoluteYScale=&quot;false&quot; movementType=&quot;3&quot; leftLimit=&quot;8.531104183963349&quot; relY=&quot;0.0&quot; relHeight=&quot;1.0&quot; relX=&quot;0.0&quot; topLimit=&quot;2.3405519513004553E8&quot; rightLimit=&quot;6.798298662728736&quot; hScale=&quot;true&quot; &gt;
+&lt;moldraw.ActMoleculeDisplay IDCode=&quot;deVDAHAHeNR[e[aZ@B@@&quot; displayIDLevel=&quot;0&quot; primaryColor=&quot;NULL&quot; relWidth=&quot;0.21390374331550802&quot; relY=&quot;0.22922636103151864&quot; relHeight=&quot;0.28653295128939826&quot; relX=&quot;0.021390374331550804&quot; EncodedCoordinates=&quot;!RypH~@N\}OagN\}yswgCx_l`Bh&quot; expandedAtoms=&quot;&quot; &gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;33&quot; atomID=&quot;0&quot; symmetryRank=&quot;10&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;0&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;34&quot; atomID=&quot;1&quot; symmetryRank=&quot;8&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;1&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;35&quot; atomID=&quot;2&quot; symmetryRank=&quot;9&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;2&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;36&quot; atomID=&quot;3&quot; symmetryRank=&quot;3&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;3&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;37&quot; atomID=&quot;4&quot; symmetryRank=&quot;4&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;4&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;38&quot; atomID=&quot;5&quot; symmetryRank=&quot;6&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;5&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;39&quot; atomID=&quot;6&quot; symmetryRank=&quot;2&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;6&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;40&quot; atomID=&quot;7&quot; symmetryRank=&quot;7&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;7&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;41&quot; atomID=&quot;8&quot; symmetryRank=&quot;5&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;8&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;moldraw.ActAtomEntity uniqueID=&quot;42&quot; atomID=&quot;9&quot; symmetryRank=&quot;1&quot; primaryColor=&quot;128,128,128&quot; nbLinks=&quot;0&quot; heterolink=&quot;true&quot; secondaryColor=&quot;0,255,0&quot; effectiveID=&quot;9&quot; erasable=&quot;false&quot; highlightPropagationType=&quot;3&quot; maximumPropagationLevel=&quot;2&quot; homolink=&quot;true&quot; &gt;
+&lt;/moldraw.ActAtomEntity&gt;
+&lt;/moldraw.ActMoleculeDisplay&gt;
+&lt;nemo.HorizontalScale nbLinks=&quot;0&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;28&quot; &gt;
+&lt;/nemo.HorizontalScale&gt;
+&lt;nemo.VerticalScale nbLinks=&quot;0&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;29&quot; &gt;
+&lt;/nemo.VerticalScale&gt;
+&lt;nemo.Spectra hasPredictionLabels=&quot;1&quot; isSmooth=&quot;true&quot; uniqueID=&quot;30&quot; integralsBaseArea=&quot;-1273016.8709574568&quot; url=&quot;http://127.0.0.1/scripting/hook4/bin/tests/nemo/99-08-1_zg.jdx&quot; magFactor=&quot;2.145478830667856&quot; lastX=&quot;-0.493924572466927&quot; relHeight=&quot;0.925&quot; isVertical=&quot;false&quot; firstX=&quot;13.49487&quot; secondaryColor=&quot;NULL&quot; hasIntegrals=&quot;1&quot; relWidth=&quot;1.0&quot; relY=&quot;-0.014326647564469915&quot; integralsRelBottom=&quot;0.07722007722007722&quot; nbLinks=&quot;0&quot; relX=&quot;0.0&quot; lowerContour=&quot;-Infinity&quot; hasPeakLabels=&quot;1&quot; is2D=&quot;0&quot; primaryColor=&quot;0,0,0&quot; integralsMagFactor=&quot;1.0&quot; &gt;
+&lt;nemo.Spectra.Process&gt;
+&lt;/nemo.Spectra.Process&gt;
+&lt;nemo.Integral nbLinks=&quot;0&quot; publicationValue=&quot;&quot; stopIndex=&quot;6385&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;136&quot; startIndex=&quot;6309&quot; &gt;
+&lt;/nemo.Integral&gt;
+&lt;nemo.Integral nbLinks=&quot;0&quot; publicationValue=&quot;&quot; stopIndex=&quot;7152&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;47&quot; startIndex=&quot;7025&quot; &gt;
+&lt;/nemo.Integral&gt;
+&lt;nemo.Integral nbLinks=&quot;0&quot; publicationValue=&quot;&quot; stopIndex=&quot;7022&quot; primaryColor=&quot;0,0,255&quot; uniqueID=&quot;45&quot; startIndex=&quot;6945&quot; &gt;
+&lt;/nemo.Integral&gt;
+&lt;nemo.SmartPeakLabel linkType1=&quot;0&quot; linkType0=&quot;0&quot; comment=&quot;&quot; nmrSignal1D=&quot;{&amp;quot;multiplicity&amp;quot;:&amp;quot;m&amp;quot;,&amp;quot;diaIDs&amp;quot;:[&amp;quot;dmvDaBxPfRd^rJJIQUi``X`@_iB@bUP&amp;quot;],&amp;quot;assignment&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pattern&amp;quot;:&amp;quot;m&amp;quot;,&amp;quot;nucleus&amp;quot;:&amp;quot;1H&amp;quot;,&amp;quot;units&amp;quot;:&amp;quot;PPM&amp;quot;,&amp;quot;peaks&amp;quot;:[{&amp;quot;intensity&amp;quot;:6.83809457365857E7,&amp;quot;x&amp;quot;:7.518708340733095},{&amp;quot;intensity&amp;quot;:4.381972904026995E7,&amp;quot;x&amp;quot;:7.537519118400176}],&amp;quot;observe&amp;quot;:400.08260052,&amp;quot;referenceAtomID&amp;quot;:5,&amp;quot;integralData&amp;quot;:{&amp;quot;area&amp;quot;:1,&amp;quot;baseArea&amp;quot;:-1273016.8709574568,&amp;quot;from&amp;quot;:7.499157996450163,&amp;quot;to&amp;quot;:7.564395567409524,&amp;quot;value&amp;quot;:-1273016.8709574568},&amp;quot;startX&amp;quot;:7.537519118400176,&amp;quot;asymmetric&amp;quot;:false,&amp;quot;stopX&amp;quot;:7.518708340733095,&amp;quot;nbPeaks&amp;quot;:2,&amp;quot;delta1&amp;quot;:7.526054848960855}&quot; highlightPropagationType=&quot;1&quot; uniqueID=&quot;44&quot; erasable=&quot;true&quot; publicationAssignment=&quot;&quot; peak1=&quot;7.537519118400176&quot; stopXUnits=&quot;7.518708340733095&quot; peak0=&quot;7.518708340733095&quot; startXUnits=&quot;7.537519118400176&quot; heterolink=&quot;true&quot; nbPeaks=&quot;2&quot; predicted=&quot;false&quot; link1=&quot;38&quot; link0=&quot;45&quot; maximumPropagationLevel=&quot;2&quot; publicationType=&quot;&quot; intensity1=&quot;4.381972904026995E7&quot; intensity0=&quot;6.83809457365857E7&quot; nbLinks=&quot;2&quot; forceMassif=&quot;false&quot; pattern=&quot;0000000000000000&quot; primaryColor=&quot;255,0,255&quot; homolink=&quot;true&quot; &gt;
+&lt;/nemo.SmartPeakLabel&gt;
+&lt;nemo.SmartPeakLabel linkType1=&quot;0&quot; linkType0=&quot;0&quot; comment=&quot;&quot; nmrSignal1D=&quot;{&amp;quot;multiplicity&amp;quot;:&amp;quot;t&amp;quot;,&amp;quot;diaIDs&amp;quot;:[&amp;quot;dmvDaFePfVe^RYVVkh@bX@GzP`HeT&amp;quot;],&amp;quot;assignment&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pattern&amp;quot;:&amp;quot;t&amp;quot;,&amp;quot;nucleus&amp;quot;:&amp;quot;1H&amp;quot;,&amp;quot;units&amp;quot;:&amp;quot;PPM&amp;quot;,&amp;quot;peaks&amp;quot;:[{&amp;quot;intensity&amp;quot;:5.749224167628858E7,&amp;quot;x&amp;quot;:7.463157016891142},{&amp;quot;intensity&amp;quot;:8.475324102941199E7,&amp;quot;x&amp;quot;:7.443691181133997},{&amp;quot;intensity&amp;quot;:3.46371505232384E7,&amp;quot;x&amp;quot;:7.424526707844955}],&amp;quot;observe&amp;quot;:400.08260052,&amp;quot;referenceAtomID&amp;quot;:7,&amp;quot;integralData&amp;quot;:{&amp;quot;area&amp;quot;:1.0555934779086176,&amp;quot;baseArea&amp;quot;:-1273016.8709574568,&amp;quot;from&amp;quot;:7.388012505186065,&amp;quot;to&amp;quot;:7.496741790118334,&amp;quot;value&amp;quot;:-1343788.3062503275},&amp;quot;startX&amp;quot;:7.463157016891142,&amp;quot;asymmetric&amp;quot;:false,&amp;quot;stopX&amp;quot;:7.424526707844955,&amp;quot;nmrJs&amp;quot;:[{&amp;quot;coupling&amp;quot;:7.787942191013642,&amp;quot;multiplicity&amp;quot;:&amp;quot;d&amp;quot;,&amp;quot;assignmentTo&amp;quot;:&amp;quot;&amp;quot;}],&amp;quot;nbPeaks&amp;quot;:3,&amp;quot;delta1&amp;quot;:7.446265384035987}&quot; highlightPropagationType=&quot;1&quot; uniqueID=&quot;46&quot; erasable=&quot;true&quot; publicationAssignment=&quot;&quot; peak2=&quot;7.424526707844955&quot; peak1=&quot;7.443691181133997&quot; stopXUnits=&quot;7.424526707844955&quot; peak0=&quot;7.463157016891142&quot; startXUnits=&quot;7.463157016891142&quot; heterolink=&quot;true&quot; nbPeaks=&quot;3&quot; predicted=&quot;false&quot; link1=&quot;40&quot; link0=&quot;47&quot; maximumPropagationLevel=&quot;2&quot; publicationType=&quot;&quot; intensity2=&quot;3.46371505232384E7&quot; intensity1=&quot;8.475324102941199E7&quot; intensity0=&quot;5.749224167628858E7&quot; nbLinks=&quot;2&quot; forceMassif=&quot;false&quot; pattern=&quot;0101010101010103&quot; primaryColor=&quot;255,0,255&quot; homolink=&quot;true&quot; &gt;
+&lt;/nemo.SmartPeakLabel&gt;
+&lt;nemo.SmartPeakLabel linkType0=&quot;0&quot; comment=&quot;&quot; nmrSignal1D=&quot;{&amp;quot;multiplicity&amp;quot;:&amp;quot;m&amp;quot;,&amp;quot;diaIDs&amp;quot;:[&amp;quot;deVDaNFPf^f^rQQHjTpDDp@Ota@\\Jh&amp;quot;],&amp;quot;assignment&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pattern&amp;quot;:&amp;quot;m&amp;quot;,&amp;quot;nucleus&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;units&amp;quot;:&amp;quot;PPM&amp;quot;,&amp;quot;peaks&amp;quot;:[{&amp;quot;intensity&amp;quot;:5.0264132E7,&amp;quot;x&amp;quot;:8.042450435804822},{&amp;quot;intensity&amp;quot;:1.31201605E8,&amp;quot;x&amp;quot;:8.064649450629293}],&amp;quot;observe&amp;quot;:400.08260052,&amp;quot;startX&amp;quot;:8.064649450629293,&amp;quot;asymmetric&amp;quot;:false,&amp;quot;stopX&amp;quot;:8.042450435804822,&amp;quot;nbPeaks&amp;quot;:2,&amp;quot;delta1&amp;quot;:8.05850055315777}&quot; highlightPropagationType=&quot;5&quot; uniqueID=&quot;111&quot; erasable=&quot;true&quot; publicationAssignment=&quot;&quot; peak1=&quot;8.064649450629293&quot; stopXUnits=&quot;8.042450435804822&quot; peak0=&quot;8.042450435804822&quot; startXUnits=&quot;8.064649450629293&quot; heterolink=&quot;true&quot; nbPeaks=&quot;2&quot; predicted=&quot;false&quot; link0=&quot;41&quot; maximumPropagationLevel=&quot;2&quot; publicationType=&quot;&quot; intensity1=&quot;1.31201605E8&quot; intensity0=&quot;5.0264132E7&quot; nbLinks=&quot;1&quot; forceMassif=&quot;false&quot; pattern=&quot;0000000000000000&quot; primaryColor=&quot;255,0,255&quot; homolink=&quot;true&quot; &gt;
+&lt;/nemo.SmartPeakLabel&gt;
+&lt;nemo.SmartPeakLabel linkType1=&quot;0&quot; linkType0=&quot;0&quot; comment=&quot;&quot; nmrSignal1D=&quot;{&amp;quot;multiplicity&amp;quot;:&amp;quot;s&amp;quot;,&amp;quot;diaIDs&amp;quot;:[&amp;quot;dmvDaBFPfRf^RYfYYXHI`@GzP`HeT&amp;quot;],&amp;quot;assignment&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pattern&amp;quot;:&amp;quot;s&amp;quot;,&amp;quot;nucleus&amp;quot;:&amp;quot;1H&amp;quot;,&amp;quot;units&amp;quot;:&amp;quot;PPM&amp;quot;,&amp;quot;peaks&amp;quot;:[{&amp;quot;intensity&amp;quot;:1.313445483289566E8,&amp;quot;x&amp;quot;:8.064860021232738}],&amp;quot;observe&amp;quot;:400.08260052,&amp;quot;referenceAtomID&amp;quot;:4,&amp;quot;integralData&amp;quot;:{&amp;quot;from&amp;quot;:8.042804421111507,&amp;quot;to&amp;quot;:8.108041992070868,&amp;quot;value&amp;quot;:-2025022.91105529},&amp;quot;startX&amp;quot;:8.064860021232738,&amp;quot;asymmetric&amp;quot;:false,&amp;quot;stopX&amp;quot;:8.064860021232738,&amp;quot;nbPeaks&amp;quot;:1,&amp;quot;delta1&amp;quot;:8.064860021232738}&quot; highlightPropagationType=&quot;1&quot; uniqueID=&quot;135&quot; erasable=&quot;true&quot; publicationAssignment=&quot;&quot; stopXUnits=&quot;8.064860021232738&quot; peak0=&quot;8.064860021232738&quot; startXUnits=&quot;8.064860021232738&quot; heterolink=&quot;true&quot; nbPeaks=&quot;1&quot; predicted=&quot;false&quot; link1=&quot;37&quot; link0=&quot;136&quot; maximumPropagationLevel=&quot;2&quot; publicationType=&quot;&quot; intensity0=&quot;1.313445483289566E8&quot; nbLinks=&quot;2&quot; forceMassif=&quot;false&quot; pattern=&quot;0000000000000000&quot; primaryColor=&quot;255,0,255&quot; homolink=&quot;true&quot; &gt;
+&lt;/nemo.SmartPeakLabel&gt;
+&lt;/nemo.Spectra&gt;
+&lt;/nemo.SpectraDisplay&gt;
+</textarea> 
+<textarea name="jsonview" id="jsonview" rows="15" cols="100">	
+	
+</textarea> 
+<p>
+<h2>script</h2>
+</form>
+</body>
+</html>

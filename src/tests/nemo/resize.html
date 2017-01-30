@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser</title>
+		
+		<style>
+			.fullheight{height:100%}
+		</style>
+	</head>
+
+	<body bgcolor="white">
+
+
+<table class="fullheight" width="100%">
+<tr height="100%"><td>
+	<applet name="nemo" code="org.cheminfo.hook.nemo.Nemo"  
+	 archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar" 
+	 codebase="../../" width="100%" height="100%" id="nemo">
+<param name="SOURCE_FILE" value="1h.dx"></param>
+	</applet>
+	</td></tr>
+	<tr><td>
+	blabla<br>
+	blabla2<br>
+	<button onclick="test();">Test height to 800</button>
+	</td></tr>
+	</table>
+
+
+<script language="javascript">
+
+function test() {
+	var appletElement=document.getElementById("nemo");
+	appletElement.height=800;
+}
+
+</script>
+
+
+	</body>
+
+</html>

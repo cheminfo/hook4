@@ -1,0 +1,44 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= Anna.Codina
+$$ 2014-09-17 16:39:35.666 +0100  INTRA-BRKR-CORP\Anna.Codina@BRHPLT012
+$$ C:/Data/NMR/RxM/DA2_1M_25C_proton_4ASAP/997/pdata/1/eretic
+$$ process C:\Bruker\TopSpin3.2.6\prog\mod\dirdata.exe
+##$CAL= 1
+##$CALACQUDATE= <>
+##$CALDATE= <>
+##$ECONC= 12
+##$ECONCU= <mmol/l>
+##$ECORR= 1
+##$EINT= 1226748.90527344
+##$ELW= 1
+##$EPOS= 0
+##$ESCAL= 1
+##$EUNIT= <>
+##$INTSCL= 1
+##$NS= 4
+##$P1= 9
+##$PP= <zg>
+##$PROBHD= <>
+##$QUANTACQUDATE= <>
+##$QUANTDATE= <>
+##$RECONC= 12
+##$RECONCU= <mmol/l>
+##$REFSPEC= <C:\data\axc/antipyrine_caffeine/1>
+##$REINT= 1226748.90527344
+##$REINTERR= 1141.60879107204
+##$RELW= 1
+##$RENSPIN= 1
+##$REPOS= 0
+##$REREG= <5.5872049749895405/5.298674373799128>
+##$REUNIT= <>
+##$RG= 10.0707
+##$RORIGIN= <C:\data\axc/antipyrine_caffeine/1/pdata/1>
+##$RPROBHD= <5 mm PABBO BB-1H/D Z-GRD Z113652/0045>
+##$SI= 65536
+##$SW= 19.9946778763279
+##$TE= 297.9999
+##END=

@@ -1,0 +1,66 @@
+CONFIGURATION INFORMATION
+=========================
+
+Path         : C:/Bruker/TopSpin3.2.pl6_RxM/conf/instr/FOURIER300/uxnmr.info
+Date         : Fri Aug 15 13:43:46 2014
+Release      : TOPSPIN Version 3.2-pl6
+Installed in : C:/Bruker/TopSpin3.2.pl6_RxM
+Host         : FOURIER300
+OS           : Windows 7 (Vs 6.1) Service Pack 1
+CPU          : Intel(R) Xeon(R) CPU E5-1620 v2 @ 3.70GHz (8 cores at 3691 MHz with Hyperthreading)
+User         : nmrsu
+Description  : FOURIER300
+Location     : Bruker UK Ltd
+System       : Fourier NMR spectrometer
+1H-frequency : 300.20 MHz
+Order Number : GH000314
+Configured in: C:/Bruker/TopSpin3.2.pl6_RxM/conf/instr/FOURIER300
+
+AcqControlServer: DRMS DRU 
+- TCP/IP address = 127.0.0.1
+- Firmware Version = 29259
+
+Router: none installed
+
+
+Transmitters at the spectrometer subnet:
+----------------------------------------
+Minispec Amplifier HMG01/215 ECL 200:
+- TCP/IP address = 149.236.99.253
+- Amplifier      = DrmsTrmX: HMG01/215 ECL 200
+Minispec Amplifier HMG02/215 ECL 200:
+- TCP/IP address = 149.236.99.253
+- Amplifier      = DrmsTrmH: HMG02/215 ECL 200
+
+BSMS: Fourier Magnet Controller connected to ethernet
+- TCP/IP address = 149.236.99.254
+
+Sample Changers at the spectrometer subnet:
+-------------------------------------------
+ - BACS2_H15200-01_0369: at TCP/IP address 149.236.99.245
+
+
+VTUs at the spectrometer subnet:
+--------------------------------
+Fourier Variable Temperature Unit :
+- TCP/IP address   = 149.236.99.252
+
+Preamplifiers :
+Minispec Preamplifier configured via Minispec BIS
+    Module  1 : preamplifier module 1
+     Module Name    : Drms13C
+     Part/Serialno  : HMG03/01389
+     Observe Nuclei : 13C
+     Lock Nuclei    : 2H, 19F
+    Module  2 : preamplifier module 2
+     Module Name    : Drms1H
+     Part/Serialno  : HMG04/01389
+     Observe Nuclei : 1H
+     Lock Nuclei    : 2H, 19F
+    Module  3 : preamplifier module 3
+     Module Name    : Drms2H
+     Part/Serialno  : HMG05/01389
+     Observe Nuclei : 2H
+     Lock Nuclei    : 2H, 19F
+
+

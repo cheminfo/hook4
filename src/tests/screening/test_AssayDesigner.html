@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<SCRIPT language=javascript>
+	
+function transferXML()
+{
+	document.form.table.value=hook.getXML();
+//	hook2.setXML(hook.getXML());
+}
+
+
+function cleanValue(value) {
+        value=value.replace(/[\r\n]+/g,",");
+        value=value.replace(/ +/g,",");
+        value=value.replace(/,,+/g,",");
+        value=value.replace(/^,+/,"");
+        value=value.replace(/,+$/,"");
+        return value;
+}
+</SCRIPT>
+
+
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser by Damiano Banfi</title>
+	</head>
+
+	<body bgcolor="white">
+
+
+	<p>
+	<applet codebase="../../" code="org.cheminfo.hook.assaydesigner2.AssayDesigner2.class" width="800" height="600" name="hook">
+	</applet>
+
+	<form name="form">
+		<INPUT type="button" value="XML COPY" onClick="transferXML();">
+		<INPUT type="button" value="Inject XML" onClick="hook.setXML(form.table.value);">
+		<INPUT type="button" value="Add Flexi" onClick="hook.addAssayGroupFromFlexi('Test', 'Test', document.form.table.value)">
+		<INPUT type="button" value="Add Flexi Ordered" onClick="hook.addAssayGroupFromFlexiOrdered('Test', 'Test', document.form.table.value, cleanValue('Plate15, Plate04, Plate08, Plate03'))">
+		<INPUT type="button" value="Add Virtual 384" onClick="hook.generateEmptyGroup(parseInt(document.form.plateNames.value), 4, 16, 24, 'Virtual', 'Virtual Empty Plates')">
+		<INPUT type="button" value="Add Virtual 384with Names" onClick="hook.addEmptyGroup(document.form.plateNames.value, 4, 16, 24, 'Empty', 'Empty Plates')">
+		<INPUT type="button" value="Add Virtual 96" onClick="hook.generateEmptyGroup(parseInt(document.form.plateNames.value), 4, 8, 12, 'Virtual', 'Virtual Empty Plates')">
+		<INPUT type="button" value="Add Virtual 96 with Names" onClick="hook.addEmptyGroup(document.form.plateNames.value, 4, 8, 12, 'Empty', 'Empty Plates')">
+		<INPUT type="button" value="Get Process Form" onclick="form.processtable.value=hook.getProcessTable();">
+		<INPUT type="button" value="Get Process Form Step" onclick="form.processtable.value=hook.getProcessTableStep();">
+		<BR>
+		<INPUT type="text" name="identifier"></INPUT>
+		<INPUT type="button" value="Replace data" onclick="document.hook.setAssayGroupData(document.form.identifier, "hello");">
+		<p>
+		
+		<textarea name="table" rows="10" cols="100"></textarea>
+		<textarea name="plateNames" rows="10" cols="20"></textarea>
+		<P>
+		<textarea name="processtable" rows="10" cols="100"></textarea>
+
+	</form>
+
+
+	
+	</body>
+
+<SCRIPT language=javascript>
+
+</SCTIPT>
+</html>

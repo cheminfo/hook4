@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= Anna.Codina
+$$ 2014-09-17 16:39:35.676 +0100  INTRA-BRKR-CORP\Anna.Codina@BRHPLT012
+$$ C:/Data/NMR/RxM/DA2_1M_25C_proton_4ASAP/997/pdata/1/outd
+$$ process C:\Bruker\TopSpin3.2.6\prog\mod\dirdata.exe
+##$CURPLOT= <HP LaserJet 5000 Series PCL6>
+##$CURPRIN= <$PDF Complete>
+##$DFORMAT= <normdp>
+##$LAYOUT= <c:/bruker/common/layouts/b1d_h.xwp>
+##$LFORMAT= <normlp>
+##$PFORMAT= <normpl>
+##END=

@@ -1,0 +1,20 @@
+##TITLE= H2O - resolution: 0.0010
+##JCAMP-DX= 5.00
+##DATA TYPE= MASS SPECTRUM
+##DATA CLASS= PEAK TABLE
+##ORIGIN= Generated spectrum based on ChemCalc www.chemcalc.org
+##SPECTROMETER/DATA SYSTEM= Based on ChemCalc isotopic distribution calculator
+##XUNITS= M/Z
+##YUNITS= RELATIVE ABUNDANCE
+##NPOINTS= 6
+##MAXY= 100
+##MINY= 0
+##PEAK TABLE= (XY..XY)
+16.011, 0
+18.011, 100
+19.015, 0.040096231
+19.017, 0.0300045007
+20.015, 0.2004811548
+22.015, 0
+##END=
+

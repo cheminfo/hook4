@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+
+
+	</head>
+
+	<body bgcolor="red">
+
+
+
+		<button onclick="openwindow();">Window 1</button>
+<br>
+<button onclick="show(windowManager.toString());">Show windowManager</button>;
+
+
+<div id="output"></div>
+
+
+<script language="javascript">
+
+
+alert(document.body.getAttribute("bgcolor"));
+
+	var windowManager=new WindowsManager();
+
+	function openwindow() {
+		var newWindow=window.open('window1.html', '', 'location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no,width=400,height=200');
+		windowManager.add(newWindow);;
+		setTimeout("windowManager.refreshWindows();",1000);
+
+	}
+	
+	
+	
+	
+	function show(toShow) {
+		document.getElementById("output").innerHTML=toShow;
+	}
+
+
+
+
+function WindowsManager() {
+	// members
+	this.windows = new Array(); // Keys
+	
+	// methods
+	this.add = function(currentWindow) {
+		this.windows[this.windows.length]=currentWindow;
+		
+	};
+	this.get = function(index) {
+		if ((index>=this.windows.length) || (index<0)) return null;
+		return this.windows[index];
+	};
+	this.size = function() {
+		return (this.windows.length); Ê
+	};
+	this.toString = function() {
+		var result = "";
+		
+		for( var i = 0; i < this.windows.length; i++ ) {
+			result += i+": " + this.windows[ i ] + "\r\n";
+		}
+		return result;
+	}; // returns a string with all keys and values in map.
+	this.indexOf = 	function(currentWindow) {
+		var result = -1;
+		for( var i = 0; i < this.windows.length; i++ ) {
+			if ( this.windows[i] == currentWindow ) {
+				return i;
+			}
+		}
+		return result;
+	};
+	this.remove = function(currentWindow) {
+		var elementIndex = this.indexOf(currentWindow);
+		if (elementIndex != (-1)) {
+			this.windows = this.windows.removeAt(elementIndex);
+		}
+		
+		this.refreshWindows();	
+	};
+	
+	this.refreshWindows=function() {
+		for (var i=0; i<this.windows.length; i++) {
+			if ( this.windows[i].updateLinks() ) {
+				this.windows[i].updateLinks();
+			}
+		}	
+	}
+	
+
+}
+
+
+function Vector() {
+	// members
+	this.valArray = new Array(); // Keys
+	
+	// methods
+	this.add = function(val) {
+		this.valArray[this.valArray.length]=val;
+	};
+	this.get = function(index) {
+		if ((index>=this.valArray.length) || (index<0)) return null;
+		return this.valArray[index];
+	};
+	this.size = function() {
+		return (this.valArray.length); Ê
+	};
+	this.toString = function() {
+		var result = "";
+		
+		for( var i = 0; i < this.valArray.length; i++ ) {
+			result += i+": " + this.valArray[ i ] + "\r\n";
+		}
+		return result;
+	}; // returns a string with all keys and values in map.
+	this.indexOf = 	function(val) {
+		var result = -1;
+		for( var i = 0; i < this.valArray.length; i++ ) {
+		alert(i);
+			if ( this.valArray[i] == val ) {
+				return i;
+			}
+		}
+		return result;
+	};
+	this.remove = function(val) {
+		var elementIndex = this.indexOf(val);
+		if (elementIndex != (-1)) {
+			this.valArray = this.valArray.removeAt(elementIndex);
+		}
+	};
+
+}
+
+
+
+function Map() {
+	// members
+	this.keyArray = new Array(); // Keys
+	this.valArray = new Array(); // Values
+	
+	// methods
+	this.put = function (key, val) {
+		var elementIndex = this.findIt( key );
+		if( elementIndex == (-1) ) {
+			this.keyArray.push( key );
+			this.valArray.push( val );
+		} else {
+			this.valArray[ elementIndex ] = val;
+		}
+	};
+	this.get = function ( key ) {
+		var result = null;
+		var elementIndex = this.findIt( key );
+		
+		if (elementIndex != (-1)) { 
+			result = this.valArray[ elementIndex ];
+		}
+		return result;
+	};
+	this.size = function () {
+		return (this.keyArray.length); Ê
+	};
+	this.clear = function () {
+		for( var i = 0; i < this.keyArray.length; i++ ) {
+			this.keyArray.pop(); this.valArray.pop(); 
+		}
+	};
+	this.keySet = function () {
+		return (this.keyArray);
+	};
+	this.valSet = function () {
+		return (this.valArray); 
+	};
+	this.toString = function () {
+		var result = "";
+		for( var i = 0; i < this.keyArray.length; i++ ) {
+			result += "Key: " + this.keyArray[ i ] + "\tValues: " + this.valArray[ i ] + "\r\n";
+		}
+		return result;
+	};
+	this.findIt = function ( key ) {
+		var result = (-1);
+		for( var i = 0; i < this.keyArray.length; i++ ) {
+			if( this.keyArray[ i ] == key ) {
+				result = i;
+				break;
+			}
+		}
+		return result;
+	};
+	this.remove = function ( key ) {
+		var elementIndex = this.findIt( key );
+		if (elementIndex != (-1)) {
+			this.keyArray = this.keyArray.removeAt(elementIndex);
+			this.valArray = this.valArray.removeAt(elementIndex);
+		}
+	};
+	
+	
+
+	
+}
+	
+	
+
+
+function removeAt(index) {
+	var part1 = this.slice(0, index);
+	var part2 = this.slice(index+1);
+	return part1.concat(part2);
+}
+Array.prototype.removeAt = removeAt;
+
+
+</script>
+
+
+	
+	</body>
+
+</html>

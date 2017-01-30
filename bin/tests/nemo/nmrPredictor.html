@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<title>JCAMP Visualiser</title>
+<script type="text/javascript">
+		function transfer() {
+		var xml = document.nemo.getXML();
+		nemo2.setXML(xml);
+		var element = document.getElementById("xmlout");
+			if (element) {
+			element.value = xml;
+			
+			} else {
+				alert("no output element");
+			}
+			
+		}
+		
+		function getJSON() {
+			//alert("ss");
+			var xml = document.nemo.getJSON();
+			//alert(xml);
+			var element = document.getElementById("xmlout");
+				if (element) {
+				element.value = xml;
+				
+				} else {
+					alert("no output element");
+				}
+				
+			}
+		
+		function setMolfile(textArea){
+			textArea.value=document.nemo.setMolfile(textArea.value);
+		}
+		</script>
+</head>
+
+<body bgcolor="white">
+
+<p>
+<table><tr><td>
+<applet code="org.cheminfo.hook.nemo.Nemo"
+	archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/concurrent.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.3.jar,../../library/lib/httpcore-4.3.jar,../../library/lib/httpmime-4.3.jar,../lib/actelion.jar"
+    codebase="../../" width="600" height="400" name="nemo" id="nemo"> </applet> <br>
+	
+</td><td>
+<INPUT type="button" value="Transfer" onClick="transfer();">
+<br>
+<INPUT type="button" value="getJSON" onClick="getJSON();">
+</td>
+<td>
+
+<p><applet code="org.cheminfo.hook.nemo.Nemo"
+	archive="../../library/lib/jfftpack.jar,../../library/lib/colt.jar,../../library/lib/concurrent.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.3.jar,../../library/lib/httpcore-4.3.jar,../../library/lib/httpmime-4.3.jar,../lib/actelion.jar"
+	codebase="../../" width="600" height="400" name="nemo2" id="nemo2"> </applet>
+</td>
+</tr></table>
+
+
+<form name="theForm">		
+<p>
+<table>
+<tr>
+<td>
+<textarea name="molfile" rows="10" cols="80">
+
+Moldraw
+
+ 13 12  0  0  0  0  0  0  0  0999 V2000
+    0.0000    0.4785   -0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.6710   -0.4614   -0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.6449   -0.4614   -0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.3420    0.5046   -0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.2898    0.5046   -0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.6710   -1.4144   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.9795   -1.6139   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3103   -1.6139   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.3413    1.8557   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.5125   -0.1703   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    4.4413    1.1809   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9661   -0.6468   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.6136    1.6561   -0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  3  1  0  0  0  0
+  2  4  2  0  0  0  0
+  3  5  1  0  0  0  0
+  2  6  1  0  0  0  0
+  3  7  1  1  0  0  0
+  3  8  1  0  0  0  0
+  4  9  1  0  0  0  0
+  4 10  1  0  0  0  0
+  5 11  1  0  0  0  0
+  5 12  1  0  0  0  0
+  5 13  1  0  0  0  0
+M  END
+</textarea>
+</td>
+<td>
+<INPUT type="button" value="Molecule" onclick="setMolfile(document.theForm.molfile);">
+<br>
+<INPUT type="button" value="Canonize" onclick="document.theForm.buffer.value=nemo.canonizeMolfile(document.theForm.molfile.value);">
+</td>
+</tr>
+<tr>
+<td>
+<textarea name="prediction" rows="10" cols="80">
+6	1H	4.738			1	8	d	7.597	7	d	2.264	
+7	1H	4.793			1	6	d	2.264	8	d	14.689	
+8	1H	6.707			1	6	d	7.597	7	d	14.689	
+9	1H	3.919			1	11	d	7.012	12	d	7.012	13	d	7.012	
+10	1H	3.919			1	11	d	7.012	12	d	7.012	13	d	7.012	
+11	1H	1.233			1	9	d	7.012	10	d	7.012	
+12	1H	1.233			1	9	d	7.012	10	d	7.012	
+13	1H	1.233			1	9	d	7.012	10	d	7.012	
+</textarea>
+</td>
+<td>
+<INPUT type="button" value="Descriptor" onclick="add(document.theForm.prediction.value);">
+</td>
+</tr>
+<tr>
+<td>
+<textarea name="nmrjson" rows="10" cols="80">
+[{"atomIDs":["5"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"8","coupling":14.689,"multiplicity":"d"},{"assignmentTo":"9","coupling":7.597,"multiplicity":"d"}],"multiplicity":"dd","units":"PPM","startX":6.707,"assignment":"5","stopX":6.707,"pattern":"s","observe":400000000,"referenceAtomID":1,"delta1":6.707,"integralData":{"to":6.707,"value":1,"from":6.707},"nucleus":"1H","peaks":[{"intensity":1,"x":6.707}]},{"atomIDs":["6"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"10","coupling":7.012,"multiplicity":"d"},{"assignmentTo":"11","coupling":7.012,"multiplicity":"d"},{"assignmentTo":"12","coupling":7.012,"multiplicity":"d"}],"multiplicity":"ddd","units":"PPM","startX":3.919,"assignment":"6","stopX":3.919,"pattern":"s","observe":400000000,"referenceAtomID":2,"delta1":3.919,"integralData":{"to":3.919,"value":1,"from":3.919},"nucleus":"1H","peaks":[{"intensity":1,"x":3.919}]},{"atomIDs":["7"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"10","coupling":7.012,"multiplicity":"d"},{"assignmentTo":"11","coupling":7.012,"multiplicity":"d"},{"assignmentTo":"12","coupling":7.012,"multiplicity":"d"}],"multiplicity":"ddd","units":"PPM","startX":3.919,"assignment":"7","stopX":3.919,"pattern":"s","observe":400000000,"referenceAtomID":2,"delta1":3.919,"integralData":{"to":3.919,"value":1,"from":3.919},"nucleus":"1H","peaks":[{"intensity":1,"x":3.919}]},{"atomIDs":["8"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"5","coupling":14.689,"multiplicity":"d"},{"assignmentTo":"9","coupling":2.264,"multiplicity":"d"}],"multiplicity":"dd","units":"PPM","startX":4.793,"assignment":"8","stopX":4.793,"pattern":"s","observe":400000000,"referenceAtomID":3,"delta1":4.793,"integralData":{"to":4.793,"value":1,"from":4.793},"nucleus":"1H","peaks":[{"intensity":1,"x":4.793}]},{"atomIDs":["9"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"5","coupling":7.597,"multiplicity":"d"},{"assignmentTo":"8","coupling":2.264,"multiplicity":"d"}],"multiplicity":"dd","units":"PPM","startX":4.738,"assignment":"9","stopX":4.738,"pattern":"s","observe":400000000,"referenceAtomID":3,"delta1":4.738,"integralData":{"to":4.738,"value":1,"from":4.738},"nucleus":"1H","peaks":[{"intensity":1,"x":4.738}]},{"atomIDs":["10"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"6","coupling":7.012,"multiplicity":"d"},{"assignmentTo":"7","coupling":7.012,"multiplicity":"d"}],"multiplicity":"dd","units":"PPM","startX":1.233,"assignment":"10","stopX":1.233,"pattern":"s","observe":400000000,"referenceAtomID":4,"delta1":1.233,"integralData":{"to":1.233,"value":1,"from":1.233},"nucleus":"1H","peaks":[{"intensity":1,"x":1.233}]},{"atomIDs":["11"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"6","coupling":7.012,"multiplicity":"d"},{"assignmentTo":"7","coupling":7.012,"multiplicity":"d"}],"multiplicity":"dd","units":"PPM","startX":1.233,"assignment":"11","stopX":1.233,"pattern":"s","observe":400000000,"referenceAtomID":4,"delta1":1.233,"integralData":{"to":1.233,"value":1,"from":1.233},"nucleus":"1H","peaks":[{"intensity":1,"x":1.233}]},{"atomIDs":["12"],"nbPeaks":1,"nmrJs":[{"assignmentTo":"6","coupling":7.012,"multiplicity":"d"},{"assignmentTo":"7","coupling":7.012,"multiplicity":"d"}],"multiplicity":"dd","units":"PPM","startX":1.233,"assignment":"12","stopX":1.233,"pattern":"s","observe":400000000,"referenceAtomID":4,"delta1":1.233,"integralData":{"to":1.233,"value":1,"from":1.233},"nucleus":"1H","peaks":[{"intensity":1,"x":1.233}]}]</textarea>
+</td>
+<td>
+<INPUT type="button" value="JSON" onclick="add(document.theForm.nmrjson.value);">
+</td>
+</tr>
+</table>
+<p><textarea name="buffer" rows="3" cols="100"></textarea>
+</form>
+
+<script type="text/javascript">
+
+var appletElement=document.getElementById("nemo");
+
+function add(value) {
+	//alert(value);
+	appletElement.addSimulatedSpectrum(value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n"),1);
+}
+
+function set(value) {
+	appletElement.setSimulatedSpectrum(value,1);
+}
+
+
+</script>
+</body>
+
+<form>
+<h2>xml out</h2>
+<textarea id="xmlout" name="xmlout" rows="20" cols="40"></textarea>
+</form>
+
+
+</html>

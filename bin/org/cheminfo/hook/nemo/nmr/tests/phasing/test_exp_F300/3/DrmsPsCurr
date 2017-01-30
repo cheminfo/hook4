@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+ <PlsSetup>
+
+  <pulses>
+
+   <DELAY>
+    <Duration>
+     <Unit>ms</Unit>
+     <VarType>7</VarType>
+     <Val>1000.000000</Val>
+
+    </Duration>
+   </DELAY>
+
+   <HF_PULSE>
+    <Duration>
+     <Unit>us</Unit>
+     <VarType>7</VarType>
+     <Val>3.795000</Val>
+
+    </Duration>
+    <Phase>
+     <Unit>quadrant</Unit>
+     <VarType>0</VarType>
+     <Quantity>8</Quantity>
+     <Val>0</Val>
+     <Val>2</Val>
+     <Val>2</Val>
+     <Val>0</Val>
+     <Val>1</Val>
+     <Val>3</Val>
+     <Val>3</Val>
+     <Val>1</Val>
+    </Phase>
+    <Atten>
+     <Unit>dB</Unit>
+     <VarType>7</VarType>
+     <Val>5.000000</Val>
+
+    </Atten>
+    <Shape>
+     <Unit>arb</Unit>
+     <VarType>7</VarType>
+     <Quantity>0</Quantity>
+    </Shape>
+   </HF_PULSE>
+
+   <DELAY>
+    <Duration>
+     <Unit>ms</Unit>
+     <VarType>7</VarType>
+     <Val>0.006500</Val>
+
+    </Duration>
+   </DELAY>
+
+   <RESET_ABS>
+    <Execute> </Execute>
+   </RESET_ABS>
+
+   <ACQ_MULTI>
+    <Duration>
+     <Unit>ms</Unit>
+     <VarType>7</VarType>
+     <Val>2684.354980</Val>
+
+    </Duration>
+    <Phase>
+     <Unit>quadrant</Unit>
+     <VarType>0</VarType>
+     <Quantity>8</Quantity>
+     <Val>0</Val>
+     <Val>2</Val>
+     <Val>2</Val>
+     <Val>0</Val>
+     <Val>1</Val>
+     <Val>3</Val>
+     <Val>3</Val>
+     <Val>1</Val>
+    </Phase>
+    <DataPoints>
+     <Unit>points</Unit>
+     <VarType>0</VarType>
+     <Val>32768</Val>
+
+    </DataPoints>
+   </ACQ_MULTI>
+
+  </pulses>
+
+ </PlsSetup>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+ <PlsSetup>
+
+  <pulses>
+
+   <DELAY>
+    <Duration>
+     <Unit>ms</Unit>
+     <VarType>7</VarType>
+     <JcampKwd>##$D[1]</JcampKwd>
+    </Duration>
+   </DELAY>
+
+   <HF_PULSE>
+    <Duration>
+     <Unit>us</Unit>
+     <VarType>7</VarType>
+     <JcampKwd>##$P[1]*0.33</JcampKwd>
+    </Duration>
+    <Phase>
+     <Unit>quadrant</Unit>
+     <VarType>0</VarType>
+     <Quantity>8</Quantity>
+     <Val>0</Val>
+     <Val>2</Val>
+     <Val>2</Val>
+     <Val>0</Val>
+     <Val>1</Val>
+     <Val>3</Val>
+     <Val>3</Val>
+     <Val>1</Val>
+    </Phase>
+    <Atten>
+     <Unit>dB</Unit>
+     <VarType>7</VarType>
+     <JcampKwd>##$PL[1]</JcampKwd>
+    </Atten>
+    <Shape>
+     <Unit>arb</Unit>
+     <VarType>7</VarType>
+     <Quantity>0</Quantity>
+    </Shape>
+   </HF_PULSE>
+
+   <DELAY>
+    <Duration>
+     <Unit>ms</Unit>
+     <VarType>7</VarType>
+     <JcampKwd>##$DE</JcampKwd>
+    </Duration>
+   </DELAY>
+
+   <RESET_ABS>
+    <Execute> </Execute>
+   </RESET_ABS>
+
+   <ACQ_MULTI>
+    <Duration>
+     <Unit>ms</Unit>
+     <VarType>7</VarType>
+     <JcampKwd>##$AQ</JcampKwd>
+    </Duration>
+    <Phase>
+     <Unit>quadrant</Unit>
+     <VarType>0</VarType>
+     <Quantity>8</Quantity>
+     <Val>0</Val>
+     <Val>2</Val>
+     <Val>2</Val>
+     <Val>0</Val>
+     <Val>1</Val>
+     <Val>3</Val>
+     <Val>3</Val>
+     <Val>1</Val>
+    </Phase>
+    <DataPoints>
+     <Unit>points</Unit>
+     <VarType>0</VarType>
+     <JcampKwd>##$TD</JcampKwd>
+    </DataPoints>
+   </ACQ_MULTI>
+
+  </pulses>
+
+ </PlsSetup>
+

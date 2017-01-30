@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+			codebase="../../../" width="800" height="600" name="nemo">
+	</applet>
+
+
+<br>
+<table border=1>
+<tr><td>
+<button onclick="simulate('simulationSimple')">simulate simple</button>
+<button onclick="simulate('simulationComplex')">simulate complex</button>
+<button onclick="alert(nemo.getSpectraData(0).getDataClass());">getSpectraData</button>
+<br>
+<script language="javascript">
+function simulate(textareaID) {
+	textarea=document.getElementById(textareaID);
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000, 0, 7, 2, "PPM");');
+	nemo.runScript('fourierTransform(spectraData);');
+}
+</script>
+<textarea id="simulationSimple" rows=5 cols=80>
+1	1H	2			1	2	d	7.597	3	d	2.264	
+2	1H	5			1	3	d	20	
+3	1H	6			1
+</textarea>
+<br>
+<textarea id="simulationComplex" rows=5 cols=80>
+6	1H	4.738			1	8	d	7.597	7	d	2.264	
+7	1H	4.793			1	6	d	2.264	8	d	14.689	
+8	1H	6.707			1	6	d	7.597	7	d	14.689	
+9	1H	3.919			1	11	d	7.012	12	d	7.012	13	d	7.012	
+10	1H	3.919			1	11	d	7.012	12	d	7.012	13	d	7.012	
+11	1H	1.233			1	9	d	7.012	10	d	7.012	
+12	1H	1.233			1	9	d	7.012	10	d	7.012	
+13	1H	1.233			1	9	d	7.012	10	d	7.012
+</textarea>
+</td>
+<td>
+<button onclick="resurectFromTable()">Resurect from table</button>
+<button onclick="resurectFromLine()">Resurect from acs</button>
+<br>
+<script language="javascript">
+function resurectFromTable() {
+	textarea=document.getElementById("table");
+	nemo.addPrediction(textarea.value);
+}
+function resurectFromLine() {
+	textarea=document.getElementById("line");
+	nemo.addSimulatedSpectrum(textarea.value,1);}
+</script>
+<textarea id="table" rows=5 cols=80>
+30,31,32	1H	2.22		s		
+35,36	1H	3.65		s		
+38,39,40	1H	3.76		s		
+34	1H	6.70		s		
+29	1H	6.93		s		
+33	1H	7.05		s		
+25,26,27,28	1H	7.67		s		
+15	13C	13.56		s		
+18	13C	30.09		s		
+24	13C	55.93		s		
+16	13C	102.33		s		
+17	13C	111.65		s		
+13	13C	114.99		s		
+2,3	13C	129.58		s		
+4,5	13C	131.51		s
+</textarea>
+<textarea id="line" rows=5 cols=80>
+1H-NMR (400 MHz, CDCl3) 5.96 (dd, J1 = 10.0 Hz, J2 = 5.4 Hz, 1 H), 5.71 (dd, J1 = 
+10.1 Hz, J2 = 1.1 Hz, 1 H), 5.14 (br. s, 1 H), 4.71 (dd, J1 = 11.1 Hz, J2 = 3.7 Hz, 1 H), 
+4.07 (sept., J = 6.2 Hz, 1 H), 2.41 (dd, J1 = 17.7 Hz, J2 = 11.2 Hz, 1 H), 2.23 (dd, J1 = 
+17.7 Hz, J2 = 4.1 Hz, 1 H), 1.29 (d, J = 6.2 Hz, 3 H), 1.19 (d, J = 6.1 Hz, 3 H), 1.00 (t, 
+J = 7.8 Hz, 9 H), 0.63 (q, J = 7.8 Hz, 6 H). 
+</textarea>
+
+
+</td>
+</tr></table>
+<br>
+<p>
+<button onclick="transfer()">Transfer</button> <button onclick="reapply()">Reapply</button>
+<br>
+<script language="javascript">
+function transfer() {
+	xml=nemo.getXML();
+	textarea=document.getElementById("xmlContent2");
+	textarea.value=xml;
+	nemo2.setXML(xml);
+}
+
+function reapply() {
+	textarea=document.getElementById("xmlContent2");
+	nemo2.setXML(textarea.value);
+}
+
+</script>
+
+	<applet code="org.cheminfo.hook.nemo.Nemo"  archive="../../library/lib/jfftpack.jar,../../library/lib/blas.jar,../../library/lib/blas_simple.jar,../../library/lib/f2jutil.jar,../../library/lib/lapack.jar,../../library/lib/lapack_simple.jar,../../library/lib/xerbla.jar,../../library/lib/cheminfo.md5.jar,../../library/lib/json.jar,../../library/lib/httpclient-4.1.3.jar,../../library/lib/httpcore-4.1.4.jar,../../library/lib/httpmime-4.1.3.jar,../lib/actelion.jar"
+			 codebase="../../../" width="600" height="500" name="nemo2">
+
+	</applet>
+
+<textarea id="xmlContent2" rows=20 cols=100></textarea>
+
+<br>
+
+	
+</body>
+
+</html>

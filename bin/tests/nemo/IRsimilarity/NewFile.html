@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<applet code="org.cheminfo.hook.nemo.Nemo"
+	archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+	codebase="../../../" width="800" height="600" id="nemo" name="nemo">
+	</applet>
+
+
+<br>
+
+<table>
+<tr>
+<td>Spectrum 1</td>
+<td><button onclick="loadExample('Z345_1_a.JDX',1);">Load spectrum</button></td>
+</tr>
+<tr>
+<td>Spectrum 2</td>
+<td><button onclick="loadExample('1731a_1_d.JDX',2);">Load spectrum</button></td>
+</tr>
+</table>
+<script language="javascript">
+
+function loadExample(jcamp,id) {
+	//alert("here");
+	nemo.addJcamp(jcamp,"IR"+id);
+	nemo.setColor('green');
+	nemo.addJcamp(jcamp,"BASE"+id);
+	nemo.setColor('blue');
+	nemo.addJcamp(jcamp,"DIFF"+id);
+	nemo.setColor('orange');
+	
+	var script = 'var ir =getSpectraData("IR'+id+'");';
+	script += 'var base =getSpectraData("BASE'+id+'");';
+	script += 'var diff =getSpectraData("DIFF'+id+'");';
+
+	script += '	var funcSize=Math.floor(ir.getNbPoints()*0.04);';
+	script += 'var func=new Array();';
+	script += 'var k;';
+	script += 'out.println("funcsize"+funcSize);';
+	script += 'for(k=funcSize-1;k>=0;k--)';
+	script += '	func[k]=1.0/funcSize;';
+	script += 'CorrelationFilter(base,func);';
+
+	script += 'diff = diff.getSpectraDataY();';
+	script += 'baseY=base.getSpectraDataY();';
+	script += 'nbPoints=ir.getNbPoints();';
+	script += 'for(k=nbPoints-1;k>=0;k--)';
+	script += '		diff[k]=diff[k]-baseY[k];';
+
+
+	nemo.runScript(script);
+}
+
+
+
+</script>
+
+
+</body>
+</html>

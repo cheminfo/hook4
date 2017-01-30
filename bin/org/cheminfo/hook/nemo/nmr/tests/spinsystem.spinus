@@ -1,0 +1,392 @@
+[
+    {
+      "atomIDs": [
+        "11"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "12",
+          "coupling": 7.639,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "13",
+          "coupling": 7.639,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "dd",
+      "units": "PPM",
+      "assignment": "11",
+      "startX": 3.437,
+      "pattern": "s",
+      "stopX": 3.437,
+      "observe": 400000000,
+      "referenceAtomID": 1,
+      "delta1": 3.437,
+      "integralData": {
+        "to": 3.437,
+        "value": 1,
+        "from": 3.437
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 3.437
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "12"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "11",
+          "coupling": 7.639,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "14",
+          "coupling": 6.713,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "dd",
+      "units": "PPM",
+      "assignment": "12",
+      "startX": 1.585,
+      "pattern": "s",
+      "stopX": 1.585,
+      "observe": 400000000,
+      "referenceAtomID": 4,
+      "delta1": 1.585,
+      "integralData": {
+        "to": 1.585,
+        "value": 1,
+        "from": 1.585
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 1.585
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "13"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "11",
+          "coupling": 7.639,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "14",
+          "coupling": 6.713,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "dd",
+      "units": "PPM",
+      "assignment": "13",
+      "startX": 1.585,
+      "pattern": "s",
+      "stopX": 1.585,
+      "observe": 400000000,
+      "referenceAtomID": 4,
+      "delta1": 1.585,
+      "integralData": {
+        "to": 1.585,
+        "value": 1,
+        "from": 1.585
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 1.585
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "14"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "12",
+          "coupling": 6.713,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "13",
+          "coupling": 6.713,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "15",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "16",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "17",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "18",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "19",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        },
+        {
+          "assignmentTo": "20",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "dddddddd",
+      "units": "PPM",
+      "assignment": "14",
+      "startX": 1.514,
+      "pattern": "s",
+      "stopX": 1.514,
+      "observe": 400000000,
+      "referenceAtomID": 5,
+      "delta1": 1.514,
+      "integralData": {
+        "to": 1.514,
+        "value": 1,
+        "from": 1.514
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 1.514
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "15"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "14",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "d",
+      "units": "PPM",
+      "assignment": "15",
+      "startX": 0.934,
+      "pattern": "s",
+      "stopX": 0.934,
+      "observe": 400000000,
+      "referenceAtomID": 6,
+      "delta1": 0.934,
+      "integralData": {
+        "to": 0.934,
+        "value": 1,
+        "from": 0.934
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 0.934
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "16"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "14",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "d",
+      "units": "PPM",
+      "assignment": "16",
+      "startX": 0.934,
+      "pattern": "s",
+      "stopX": 0.934,
+      "observe": 400000000,
+      "referenceAtomID": 6,
+      "delta1": 0.934,
+      "integralData": {
+        "to": 0.934,
+        "value": 1,
+        "from": 0.934
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 0.934
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "17"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "14",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "d",
+      "units": "PPM",
+      "assignment": "17",
+      "startX": 0.934,
+      "pattern": "s",
+      "stopX": 0.934,
+      "observe": 400000000,
+      "referenceAtomID": 6,
+      "delta1": 0.934,
+      "integralData": {
+        "to": 0.934,
+        "value": 1,
+        "from": 0.934
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 0.934
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "18"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "14",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "d",
+      "units": "PPM",
+      "assignment": "18",
+      "startX": 0.934,
+      "pattern": "s",
+      "stopX": 0.934,
+      "observe": 400000000,
+      "referenceAtomID": 7,
+      "delta1": 0.934,
+      "integralData": {
+        "to": 0.934,
+        "value": 1,
+        "from": 0.934
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 0.934
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "19"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "14",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "d",
+      "units": "PPM",
+      "assignment": "19",
+      "startX": 0.934,
+      "pattern": "s",
+      "stopX": 0.934,
+      "observe": 400000000,
+      "referenceAtomID": 7,
+      "delta1": 0.934,
+      "integralData": {
+        "to": 0.934,
+        "value": 1,
+        "from": 0.934
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 0.934
+        }
+      ]
+    },
+    {
+      "atomIDs": [
+        "20"
+      ],
+      "nbPeaks": 1,
+      "nmrJs": [
+        {
+          "assignmentTo": "14",
+          "coupling": 6.598,
+          "multiplicity": "d"
+        }
+      ],
+      "multiplicity": "d",
+      "units": "PPM",
+      "assignment": "20",
+      "startX": 0.934,
+      "pattern": "s",
+      "stopX": 0.934,
+      "observe": 400000000,
+      "referenceAtomID": 7,
+      "delta1": 0.934,
+      "integralData": {
+        "to": 0.934,
+        "value": 1,
+        "from": 0.934
+      },
+      "nucleus": "1H",
+      "peaks": [
+        {
+          "intensity": 1,
+          "x": 0.934
+        }
+      ]
+    }
+  ]

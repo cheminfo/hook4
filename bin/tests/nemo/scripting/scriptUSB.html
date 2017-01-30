@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf8">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+One of the way to run script is to make the applet run the script in an interactive mode.<p>
+For this you first need to add the spectra (or create new one with createNewSpectrum). Naming the spectra will allow to retrieve them in the javascript code using getSpectraData('spectrumName').
+
+<p>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+		archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+		codebase="../../../" width="100" height="100" name="nemo" id="nemo">
+	</applet>
+
+<script language="javascript">
+
+var nemo=document.getElementById("nemo");
+
+function makeReport() {
+	var script = 'out.println("Starting test script");';	
+	script += 'var dir ="/home/karina/workspace/hook3/bin/tests/nemo/scripting/";';
+	script += 'var openFileMf = dir+"mf.txt";';
+	script += 'var writeFile =  dir+"report.txt";';
+	script += 'var url="http://www.chemcalc.org/cheminfo/servlet/org.chemcalc.ChemCalc?resolution=0.01&mf=";';
+	script += 'var mfs= defaultAPI.getMfs(openFileMf);';
+	script += 'var internalProduct=defaultAPI.getCodProduct(openFileMf);';
+	script += 'out.println("Samples File");';
+	script += 'var idSpectrum=defaultAPI.makeFileJCamp();';
+	script += 'var predictions = new Array();';
+	script += 'var globalShift = new Array();';
+	script += 'var realFit = new Array();';
+	script += 'var peakWidth = new Array();';
+	script += 'var similarity = new Array();';
+	script += 'var IDbest = new Array();';
+	script += 'for (var j=0;j<mfs.length;j=j+1) { out.println(mfs[j]); predictions[j]= loadJCamp(url+mfs[j]);}';
+	script += 'for(var i=0;i<idSpectrum.length;i++){';
+	//script += 'if((idSpectrum[i]!= "Sample:1PeakID2") && (idSpectrum[i]!= "Sample:2PeakID1") && (idSpectrum[i]!= "Sample:2PeakID5")){';
+	script += 'var experimental=loadJCamp("file:"+dir+"files/"+idSpectrum[i]+".jdx");';
+	//script += 'var experimental=loadJCamp("file:"+dir+"files/Sample:1PeakID1.jdx");';
+	script += 'out.println(idSpectrum[i]);';
+	script += 'var result=massFitting(experimental,predictions);';
+	script += 'out.println("massfitting echo");';
+	script += 'globalShift[i]=result.getDouble("globalShift");';
+	script += 'realFit[i]=result.getDouble("R");';
+	script += 'peakWidth[i]=result.getDouble("gaussParam");';
+	script += 'similarity[i]=result.getDouble("similarity");';
+	script += 'IDbest[i]=result.getDouble("IDbest");';
+	script += '}';
+	script += 'out.println("creando reporte");';
+	script += 'defaultAPI.createReport(writeFile,internalProduct,mfs,idSpectrum,globalShift,realFit,peakWidth,similarity,IDbest);';
+
+	var jsonString =nemo.runScript(script);
+	var jSONResult=eval("("+jsonString+")");
+}
+
+</script>
+<br>
+
+
+<button onclick="makeReport()">Make Report</button>
+
+
+</body>
+
+</html>

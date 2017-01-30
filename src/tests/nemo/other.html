@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser</title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+			 archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+			 codebase="../../" width="800" height="600" id="nemo" name="nemo">
+	</applet>
+	<applet code="org.cheminfo.hook.nemo.Nemo"
+			archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+			codebase="../../" width="600" height="600" name="nemo2" id="nemo2"></applet>
+
+<br>
+<button onclick="nemo.addJcamp('otherjcamp/ir.jdx');">Add IR</button>
+<button onclick="nemo.addJcamp('otherjcamp/ir2.jdx');">Add IR2</button>
+<button onclick="nemo.addJcamp('otherjcamp/ir3.jdx');">Add IR3</button> Problem peak picking
+<button onclick="nemo.addJcamp('otherjcamp/uv.jdx');">Add UV</button>
+<button onclick="nemo.addJcamp('1h.dx');">Add NMR</button>
+<button onclick="nemo.addJcamp('otherjcamp/mass-hr.jdx');">Add HR mass</button>
+<button onclick="nemo.addJcamp('otherjcamp/mass-chemcalc.jdx');">Add chemcalc mass</button>
+<button onclick="nemo.addJcamp('otherjcamp/mass-label.jdx');">Add mass labeled</button>
+<button onclick="nemo.addJcamp('otherjcamp/mass-varian1200.jdx');">Add mass varian 1200</button>
+<button onclick="nemo.addJcamp('otherjcamp/mass-other.jdx');">Add mass other</button>
+<button onclick="nemo.addJcamp('otherjcamp/iv.jdx');">Add IV</button>
+<button onclick="nemo.addJcamp('otherjcamp/iv2.jdx');">Add IV2</button>
+<button onclick="nemo.addJcamp('otherjcamp/winnmr.jdx');">Add WinNMR</button>
+
+<button onclick="getNmrHtml('nemo');">Get NMR HTML</button>
+<button onclick="getPeakHtml('nemo');">Get Peak HTML</button>
+<button onclick="getJSON('nemo');">Get JSONL</button>
+
+<br>
+
+<INPUT type="button" value="Transfer XML" onclick="setOutput(nemo.getXML());nemo2.setXML(nemo.getXML());">
+
+Result:
+<textarea id="stdout" rows=10 cols=140></textarea>
+
+
+<script language="javascript">
+
+function getNmrHtml(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var nmrHtml=nemoElement.getNmrHtml();
+	setOutput(nmrHtml);
+}
+
+function getPeakHtml(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var nmrHtml=nemoElement.getPeakHtml(true);
+	setOutput(nmrHtml);
+}
+
+
+function getJSON(theApplet){
+	var nemoElement = document.getElementById(theApplet);
+	var json=nemoElement.getJSON();
+	setOutput(json);
+}
+
+function setOutput(value) {
+	var element = document.getElementById("stdout");
+	if (element) {
+		element.value = value; //.replaceAll("<","&lt;").replaceAll(">","&gt;");
+	} else {
+		alert("no output element");
+	}
+}
+
+
+</script>
+
+	
+	</body>
+
+</html>

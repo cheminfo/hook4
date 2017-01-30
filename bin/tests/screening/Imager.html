@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>JCAMP Visualiser by Damiano Banfi</title>
+	</head>
+
+	<body bgcolor="white">
+
+	<p>
+	<applet codebase="../.." code="org.cheminfo.hook.imager.Imager.class" width="800" height="750" name="hook">
+	</applet>
+
+	<form name="form">
+		<INPUT name="r" value="0" ></INPUT> 
+		<INPUT name="g" value="255" ></INPUT> 
+		<INPUT name="b" value="0" ></INPUT> 
+		<INPUT name="url" value="File:///f:/java/hook3/bin/tests/screening/3x3/Filipin G cyto - n000000.tif" ></INPUT> 
+		<INPUT type="button" value="addImage" onclick="hook.addImage(document.form.url.value, document.form.r.value, document.form.g.value, document.form.b.value)" /><p>
+		<INPUT type="button" value="addImageA" onclick="hook.addImage('File:///f:/java/hook3/bin/tests/screening/3x3/Filipin G cyto - n000000.tif', 0, 0, 255)" />
+		<INPUT type="button" value="addImageB" onclick="hook.addImage('File:///f:/java/hook3/bin/tests/screening/3x3/CY5 G noROI - n000000.tif', 0, 255, 0)" />
+		<INPUT type="button" value="addImageC" onclick="hook.addImage('File:///f:/java/hook3/bin/tests/screening/3x3/Propidium Iodide G - n000000.tif', 255, 0, 0)" /><BR>
+		<INPUT type="button" value="addImageA" onclick="hook.addImage('File:///f:/java/hook3/bin/tests/screening/2x2/Filipin G cyto - n000000.tif', 0, 0, 255)" />
+		<INPUT type="button" value="addImageB" onclick="hook.addImage('File:///f:/java/hook3/bin/tests/screening/2x2/CY5 G - n000000.tif', 0, 255, 0)" />
+		<INPUT type="button" value="addImageC" onclick="hook.addImage('File:///f:/java/hook3/bin/tests/screening/2x2/Propidium Iodide G - n000000.tif', 255, 0, 0)" /><BR>
+		
+		<INPUT type="button" value="Update" onclick="hook.updateImage()" />
+		<INPUT type="button" value="bogus" onclick="hook.bogus()" />
+		
+	</form>
+
+
+	
+	</body>
+
+</html>

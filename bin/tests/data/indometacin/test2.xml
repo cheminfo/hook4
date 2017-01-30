@@ -1,0 +1,58 @@
+<nemo.SpectraDisplay uniqueID="1" bottomLimit="0.0" is2D="false" vScale="false" relWidth="1.001290322580645" primaryColor="255,0,0" nbLinks="0" absoluteYScale="false" movementType="3" leftLimit="0.0" relY="0.0" relHeight="0.9783464566929134" relX="0.0" topLimit="0.0" rightLimit="0.0" hScale="true" >
+<moldraw.ActMoleculeDisplay IDCode="fi{`R@IBjwhHaIe]nYe_VZLLzNX@IjA`bfb@@@" primaryColor="NULL" relWidth="0.19329896907216496" displayID="false" relY="0.1006036217303823" relHeight="0.30181086519114686" relX="0.06443298969072164" EncodedCoordinates=")J6sF*)J)JF*)J6sF**Fl0S(.h:1~S.&gt;.&gt;`*.h63.=)\`*S('=CFd@`" expandedAtoms="" >
+<moldraw.ActAtomEntity uniqueID="7" atomID="0" symmetryRank="23" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="0" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="8" atomID="1" symmetryRank="14" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="1" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="9" atomID="2" symmetryRank="17" primaryColor="255,255,0" nbLinks="1" heterolink="true" secondaryColor="0,255,0" effectiveID="2" erasable="false" linkType0="0" link0="10" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="10" atomID="3" symmetryRank="17" primaryColor="255,255,0" nbLinks="1" heterolink="true" secondaryColor="0,255,0" effectiveID="3" erasable="false" linkType0="0" link0="9" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="11" atomID="4" symmetryRank="15" primaryColor="255,255,0" nbLinks="1" heterolink="true" secondaryColor="0,255,0" effectiveID="4" erasable="false" linkType0="0" link0="12" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="12" atomID="5" symmetryRank="15" primaryColor="255,255,0" nbLinks="1" heterolink="true" secondaryColor="0,255,0" effectiveID="5" erasable="false" linkType0="0" link0="11" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="13" atomID="6" symmetryRank="10" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="6" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="14" atomID="7" symmetryRank="5" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="7" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="15" atomID="8" symmetryRank="22" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="8" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="16" atomID="9" symmetryRank="18" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="9" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="17" atomID="10" symmetryRank="9" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="10" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="18" atomID="11" symmetryRank="7" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="11" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="19" atomID="12" symmetryRank="8" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="12" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="20" atomID="13" symmetryRank="12" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="13" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="21" atomID="14" symmetryRank="6" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="14" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="22" atomID="15" symmetryRank="2" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="15" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="23" atomID="16" symmetryRank="11" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="16" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="24" atomID="17" symmetryRank="16" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="17" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="25" atomID="18" symmetryRank="1" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="18" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="26" atomID="19" symmetryRank="13" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="19" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="27" atomID="20" symmetryRank="4" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="20" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="28" atomID="21" symmetryRank="19" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="21" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="29" atomID="22" symmetryRank="21" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="22" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="30" atomID="23" symmetryRank="20" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="23" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+<moldraw.ActAtomEntity uniqueID="31" atomID="24" symmetryRank="3" primaryColor="255,255,0" nbLinks="0" heterolink="true" secondaryColor="0,255,0" effectiveID="24" erasable="false" highlightPropagationType="3" maximumPropagationLevel="2" homolink="true" >
+</moldraw.ActAtomEntity>
+</moldraw.ActMoleculeDisplay>
+<nemo.HorizontalScale nbLinks="0" primaryColor="0,0,255" uniqueID="2" >
+</nemo.HorizontalScale>
+<nemo.VerticalScale nbLinks="0" primaryColor="0,0,255" uniqueID="3" >
+</nemo.VerticalScale>
+</nemo.SpectraDisplay>

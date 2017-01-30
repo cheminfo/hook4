@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<title>JCAMP Visualiser</title>
+</head>
+
+<body bgcolor="white">
+<table border=1>
+<tr><td><p><applet code="org.cheminfo.hook.nemo.Nemo"
+	archive="ext-lib/jfftpack.jar,ext-lib/blas.jar,ext-lib/blas_simple.jar,ext-lib/f2jutil.jar,ext-lib/lapack.jar,ext-lib/lapack_simple.jar,ext-lib/xerbla.jar,ext-lib/cheminfo.md5.jar,ext-lib/json.jar,ext-lib/httpclient-4.1.3.jar,ext-lib/httpcore-4.1.4.jar,ext-lib/httpmime-4.1.3.jar"
+	codebase="../../../" width="800" height="500" name="nemo"> </applet> <br>
+From: <input type="text" value=1 name="from" size=4 id="from">
+to <input type="text" value=7 name="to" size=4 id="to"> ppm.
+Line Width <input type="text" value=0.5 name="lineWidth" size=4
+	id="lineWidth"> Hz <br></td>
+	<td><p align="center"><a><img src="YXABm.png" border="0" alt="2D Mol"></a></p>
+	</td>
+</table>
+<table border=1>
+	<tr>
+		<td>
+		<button onclick="simulate('simulationSimple')">simulate Full</button>
+		<button onclick="simulate('simulationSimpleYXAB')">simulate
+		YXAB</button>
+		<button onclick="simulate('simulationSimpleABm')">simulate
+		ABm</button>
+		<button onclick="simulate('simulationSimpleXABm')">simulate
+		XABm</button>
+		<br>
+		<script language="javascript">
+function simulate(textareaID) {
+	textarea=document.getElementById(textareaID);
+	from = document.getElementById("from").value;
+	to = document.getElementById("to").value;
+	lw = document.getElementById("lineWidth").value;
+	nemo.createNewSpectrum();
+	nemo.runScript('simulateExactSpectrum("'+textarea.value.replace(/[\r]/g,"\\r").replace(/[\n]/g,"\\n")+'", 500000000,'+from+', '+to+', '+lw+', "PPM");');
+	nemo.runScript('fourierTransform(spectraData);');
+}
+</script> 
+<br>YXABm<br>
+<textarea id="simulationSimple" rows=5 cols=120>
+X	1H	6.00			1	Y	d	8	A	d	15	B	d	5
+Y	1H	6.02			1
+A	1H	4.00			1	B	d	3	m	d	7
+B	1H	4.02			1	m	d	6
+m	1H	2.00			1
+</textarea> <br>
+ABX<br>
+<textarea id="simulationSimpleYXAB" rows=4 cols=120>
+X	1H	6.00			1	Y	d	8	A	d	15	B	d	5
+Y	1H	6.02			1
+A	1H	4.00			1	B	d	3
+B	1H	4.02			1
+</textarea> <br>
+ABm<br>
+<textarea id="simulationSimpleABm" rows=3 cols=120>
+A	1H	4.00			1	B	d	3	m	d	7
+B	1H	4.02			1	m	d	6
+m	1H	2.00			1
+</textarea> <br>
+XABm<br>
+<textarea id="simulationSimpleXABm" rows=3 cols=120>
+X	1H	6.00			1	A	d	15	B	d	5
+A	1H	4.00			1	B	d	3	m	d	7
+B	1H	4.02			1	m	d	6
+m	1H	2.00			1
+</textarea> <br>
+</td>
+</body>
+
+</html>

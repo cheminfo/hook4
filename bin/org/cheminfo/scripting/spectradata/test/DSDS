@@ -1,0 +1,391 @@
+
+# -----------------------------------------------------------------------
+# GUESTBOOK
+# -----------------------------------------------------------------------
+drop table if exists GUESTBOOK;
+
+CREATE TABLE GUESTBOOK
+(
+		            GUESTBOOK_ID INTEGER NOT NULL,
+		            USER_ID INTEGER,
+		            DATE DATETIME NOT NULL,
+		            TEXT MEDIUMTEXT NOT NULL,
+		            VALID VARCHAR (8) default 'false' NOT NULL,
+    PRIMARY KEY(GUESTBOOK_ID),
+    FOREIGN KEY (USER_ID) REFERENCES TURBINE_USER (USER_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# SESSIONS
+# -----------------------------------------------------------------------
+drop table if exists SESSIONS;
+
+CREATE TABLE SESSIONS
+(
+		            SESSIONS INTEGER NOT NULL,
+		            LOWEST_LOAD_SERVER VARCHAR (255),
+		            SESSIONS_ALL INTEGER default 0 NOT NULL,
+    PRIMARY KEY(SESSIONS)
+);
+
+# -----------------------------------------------------------------------
+# CONDITION_TYPE
+# -----------------------------------------------------------------------
+drop table if exists CONDITION_TYPE;
+
+CREATE TABLE CONDITION_TYPE
+(
+		            CONDITION_TYPE_ID INTEGER NOT NULL,
+		            CONDITION_NAME VARCHAR (255) NOT NULL,
+		            CONDITION_TYPE CHAR NOT NULL,
+		            DATA_TYPE VARCHAR (255) NOT NULL,
+		            DICT_REF VARCHAR (255) NOT NULL,
+		            UNITS VARCHAR (255) NOT NULL,
+		            CML_ENTRY_TYPE VARCHAR (255) NOT NULL,
+		            REQUIRED VARCHAR (255) NOT NULL,		            
+    PRIMARY KEY(CONDITION_TYPE_ID)
+);
+
+# -----------------------------------------------------------------------
+# CONDITION
+# -----------------------------------------------------------------------
+drop table if exists `CONDITION`;
+
+CREATE TABLE `CONDITION`
+(
+		            CONDITION_ID INTEGER NOT NULL,
+		            VALUE VARCHAR (255) NOT NULL,
+		            CONDITION_TYPE_ID INTEGER NOT NULL,
+		            USER_ID INTEGER NOT NULL,
+    PRIMARY KEY(CONDITION_ID),
+    FOREIGN KEY (CONDITION_TYPE_ID) REFERENCES CONDITION_TYPE (CONDITION_TYPE_ID)
+    ,
+    FOREIGN KEY (USER_ID) REFERENCES TURBINE_USER (USER_ID)
+    ,
+    INDEX CONDITION_TYPE_ID_INDEX (CONDITION_TYPE_ID),
+    INDEX USER_ID_INDEX (USER_ID)
+);
+
+# -----------------------------------------------------------------------
+# SPECTRUM_TYPE
+# -----------------------------------------------------------------------
+drop table if exists SPECTRUM_TYPE;
+
+CREATE TABLE SPECTRUM_TYPE
+(
+		            SPECTRUM_TYPE_ID INTEGER NOT NULL,
+		            DIMENSIONALITY INTEGER NOT NULL,
+		            NAME VARCHAR (255) NOT NULL,
+		            USER_ID INTEGER NOT NULL,
+    PRIMARY KEY(SPECTRUM_TYPE_ID),
+    FOREIGN KEY (USER_ID) REFERENCES TURBINE_USER (USER_ID)
+    ,
+    INDEX USER_ID_INDEX (USER_ID),
+    INDEX DIMENSIONLATA_INDEX (DIMENSIONALITY)
+);
+
+# -----------------------------------------------------------------------
+# ISOTOPE
+# -----------------------------------------------------------------------
+drop table if exists ISOTOPE;
+
+CREATE TABLE ISOTOPE
+(
+		            SPECTRUM_TYPE_ID INTEGER NOT NULL,
+		            AXIS INTEGER NOT NULL,
+		            ELEMENT_SYMBOL VARCHAR (255) NOT NULL,
+		            ATOMIC_MASS INTEGER NOT NULL,
+    PRIMARY KEY(SPECTRUM_TYPE_ID,AXIS),
+    FOREIGN KEY (SPECTRUM_TYPE_ID) REFERENCES SPECTRUM_TYPE (SPECTRUM_TYPE_ID)
+    ,
+    INDEX ELEMENT_SYMBOL_INDEX (ELEMENT_SYMBOL),
+    INDEX SPECTRUM_TYPE_ID_INDEX (SPECTRUM_TYPE_ID)
+);
+
+# -----------------------------------------------------------------------
+# MOLECULE
+# -----------------------------------------------------------------------
+drop table if exists MOLECULE;
+
+CREATE TABLE MOLECULE
+(
+		            MOLECULE_ID INTEGER NOT NULL,
+		            DATE DATETIME NOT NULL,
+		            CAS_NUMBER MEDIUMTEXT NOT NULL,
+		            MOLECULAR_WEIGHT FLOAT NOT NULL,
+		            SMILES_STRING MEDIUMBLOB NOT NULL,
+		            SMILES_STRING_CHIRAL MEDIUMBLOB,
+		            USER_ID INTEGER NOT NULL,
+		            fp0 BIGINT NOT NULL,
+		            fp1 BIGINT NOT NULL,
+		            fp2 BIGINT NOT NULL,
+		            fp3 BIGINT NOT NULL,
+		            fp4 BIGINT NOT NULL,
+		            fp5 BIGINT NOT NULL,
+		            fp6 BIGINT NOT NULL,
+		            fp7 BIGINT NOT NULL,
+		            fp8 BIGINT NOT NULL,
+		            fp9 BIGINT NOT NULL,
+		            fp10 BIGINT NOT NULL,
+		            fp11 BIGINT NOT NULL,
+		            fp12 BIGINT NOT NULL,
+		            fp13 BIGINT NOT NULL,
+		            fp14 BIGINT NOT NULL,
+		            fp15 BIGINT NOT NULL,
+		            DBE FLOAT NOT NULL,
+		            SSSR INTEGER NOT NULL,
+		            SAR INTEGER NOT NULL,
+		            COMMENT LONGBLOB,
+    PRIMARY KEY(MOLECULE_ID),
+    FOREIGN KEY (USER_ID) REFERENCES TURBINE_USER (USER_ID)
+    ,
+    INDEX SMILES_STRING_INDEX (SMILES_STRING(250)),
+    INDEX SMILES_STRING_CHIRAL_INDEX (SMILES_STRING_CHIRAL(250)),
+    INDEX CAS_NUMBER_INDEX (CAS_NUMBER(250)),
+    INDEX MOLECULAR_WEIGHT_INDEX (MOLECULAR_WEIGHT),
+    INDEX USER_ID_INDEX (USER_ID)
+);
+
+# -----------------------------------------------------------------------
+# BOOKMARK
+# -----------------------------------------------------------------------
+drop table if exists BOOKMARK;
+
+CREATE TABLE BOOKMARK
+(
+		            MOLECULE_ID INTEGER NOT NULL,
+		            USER_ID INTEGER NOT NULL,
+    PRIMARY KEY(MOLECULE_ID,USER_ID),
+    FOREIGN KEY (MOLECULE_ID) REFERENCES MOLECULE (MOLECULE_ID)
+    ,
+    FOREIGN KEY (USER_ID) REFERENCES TURBINE_USER (USER_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# CANONICAL_NAME_TYPE
+# -----------------------------------------------------------------------
+drop table if exists CANONICAL_NAME_TYPE;
+
+CREATE TABLE CANONICAL_NAME_TYPE
+(
+		            CANONICAL_NAME_TYPE_ID INTEGER NOT NULL,
+		            CANONICAL_NAME_TYPE VARCHAR (255) NOT NULL,
+    PRIMARY KEY(CANONICAL_NAME_TYPE_ID)
+);
+
+# -----------------------------------------------------------------------
+# CANONICAL_NAME
+# -----------------------------------------------------------------------
+drop table if exists CANONICAL_NAME;
+
+CREATE TABLE CANONICAL_NAME
+(
+		            MOLECULE_ID INTEGER NOT NULL,
+		            CANONICAL_NAME_TYPE_ID INTEGER NOT NULL,
+		            NAME VARCHAR (255) NOT NULL,
+		            NAME_SOUNDEX MEDIUMTEXT NOT NULL,
+    PRIMARY KEY(MOLECULE_ID,CANONICAL_NAME_TYPE_ID),
+    FOREIGN KEY (MOLECULE_ID) REFERENCES MOLECULE (MOLECULE_ID)
+    ,
+    FOREIGN KEY (CANONICAL_NAME_TYPE_ID) REFERENCES CANONICAL_NAME_TYPE (CANONICAL_NAME_TYPE_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# WISHLIST
+# -----------------------------------------------------------------------
+drop table if exists WISHLIST;
+
+CREATE TABLE WISHLIST
+(
+		            USER_ID INTEGER,
+		            DATE DATETIME NOT NULL,
+		            SPECTRUM_TYPE_ID INTEGER NOT NULL,
+		            MOLECULE_ID INTEGER NOT NULL,
+    PRIMARY KEY(USER_ID,SPECTRUM_TYPE_ID,MOLECULE_ID),
+    FOREIGN KEY (SPECTRUM_TYPE_ID) REFERENCES SPECTRUM_TYPE (SPECTRUM_TYPE_ID)
+    ,
+    FOREIGN KEY (USER_ID) REFERENCES TURBINE_USER (USER_ID)
+    ,
+    FOREIGN KEY (MOLECULE_ID) REFERENCES MOLECULE (MOLECULE_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# SPECTRUM
+# -----------------------------------------------------------------------
+drop table if exists SPECTRUM;
+
+CREATE TABLE SPECTRUM
+(
+		            SPECTRUM_ID INTEGER NOT NULL,
+		            DATE DATETIME NOT NULL,
+		            SPECFILE MEDIUMTEXT NOT NULL,
+		            SIMPLE_SPECFILE VARCHAR (255) NOT NULL,
+		            LITERATURE MEDIUMTEXT NOT NULL,
+		            LITERATURE_SOUNDEX MEDIUMTEXT NOT NULL,
+		            REVIEW_FLAG VARCHAR (8) NOT NULL,
+		            REVIEW_KEY VARCHAR (6) NOT NULL,
+		            FINGERPRINT BIGINT NOT NULL,
+		            USER_ID INTEGER NOT NULL,
+		            SPECTRUM_TYPE_ID INTEGER NOT NULL,
+		            COMMENT LONGBLOB,
+		            COMMENT_SOUNDEX MEDIUMTEXT NOT NULL,
+		            MOLECULE_ID INTEGER NOT NULL,
+    PRIMARY KEY(SPECTRUM_ID),
+    FOREIGN KEY (USER_ID) REFERENCES TURBINE_USER (USER_ID)
+    ,
+    FOREIGN KEY (SPECTRUM_TYPE_ID) REFERENCES SPECTRUM_TYPE (SPECTRUM_TYPE_ID)
+    ,
+    FOREIGN KEY (MOLECULE_ID) REFERENCES MOLECULE (MOLECULE_ID)
+    ,
+    INDEX REVIEW_FLAG_INDEX (REVIEW_FLAG),
+    INDEX MOLECULE_ID_INDEX (MOLECULE_ID),
+    INDEX SPECTRUM_TYPE_ID_INDEX (SPECTRUM_TYPE_ID),
+    INDEX SPECFILE_INDEX (SPECFILE(255)),
+    INDEX DATE_INDEX (DATE),
+    INDEX USER_ID_INDEX (USER_ID)
+);
+
+# -----------------------------------------------------------------------
+# SPECTRUM_CONDITION
+# -----------------------------------------------------------------------
+drop table if exists SPECTRUM_CONDITION;
+
+CREATE TABLE SPECTRUM_CONDITION
+(
+		            SPECTRUM_ID INTEGER NOT NULL,
+		            CONDITION_ID INTEGER NOT NULL,
+    PRIMARY KEY(SPECTRUM_ID,CONDITION_ID),
+    FOREIGN KEY (SPECTRUM_ID) REFERENCES SPECTRUM (SPECTRUM_ID)
+    ,
+    FOREIGN KEY (CONDITION_ID) REFERENCES `CONDITION` (CONDITION_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# ATOM
+# -----------------------------------------------------------------------
+drop table if exists ATOM;
+
+CREATE TABLE ATOM
+(
+		            ATOM_ID INTEGER NOT NULL,
+		            SYMBOL VARCHAR (3) NOT NULL,
+		            MOLECULE_ID INTEGER NOT NULL,
+		            HOSE_CODE VARCHAR (120) NOT NULL,
+		            HOSE_CODE_WITH_RINGS VARCHAR (120) NOT NULL,
+		            ATOMIC_MASS INTEGER NOT NULL,
+		            FORMAL_CHARGE INTEGER NOT NULL,
+		            IS_AROMATIC VARCHAR (5) default 'false' NOT NULL,
+		            IS_VISIBLE VARCHAR (5) default 'false' NOT NULL,
+		            HETERO VARCHAR (5) default 'false' NOT NULL,
+    PRIMARY KEY(ATOM_ID),
+    FOREIGN KEY (MOLECULE_ID) REFERENCES MOLECULE (MOLECULE_ID)
+    ,
+    INDEX MOLECULE_ID_INDEX (MOLECULE_ID),
+    INDEX HOSE_CODE_INDEX (HOSE_CODE)
+);
+
+# -----------------------------------------------------------------------
+# COORDINATE_SET_TYPE
+# -----------------------------------------------------------------------
+drop table if exists COORDINATE_SET_TYPE;
+
+CREATE TABLE COORDINATE_SET_TYPE
+(
+		            COORDINATE_SET_TYPE_ID INTEGER NOT NULL,
+		            DESCRIPTION LONGBLOB,
+    PRIMARY KEY(COORDINATE_SET_TYPE_ID)
+);
+
+# -----------------------------------------------------------------------
+# COORDINATE_SET_2D
+# -----------------------------------------------------------------------
+drop table if exists COORDINATE_SET_2D;
+
+CREATE TABLE COORDINATE_SET_2D
+(
+		            COORDINATE_SET_TYPE_ID INTEGER NOT NULL,
+		            ATOM_ID INTEGER NOT NULL,
+		            X_COORDINATE DOUBLE NOT NULL,
+		            Y_COORDINATE DOUBLE NOT NULL,
+    PRIMARY KEY(COORDINATE_SET_TYPE_ID,ATOM_ID),
+    FOREIGN KEY (ATOM_ID) REFERENCES ATOM (ATOM_ID)
+    ,
+    FOREIGN KEY (COORDINATE_SET_TYPE_ID) REFERENCES COORDINATE_SET_TYPE (COORDINATE_SET_TYPE_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# COORDINATE_SET_3D
+# -----------------------------------------------------------------------
+drop table if exists COORDINATE_SET_3D;
+
+CREATE TABLE COORDINATE_SET_3D
+(
+		            COORDINATE_SET_TYPE_ID INTEGER NOT NULL,
+		            ATOM_ID INTEGER NOT NULL,
+		            X_COORDINATE DOUBLE NOT NULL,
+		            Y_COORDINATE DOUBLE NOT NULL,
+		            Z_COORDINATE DOUBLE NOT NULL,
+    PRIMARY KEY(COORDINATE_SET_TYPE_ID,ATOM_ID),
+    FOREIGN KEY (ATOM_ID) REFERENCES ATOM (ATOM_ID)
+    ,
+    FOREIGN KEY (COORDINATE_SET_TYPE_ID) REFERENCES COORDINATE_SET_TYPE (COORDINATE_SET_TYPE_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# COUPLING
+# -----------------------------------------------------------------------
+drop table if exists COUPLING;
+
+CREATE TABLE COUPLING
+(
+		            SPECTRUM_ID INTEGER NOT NULL,
+		            ATOM_ID_1 INTEGER NOT NULL,
+		            ATOM_ID_2 INTEGER NOT NULL,
+		            CONSTANT DOUBLE NOT NULL,
+    PRIMARY KEY(SPECTRUM_ID,ATOM_ID_1,ATOM_ID_2),
+    FOREIGN KEY (ATOM_ID_1) REFERENCES ATOM (ATOM_ID)
+    ,
+    FOREIGN KEY (ATOM_ID_2) REFERENCES ATOM (ATOM_ID)
+    ,
+    FOREIGN KEY (SPECTRUM_ID) REFERENCES SPECTRUM (SPECTRUM_ID)
+    
+);
+
+# -----------------------------------------------------------------------
+# BOND
+# -----------------------------------------------------------------------
+drop table if exists BOND;
+
+CREATE TABLE BOND
+(
+		            BOND_ID INTEGER NOT NULL,
+		            DEGREE INTEGER NOT NULL,
+		            STEREO INTEGER NOT NULL,
+		            IS_CONFIGURATION_SPECIFIED VARCHAR (5) default 'false' NOT NULL,
+		            IS_AROMATIC VARCHAR (5) default 'false' NOT NULL,
+    PRIMARY KEY(BOND_ID)
+);
+
+# -----------------------------------------------------------------------
+# BOND_ATOM
+# -----------------------------------------------------------------------
+drop table if exists BOND_ATOM;
+
+CREATE TABLE BOND_ATOM
+(
+		            BOND_ID INTEGER NOT NULL,
+		            ATOM_ID INTEGER NOT NULL,
+		            ORDER_NUMBER INTEGER NOT NULL,
+    PRIMARY KEY(BOND_ID,ATOM_ID),
+    FOREIGN KEY (BOND_ID) REFERENCES BOND (BOND_ID)
+    ,
+    FOREIGN KEY (ATOM_ID) REFERENCES ATOM (ATOM_ID)
+    
+);

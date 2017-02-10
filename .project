@@ -38,7 +38,7 @@
 		<link>
 			<name>srcOpenchemlib</name>
 			<type>2</type>
-			<location>/Users/acastillo/git/openchemlib/src/main/java</location>
+			<location>/home/acastillo/Documents/git/actelion/openchemlib/src/main/java</location>
 		</link>
 		<link>
 			<name>srcSpectraDataPlugin</name>
